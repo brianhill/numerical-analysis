@@ -2,11 +2,11 @@
 
 *The Emergence of Modern Physical Science*
 
-* Brian Hill
+Terms 2-3, Deep Springs College, Prof. [Brian Hill](../index.html)
 
 ## Syllabus
 
-* [Syllabus -- Forthcoming](./NumericalAnalysisSyllabus.pdf)
+* [Syllabus -- A PDF mostly mirroring what is on these web pages is forthcoming](./NumericalAnalysisSyllabus.pdf)
 
 ## Daily Schedules
 
