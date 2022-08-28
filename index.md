@@ -6,7 +6,7 @@ Terms 2-3, Deep Springs College, Prof. [Brian Hill](../index.html)
 
 ## Syllabus
 
-* [Syllabus -- A PDF mostly mirroring what is on these web pages is forthcoming](./NumericalAnalysisSyllabus.pdf)
+* [Syllabus -- A PDF mostly mirroring what is on these web pages is FORTHCOMING](./NumericalAnalysisSyllabus.pdf)
 
 ## Daily Schedules
 
