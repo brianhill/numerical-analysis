@@ -4,4 +4,4 @@ Course [home page](./)
 
 ### Week 1
 
-* Tuesday, Aug. 30
+* Tuesday, Aug. 30 &mdash; Prepare for class with [Before Calculators](./tex/na_day01.pdf)
