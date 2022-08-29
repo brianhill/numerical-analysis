@@ -1,16 +1,10 @@
 % Numerical Analysis on a Pocket Calculator
 % Day 1
-% Brian Hill, Deep Springs College, 2022
-
-\magnification=\magstep1
-\vsize=227 true mm \hsize=170 true mm
-   \voffset=-0.4 true mm \hoffset=-5.4 true mm
 
 \def\folio{\ifnum\pageno>0 \number\pageno \else
    \ifnum\pageno<0 \romannumeral-\pageno \else\fi\fi}
 
-
-\font\Largebf=cmbx10  scaled \magstep2
+\font\largebf=cmbx10  scaled \magstep2
 \font\largerm=cmr12
 \font\largeit=cmti12
 \font\tensc=cmcsc10
@@ -26,52 +20,98 @@
 
 \input epsf
 
-\pageno=0
-
-\null\vskip72pt
-
-\centerline{\Largebf NUMERICAL ANALYSIS}
-
-\vskip12pt
-
-\centerline{\Largebf ON A POCKET CALCULATOR}
-
-\vskip24pt
-
-\centerline{\Largebf by}
-
-\vskip24pt
-
-\centerline{\Largebf Brian Hill}
-
-\vskip24pt
-
-\centerline{\Largebf Deep Springs College}
-
-\vskip24pt
-
-\centerline{\Largebf Fall, 2022}
-
-\vfill
-
-\eject
-
 \pageno=1
 
 \null\vskip36pt
 
 \centerline{\largerm DAY 1}
-
-\vskip 12pt
-
-\centerline{\largeit Before Calculators}
-
 \nobreak\bigskip
 
-The area of a triangle is usually given as ${1\over 2} b h$. Since we are starting from first principles as much as we can, and also trying to have as much fun as we can, let's 
-take it easy on ourselves and instead of rushing to the next thing, let us first convince ourselves that the formula is true.
-
+\centerline{\largeit Wherein we Appreciate how Difficult things were Before Calculators}
 \nobreak\bigskip
+
+\noindent{\bf The Area of a Triangle}
+\nobreak\bigskip
+
+\noindent The area of a triangle is usually given as:
+$$A={1\over 2} b h.$$ 
+In this formula, $A$ is the area, $b$ is the length of the base, and $h$ is the height of the triangle.
+\nobreak\bigskip
+
+\midinsert
+\centerline{\epsfbox{na_day01_fig.1}}
+\endinsert
+\nobreak\bigskip
+
+\noindent The dashed line representing the height has to be perpendicular to the base. The formula is read aloud or to yourself as ``area equals one-half base times height.''
+Since we are starting from first principles as much as we can, and also trying to have as much fun as we can,
+instead of immediately turning to the next thing, let us pause, and ask how can we convince ourselves that the formula for $A$ is correct? Come prepared with an argument.
+
+To use this formula, you would typically measure the base and the height and then grab a calculator and punch the numbers in. If printing and photocopying haven't
+messed up the size of the drawing, $b=6.56 {\rm cm},$ and $h=2.40 {\rm cm}.$
+
+Take the time to compute the area by hand (yes, you have to multiply two numbers and then divide by 2), so as to remind yourself how much burden has been lifted by calculators.
+If you don't get something a little less than 8, try again.
+
+Also, be careful, what are the units of your answer? You have to keep track of units whether you or not you are using a calculator.
+\bigskip
+
+\noindent{\bf The Slide Rule}
+\nobreak\bigskip
+
+\noindent An amazing invention, going back to John Napier (1550--1617), turns multiplication problems into addition problems. At the root of the idea is the logarithm.
+Napier published the idea of the logarithm in 1614 in {\it Mirifici Logarithmorum Canonis Descriptio} {\it (A Description of the Wonderful Law of Logarithms)}.
+
+The slide rule contains logarithmic scales. If a person was satisfied with two decimal places of accuracy, or maybe three, then busting out a slide rule could save
+the work of multiplying by hand. You can also divide with a slide rule.
+
+I will bring a slide rule to class and we can spend some of our first day seeing how it works. Up until the early 1970s most scientists and engineers were very good 
+with slide rules and used them frequently.
+\bigskip
+
+\noindent{\bf Trigonometric Functions}
+\nobreak\bigskip
+
+\noindent We might not be fortunate enough to know the height of a triangle. Look again at the triangle above. Suppose instead of being given $b$ and $h$, we were instead given $b$, $\theta$, and $\phi$, as shown in the triangle below, where $b$ is still the base, but $\theta$ is the angle at the lower left corner and $\phi$ is the angle at the lower right corner.
+\nobreak\bigskip
+
+\midinsert
+\centerline{\epsfbox{na_day01_fig.2}}
+\endinsert
+\bigskip
+
+\noindent Please don't be put off by Greek letters. Just learn to pronounce them and write them. You say ``thay-tuh'' when you see $\theta$ and ``fee'' when you see $\phi$. Sometimes they are written out in English as ``theta'' and ``phi.'' These are lower-case Greek letters. Although we have no occasion to use them at present, it might be good to mention that there are also upper-case versions of $\theta$ and $\phi$. They look like $\Theta$ and $\Phi$.
+
+Well, now we have some trouble. It isn't totally straightforward to calculate $h$ even if you know $b$, $\theta$, and $\phi$. The formula is:
+
+$$h=b{\sin\theta \sin\phi \over \sin (\theta + \phi)}$$
+
+\noindent The triangle above has $\theta=30^{\circ}$ and $\phi=45^{\circ}$. We still have $b=6.56 {\rm cm}.$
+
+Before calculators, tables of trigonometric functions were kept by the side of scientists and slide rules also had trig scales on them. Although I did not ever use any trigonometric tables, I even have some embedded in a reference I used in my college days: Herbert Bristol Dwight, {\it Tables of Integrals and Other Mathematical Data}, 4th edition, 1961. On p. 274, $\sin 30^{\circ} = 0.50000,$ on p. 277, $\sin 45^{\circ}=0.70711$, and on p. 283, $\sin 75^{\circ}=0.96593.$ You can put the equations we have so far together and get:
+
+$$A={1\over 2} b^2 {\sin\theta \sin\phi \over \sin (\theta + \phi)}.$$
+
+\noindent Imagine evaluating that by hand, or even with a slide rule! Let's spare ourselves. But do bust out a calculator (any calculator that you happen to have) and see if you get the same number you got before.
+\bigskip
+
+\noindent{\bf An Exercise}
+\nobreak\bigskip
+
+\noindent This is not a problem set. It is additional preparation for our Day 1 meeting. Do the calculation of $A$ again, using any calculator but this time with $b=4.559014114$, $\theta=60^{\circ}$, and $\phi=60^{\circ}$. If you don't get something very close to a whole number, something went wrong. One common problem is that your calculator might not be in degrees mode. Some calculators default to radians.
+
+Also, record every keystroke you pressed when doing this calculation. Write that down neatly on 8~1/2x11 paper (not torn out from a bound notebook) to share.
+
+Imagine doing this by hand or with a slide rule after consulting your table of trigonometric functions.  On p. 280 of Dwight, it says $\sin 60^{\circ} = 0.86603.$ At least there is a simplification for this particular problem because it is also the case that $\sin (60^{\circ}+60^{\circ}) = \sin 120^{\circ} = 0.86603.$ In class we will do this together by hand to two or three significant figures.
+\bigskip
+
+\noindent{\bf More Things we Will Discuss}
+\nobreak\bigskip
+
+\noindent If you don't need a review of trig functions, come prepared to explain how you derive:
+
+$$h=b{\sin\theta \sin\phi \over \sin (\theta + \phi)}?$$
+
+\noindent If you do need to review trig functions, do as much review as you can and then come prepared with specific questions for what you want reviewed. An additional trig-related topic I will cover is: What are radians? Why are they so useful? What is the conversion factor between degrees and radians?
 
 \bye
-
