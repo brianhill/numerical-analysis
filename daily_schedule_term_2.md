@@ -10,4 +10,4 @@ Course [home page](./)
 ### Week 2
 
 * Tuesday, Sep. 6 &mdash; Prepare for class by following the directions in [Calculating with the HP-25](./tex/na_day03.pdf) &mdash; These directions include your first problem set to turn in &mdash; You will need to make a copy of [Sections 4-5 of the HP-25 Owner's Handbook](./resources/HP25-OwnersHandbook-Sections4-5.pdf)
-* Friday, Sep. 9 &mdash; Prepare for class by following the directions in [The Stack, Registers, and Programming](./tex/na_day04.pdf
+* Friday, Sep. 9 &mdash; Prepare for class by following the directions in [The Stack, Registers, and Programming](./tex/na_day04.pdf)
