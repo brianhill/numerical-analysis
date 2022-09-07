@@ -1,0 +1,72 @@
+% Numerical Analysis on a Pocket Calculator
+% Day 4
+
+\def\folio{\ifnum\pageno>0 \number\pageno \else
+   \ifnum\pageno<0 \romannumeral-\pageno \else\fi\fi}
+
+\font\largebf=cmbx10  scaled \magstep2
+\font\largerm=cmr12
+\font\largeit=cmti12
+\font\tensc=cmcsc10
+\font\sevensc=cmcsc10 scaled 700
+\newfam\scfam \def\sc{\fam\scfam\tensc}
+\textfont\scfam=\tensc \scriptfont\scfam=\sevensc
+\scriptscriptfont\scfam=\sevensc
+\font\largesc=cmcsc10 scaled \magstep1
+\font\ninerm=cmr9
+\newfam\srfam \def\sr{\fam\srfam\ninerm}
+\textfont\srfam=\ninerm \scriptfont\srfam=\sevenrm
+\scriptscriptfont\srfam=\fiverm
+
+\input epsf
+
+\pageno=6
+
+\null\vskip36pt
+
+\centerline{\largerm DAY 4}
+\nobreak\bigskip
+
+\centerline{\largeit The Stack, Registers, and Programming}
+\nobreak\bigskip
+
+\noindent{\bf Where are we?}
+\nobreak\bigskip
+
+\noindent You have read to and worked all the examples up to p.~59 in the {\it Owner's Handbook}. For now, we are going to skip most of the rest of Section~4. What we are skipping is HMS conversion, which is some stuff for converting things like 12h~15m~30s to 12.25833333h and back, polar coordinate conversion, and finally, some handy and sophisticated stuff for statistics using the $\Sigma+$ and $\Sigma-$ keys. As we are doing applications later in the course, we will get back to those things.
+
+However, some things buried in the pages we are skipping that we should learn are logarithms, exponentials, and powers. The calculator has base~10 logarithms and exponentials, it has natural logarithms and exponentials (base~$e$), and if that isn't enough it will raise any base to any power using the $y^x$~key. So read pp.~63-65 starting with ``Logarithmic and Exponential Functions'' and finishing with the horribly complicated formula for Mach number on p.~65. Key the whole thing in and make sure you get the expected answer.
+
+The reason we are skipping most of pp.~60-71 is that we want to get to programming!
+
+\bigskip
+
+\noindent{\bf The Stack and Registers}
+\nobreak\bigskip
+
+\noindent We have the stack  (X, Y, Z, and T), Last X, and REG 0, REG 1, REG 2, ..., REG 7 at our disposal. We have these both when we are doing calculations manually and when we are programming the calculator. It is extremely common, when running a program, to have to enter initial values into one or more of these locations before starting the program.
+
+\noindent Find the right triangle in this figure that has angle $\alpha + \beta$ and hypotenuse 1. Using this triangle, label what you can using the CAH in SOH-CAH-TOA. You are off to the races! Now it is a matter of
+carefully finding and labeling other angles and dimensions that are known. This is really quite a puzzle, but it is also completely doable with perseverance.
+
+\bigskip
+
+\noindent{\bf Our First Program}
+\nobreak\bigskip
+
+\noindent We will do the program alluded to in the reading: the area of a sphere. The formula is $A = 4 \pi r^2$.
+\bigskip
+
+\noindent{\bf Your Second Program}
+\nobreak\bigskip
+
+\noindent To test yourself that you know how to do another simple program, do a program for $V = {4\over 3} \pi r^3$.
+
+\bigskip
+
+\noindent{\bf Your Third Program: Nimb}
+\nobreak\bigskip
+
+\noindent Key in and play the attached program. People in the combinatorics class call this ``Baby Nim.'' We just call it Nimb. Find somebody in the combinatorics class and show it to them.
+
+\bye
