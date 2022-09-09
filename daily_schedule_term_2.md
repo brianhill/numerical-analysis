@@ -14,7 +14,6 @@ Course [home page](./)
 
 ### Week 3
 
-* Tuesday, Sep. 13 &mdash; Prepare for class by following the directions in [Programming the HP-25](./tex/na_day05.pdf) &mdash; These directions include your second problem set due Sep. 13 &mdash; You will find [the formulas we had on the board last time](../resources/Mecca.jpeg) very helpful in proceeding toward your solution
+* Tuesday, Sep. 13 &mdash; Prepare for class by following the directions in [Programming the HP-25](./tex/na_day05.pdf) &mdash; These directions include your second problem set due Sep. 13 &mdash; You will probably find [the formulas we had on the board last time] very helpful in proceeding toward your working program:
 
-
-
+!<img src="./resources/Mecca.jpeg" width="300">
