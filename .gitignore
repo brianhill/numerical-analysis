@@ -1,2 +1,4 @@
 **/.DS_Store
 tex/*.mpx
+**/*.synctex
+**/*.synctex.gz

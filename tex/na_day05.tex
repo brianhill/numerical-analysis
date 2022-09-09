@@ -1,0 +1,69 @@
+% Numerical Analysis on a Pocket Calculator
+% Day 5
+
+\def\folio{\ifnum\pageno>0 \number\pageno \else
+   \ifnum\pageno<0 \romannumeral-\pageno \else\fi\fi}
+
+\font\largebf=cmbx10  scaled \magstep2
+\font\largerm=cmr12
+\font\largeit=cmti12
+\font\tensc=cmcsc10
+\font\sevensc=cmcsc10 scaled 700
+\newfam\scfam \def\sc{\fam\scfam\tensc}
+\textfont\scfam=\tensc \scriptfont\scfam=\sevensc
+\scriptscriptfont\scfam=\sevensc
+\font\largesc=cmcsc10 scaled \magstep1
+\font\ninerm=cmr9
+\newfam\srfam \def\sr{\fam\srfam\ninerm}
+\textfont\srfam=\ninerm \scriptfont\srfam=\sevenrm
+\scriptscriptfont\srfam=\fiverm
+
+\input epsf
+
+\pageno=10
+
+\null\vskip36pt
+
+\centerline{\largerm DAY 5}
+\nobreak\bigskip
+
+\centerline{\largeit Programming the HP-25 --- Includes the Second Problem Set to Turn In}
+\nobreak\bigskip
+
+\noindent{\bf Where Are We Now?}
+\nobreak\bigskip
+
+\noindent You have done two simple programs (the area of a sphere and the volume of a sphere), and you have keyed in a full 49-step program (Nimb) that you were not expected to understand, but which will have given you a great sense of what advanced programming of the calculator involves and what the calculator can do. By keying in the initial values, you got a feel for how data is supplied to a program. When the program stopped and asked you for your move, you got an idea of how you can supply additional data to the program.
+
+\bigskip
+
+\noindent{\bf The Next Reading}
+\nobreak\bigskip
+
+\noindent In addition to the hands-on familiarity you have been building up, you also need to start building up the theory of programming. For the next class read pp.~73-82 of the {\it Owner's Handbook.} As usual, do all the examples and make sure they work as expected in your HP-25 app.
+
+\bigskip
+
+\noindent{\bf Second Problem Set}
+\nobreak\bigskip
+
+\noindent This problem set consists of a single program that you will write. The program will compute the direction of Mecca. Muslims orient themselves in this direction when they pray. If you are a long ways from Mecca (like Deep Springs) calculating the direction is tricky! The latitude of Mecca is $21.4^{\circ}$~N and the longitude is $39.9^{\circ}$~E. Just so we are all doing something similar, let's put the latitude in REG~0 and the longitude in REG~1.
+
+We also need the latitude and longitude of the person doing the praying. Let's put them in Cairo. The latitude of Cairo is $30.0^{\circ}$ and the longitude of Cairo is $31.2^{\circ}$. Again, so that we are all doing the same thing, let's enter that latitude into REG~2 and that longitude into REG~3.
+
+In Clara's and Brandon's presentations, they needed the Spherical Law of Cosines. It is:
+
+$$\cos c = \cos a \cos b + \sin a \sin b \cos C$$
+
+\noindent It might also be helpful to have the Spherical Law of Sines. It is:
+
+$${\sin a \over \sin A} = {\sin b \over \sin B} = {\sin c \over \sin C}$$
+
+\noindent {\bf What You Turn In}
+\nobreak\bigskip
+
+\noindent Look at how Hewlett-Packard documented the Nimb program (see the previous handout). The nice thing is that Hewlett-Packard supplied blank program forms so that you could do similar documentation and I have scanned one of those for you. What you turn in will be a working program that starts with the above inputs and computes the direction of Mecca. In addition to documenting your program, come to class with it working so that we can type in some other values and run it with those.
+
+So that you can check that your program is getting something close, I'll tell you that the answer is $44.3^{\circ}$. It turns out you have to subtract this from $180^{\circ}$, and the actual direction of Mecca from Cairo is $135.7^{\circ}$. We can discuss the reason for that when you turn the problem set in.
+
+\bye
