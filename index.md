@@ -4,7 +4,7 @@ Terms 2-3, Deep Springs College, Prof. [Brian Hill](../index.html)
 
 ## Syllabus
 
-* Draft [Syllabus](./NumericalAnalysisSyllabus.pdf) &mdash; A PDF mirroring what is on these web pages
+* [Syllabus](./NumericalAnalysisSyllabus.pdf) &mdash; A PDF mirroring what is on these web pages
 
 ## Overview
 
