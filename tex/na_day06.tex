@@ -1,0 +1,72 @@
+% Numerical Analysis on a Pocket Calculator
+% Day 6
+
+\def\folio{\ifnum\pageno>0 \number\pageno \else
+   \ifnum\pageno<0 \romannumeral-\pageno \else\fi\fi}
+
+\font\largebf=cmbx10  scaled \magstep2
+\font\largerm=cmr12
+\font\largeit=cmti12
+\font\tensc=cmcsc10
+\font\sevensc=cmcsc10 scaled 700
+\newfam\scfam \def\sc{\fam\scfam\tensc}
+\textfont\scfam=\tensc \scriptfont\scfam=\sevensc
+\scriptscriptfont\scfam=\sevensc
+\font\largesc=cmcsc10 scaled \magstep1
+\font\ninerm=cmr9
+\newfam\srfam \def\sr{\fam\srfam\ninerm}
+\textfont\srfam=\ninerm \scriptfont\srfam=\sevenrm
+\scriptscriptfont\srfam=\fiverm
+
+\input epsf
+
+\pageno=14
+
+\null\vskip36pt
+
+\centerline{\largerm DAY 6}
+\nobreak\bigskip
+
+\centerline{\largeit Programming the HP-25 --- Part II}
+\nobreak\bigskip
+
+
+\noindent{\bf Where are we?}
+\nobreak\bigskip
+
+In preparation for the Day 5 class, you read pp.~73-82, which was an introduction to programming. As your second assignment, you created a program that solves the problem of finding the direction of Mecca. This program used both the $\cos^{-1}$ and $\sin^{-1}$ functions (when reading out loud, you say ``arc cos'' and ``arc sin,'' and often these are written as arccos and arcsin, or sometimes acos and asin. Inverse functions often do not actually have unique values, so one has to be picked. For $\sin^-1$ the calculator will always pick a value between $-90^{\circ}$ and $90^{\circ}$. The direction of Mecca (as measured from North) may actually be $180^{\circ}$ minus the value the calculator gives.
+
+For our next relatively easy program, let's review the program on pp.~80-82. We have been storing the initial values that we want to feed a program in registers. This program is a nice example of storing the initial value for the program in the X and Y locations in the stack.
+
+
+\noindent{\bf Part II of Programming}
+\nobreak\bigskip
+
+\noindent Our programs have so far had no decision points! They always do the same thing. The exception was Nimb, which you keyed in without really understanding it. It had multiple decision points, including a final decision to go to ``I.LOSE'' or ``BLISS'' depending on who had to make the final move.
+
+As we are taking our programming to the next level, we'll start with something easy: the R/S key. Then the PAUSE key. These we will become familiar with together following pp.~83-86 of the manual.
+
+Finally, we get to decision points, which the Hewlett-Packard 25 {\it Owner's Handbook} calls ``Branching.''
+
+\noindent{\bf Unconditional Branching}
+\nobreak\bigskip
+
+\noindent The types of branching are unconditional branching and conditional branching. Unconditional branching might not seem terribly useful, because it isn't really a decision point. It is at its most powerful when used together with conditional branching, but it is also important on its own.
+
+\bigskip
+
+\noindent{\bf Conditional Branching}
+\nobreak\bigskip
+
+\noindent On p.~89, the extremely powerful feature of conditional branching is introduced. Above, it was mentioned that for $\sin^-1$ the calculator will always pick a value between $-90^{\circ}$ and $90^{\circ}$. The
+
+\bigskip
+
+\noindent{\bf Preparation for the Next Class}
+\nobreak\bigskip
+
+\noindent Finish the chapter on Programming (through p.~99 of the {\it Owner's Handbook}). We skipped a couple of sections (most importantly the section on Statistical), but we will get back to that, and you are now ready to tackle any application in the Applications Programs book.
+
+Also key in the Moon Landing simulator and have it ready to go at the beginning of class. We are going to play it, and we are going to look at how it uses conditional branching. HP's documentation for the Moon Landing Program is on the next three pages.
+
+\bye

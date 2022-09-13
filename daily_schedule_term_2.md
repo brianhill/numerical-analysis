@@ -19,3 +19,4 @@ Course [home page](./)
 !<img src="./resources/Mecca.jpeg" width="400">
 
 * Tuesday, Sep. 13 &mdash; Hand out [Solution to Problem Set 1](./assignments/ProblemSet1-Solution.pdf)
+* Preparation for Friday, Sep. 16 &mdash; Prepare for class by following the directions in [Programming the HP-25 Part II](./tex/na_day06.pdf)
