@@ -9,7 +9,7 @@ Course [home page](./)
 
 ### Week 2
 
-* Tuesday, Sep. 6 &mdash; Prepare for class by following the directions in [Calculating with the HP-25](./tex/na_day03.pdf) &mdash; These directions include your first problem set due Sep. 6 &mdash; You will need to make a copy of [Sections 4-5 of the HP-25 Owner's Handbook](./resources/HP25-OwnersHandbook-Sections4-5.pdf) &mdash; [Upper Reservoir Volume](./resources/UpperReservoirVolume.pdf) example calculation
+* Tuesday, Sep. 6 &mdash; Prepare for class by following the directions in [Calculating with the HP-25](./tex/na_day03.pdf) &mdash; These directions include your first problem set due Sep. 6 &mdash; You will need to make a copy of [Sections 4-5 of the HP-25 Owner's Handbook](./resources/HP25-OwnersHandbook-Sections4-5.pdf)
 * Friday, Sep. 9 &mdash; Prepare for class by following the directions in [The Stack, Registers, and Beginning Programming (Including Nimb)](./tex/na_day04.pdf)
 
 ### Week 3
@@ -18,5 +18,5 @@ Course [home page](./)
 
 !<img src="./resources/Mecca.jpeg" width="400">
 
-* Tuesday, Sep. 13 &mdash; Hand out [Solution to Problem Set 1](./assignments/ProblemSet1-Solution.pdf)
+* Tuesday, Sep. 13 &mdash; Hand out [Solution to Problem Set 1](./assignments/PS01-Solution.pdf)
 * Preparation for Friday, Sep. 16 &mdash; Prepare for class by following the directions in [Programming the HP-25 Part II](./tex/na_day06.pdf)
