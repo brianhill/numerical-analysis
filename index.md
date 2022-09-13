@@ -11,7 +11,7 @@ Terms 2-3, Deep Springs College, Prof. [Brian Hill](../index.html)
 Four subjects will emerge:
 
 1. Operation and programming of a stack-based calculator, the Hewlett-Packard 25
-2. General applications that were in the calculator's target market: finance, games, navigation, statistics, and surveying
+2. General applications that were in the calculator's target market: games, finance, navigation, statistics, and surveying
 3. Numerical analysis: root-finding, power series, integration
 4. Statistics: linear regression, exponential, logarithmic, and power law curve fitting, standard deviations and correlation coefficients
 
@@ -55,7 +55,7 @@ familiar with the Android offerings. We will investigate those together.
 
 Five major areas:
 
-* Active sharing, preparation, and engagement with the class: 15%
+* Active preparation for and engagement with the class: 15%
 * Weekly problem sets involving both theory and programming (except during exam weeks and during the final project): 35%
 * A midterm towards the end of Term 2: 20%
 * A final exam towards the end of Term 3 (but before the final project): 20%
@@ -63,7 +63,13 @@ Five major areas:
 
 ## Miscellaneous Policies
 
-There will be a lot of handouts. Get a three-ring binder to keep all the handouts and problem sets organized.
+There will be a lot of handouts. Get a three-ring binder to keep all the handouts and problem sets organized. On the first assignment, it was noted that 
 
-The College's general policies on absences and late work are applicable. There
-should be an email from the Dean on this early in September.
+The College's general policies on absences and late work are applicable. There was an email from the Dean on this September 8. The
+policies below are consistent with those policies:
+
+Whereas, missed coursework affects both your classmates and professors by lowering the thinking and understanding you bring to a given class, and interrupts the course schedule that has been set up and is adjusted on an ongoing basis with substantial care. The same is true for absences &mdash; whereas a handful of absences might be &ldquo;normal&rdquo; at colleges with large lectures or less serious academics, at Deep Springs we expect students to miss *no classes* save for legitimate health issues or emergencies requiring also missing labor and governance obligations.
+
+For a student wishing to submit a course assignment past its required deadline, the student may request an extension on the assignment directly from the professor 48 hours in advance. Within 48 hours of the due date, the student must request an extension directly from the Dean. Exceptions will be granted by the Dean only if the student faces unforeseen and unforeseeable circumstances. A student who misses the deadline will be penalized according to the faculty member’s course policy for late work, which will be roughly equivalent to a whole letter grade for each 24 hour period the assignment is late. In no case can assignments be turned in after solutions and graded assignments have been passed back, which almost always happens 1-2 classes after they were turned in.
+
+When the first assignment was made, I requested that assignments be on 8 1/2 x 11 paper (and not torn out from a bound notebook), that multi-page assignments be stapled and that corrections be erased (if done in pencil) or recopied (if done in pen). Points will be removed from assignment scores when these directions are not followed.
