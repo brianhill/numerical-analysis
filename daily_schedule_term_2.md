@@ -25,3 +25,6 @@ Course [home page](./)
 ### Week 4 &mdash; Applications: Graphing, Base Conversion, Vector Operations
 
 * Preparation for Tuesday, Sep. 20 &mdash; Prepare for class by following the directions in [Applications: Graphing and Base Conversion](./tex/na_day07.pdf) &mdash; These directions include your third problem set due Sep. 20 &mdash; You will need to make a copy of [Chapters 1-2 of the HP-25 Applications Programs book](./resources/HP25-ApplicationsPrograms-Chapters1-2.pdf) from which you will be keying in the first few programs, and finally we will read pp. 180-189 of [Bill &amp; Dave](./resources/BillAndDaveExcerptPages180-189.pdf)
+* Tuesday, Sep. 20 &mdash; Discussion of Reading &mdash; The Uses of Dot Products &mdash; Simultaneous Equations &mdash; Return Problem Set 2 with [Solution](./assignments/PS02-Solution.pdf)
+* Preparation for Friday, Sep. 23 &mdash; Prepare for class by following the directions in [Applications: Dot Products and Simultaneous Equations](./tex/na_day08.pdf) &mdash; Additionally, we will read pp. 264-282 of [Bill &amp; Dave](./resources/BillAndDaveExcerptPages264-282.pdf)
+* Friday, Sep. 23 &mdash; Discussion of Reading &mdash; [Solution to Problem Set 3](./assignments/PS03-Solution.pdf) &mdash; Start Finance
