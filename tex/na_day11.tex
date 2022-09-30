@@ -1,0 +1,75 @@
+% Numerical Analysis on a Pocket Calculator
+% Day 11
+
+\def\folio{\ifnum\pageno>0 \number\pageno \else
+   \ifnum\pageno<0 \romannumeral-\pageno \else\fi\fi}
+
+\font\largebf=cmbx10  scaled \magstep2
+\font\largerm=cmr12
+\font\largeit=cmti12
+\font\tensc=cmcsc10
+\font\sevensc=cmcsc10 scaled 700
+\newfam\scfam \def\sc{\fam\scfam\tensc}
+\textfont\scfam=\tensc \scriptfont\scfam=\sevensc
+\scriptscriptfont\scfam=\sevensc
+\font\largesc=cmcsc10 scaled \magstep1
+\font\ninerm=cmr9
+\newfam\srfam \def\sr{\fam\srfam\ninerm}
+\textfont\srfam=\ninerm \scriptfont\srfam=\sevenrm
+\scriptscriptfont\srfam=\fiverm
+
+\input epsf
+
+\pageno=29
+
+\null\vskip36pt
+
+\centerline{\largerm DAY 11 -- Includes 4th Problem Set Due Sep. 27}
+\nobreak\bigskip
+
+\centerline{\largeit Applications: Finish Finance with the Periodic Savings Prrogram}
+\nobreak\bigskip
+
+\noindent{\bf Where are We?}
+\nobreak\bigskip
+
+\noindent  We have done very instructive and relevant examples using for both loans and savings. But these problems did not account for inflation in any meaningful way. The rest of this handout are general directions for writing a program that will tell you when you have enough saved for a downpayment on a house.
+
+After this, we have collectively decided that we will turn to the chapter on statistics (skipping three chapters, for now, of the {\it Applications Programs} book).
+
+\bigskip
+
+\noindent{\bf Assignment for Tuesday, Oct. 4}
+\nobreak\bigskip
+
+\noindent{\it Background}
+\nobreak\bigskip
+
+\noindent Let's assume, that you are saving for a house. You aren't likely to be able to buy a house in cash, so you are actually saving for the down-payment on a house. Let's say the house costs \$500,000 and you need a 20\% down-payment. So you need to save \$100,000. Ok, maybe you can find a bank that will let you get in with only 10\% down, so you need to save \$50,000. You make regular deposits into a bank account that pays interest per period $i$. Your income grows at a rate per period of $r$ and we will assume that the deposits grow proportionately to your income. So far that's all good news. However, due to asset price inflation, the cost of the house is going up at a rate per period of $g$, and therefore so is the required down-payment.
+
+\bigskip
+
+\noindent{\it The Program to Write}
+\nobreak\bigskip
+
+\noindent Write a program that iterates through the time steps. {\it It won't use the formulas we have derived in the previous finance applications,} or any formulas like those formulas. Instead, it just walks through time, assessing with a conditional test whether you have saved enough to make the downpayment. If you haven't succeeded after 120 banking periods (if that is 120 months, that is 10 years), have the program stop.
+
+Whether or not you succeed, the program should report how long you have been saving, how much you paid in in dollars, and how much those dollars have compounded into.
+
+\bigskip
+
+\noindent{\it Test the Program}
+
+\nobreak\bigskip
+
+\noindent Usually I find illustrative values to plug into formulas and tell you to use them, and I hope that you will find the combination of realism and instructiveness to be valuable. How about instead this time, you invent and put in the values of $i$, $r$, and $g$, as well as a value for your initial savings rate. Try to find two sets of values, one which illustrates success and one which illustrates the case of insufficient savings after 100 payment periods.
+
+\bigskip
+
+\noindent{\it Comment on the Output}
+\nobreak\bigskip
+
+\noindent Are there a few sentences that you would like to share about savings, income growth, and asset inflation?
+\bigskip
+
+\bye

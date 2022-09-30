@@ -1,0 +1,85 @@
+% Numerical Analysis on a Pocket Calculator
+% Day 10
+
+\def\folio{\ifnum\pageno>0 \number\pageno \else
+   \ifnum\pageno<0 \romannumeral-\pageno \else\fi\fi}
+
+\font\largebf=cmbx10  scaled \magstep2
+\font\largerm=cmr12
+\font\largeit=cmti12
+\font\tensc=cmcsc10
+\font\sevensc=cmcsc10 scaled 700
+\newfam\scfam \def\sc{\fam\scfam\tensc}
+\textfont\scfam=\tensc \scriptfont\scfam=\sevensc
+\scriptscriptfont\scfam=\sevensc
+\font\largesc=cmcsc10 scaled \magstep1
+\font\ninerm=cmr9
+\newfam\srfam \def\sr{\fam\srfam\ninerm}
+\textfont\srfam=\ninerm \scriptfont\srfam=\sevenrm
+\scriptscriptfont\srfam=\fiverm
+
+\input epsf
+
+\pageno=28
+
+\null\vskip36pt
+
+\centerline{\largerm DAY 10}
+\nobreak\bigskip
+
+\centerline{\largeit Applications: Finish Finance with the Periodic Savings Prrogram}
+\nobreak\bigskip
+
+\noindent{\bf Where are We?}
+\nobreak\bigskip
+
+\noindent  We are going to finish the finance chapter by focusing on just one more program, which is the periodic saving rate program. Your work will be based on the program on pp.~44--45 of the {\it Applications Programs} book. It is titled, ``PERIODIC SAVINGS
+PAYMENT, FUTURE VALUE, NUMBER OF PERIODS.''
+\bigskip
+
+\noindent{\bf Preparation for Friday}
+\nobreak\bigskip
+
+\noindent This isn't an assignment you will turn in, but treat it like one and be prepared to share the theory and the derivations with classmates. Just follow the next three steps.
+\bigskip
+
+\noindent{\bf Part 1---Theory}
+
+\bigskip
+
+\noindent Use the same methods as we used in class to derive the formula for FV. However, let's modify the series so that there is both an initial payment and a final payment. Notice that their series does not have a final payment. If you don't remember the methdos we used in class, a similar derivation is written up in my solution to Problem Set~4. Once you have derived the new, slightly different, formula for FV, derive the new slightly different versions of the formulas for n and PMT.
+
+\bigskip
+
+\noindent{\bf Part 2---Program}
+\nobreak\bigskip
+
+\noindent Using these new formulas, which are only slightly different, modify the program on p.~44 to use these formulas.
+
+\bigskip
+
+\noindent{\bf Part 3---Test the Program}
+
+\bigskip
+
+\noindent Key in the three examples on p.~45 using the same inputs. What are the new outputs? They will be slightly different.
+
+\bigskip
+
+\noindent{\bf Part 4---Saving for Something}
+
+\bigskip
+
+\noindent Think of something you would actually like to save for. Find out how much it costs. Assume you can get 6\% annual interest from a bank (that's a lot, you really can't get that much currently). Assume you would like to have saved up enough to have that amount in three years (n=36). What does your program say that you have to save each month to end up with this amount?
+
+\bigskip
+
+\noindent{\bf Part 5---Saving for Retirement}
+
+\bigskip
+
+\noindent Do the same thing for retirement. Assume you would like to retire in 40~years (n=480). What is the amount of money you think you will need to just barely be able to retire? Multiply that by~5 because inflation will further wreck the value of the dollar over the next 40~years. Again use 6\% for the annual interest. You heard it from me first, when you retire, gas will be \$30 a gallon, and a half-gallon of milk will be \$20. How much would you need to save each month to retire? The result will be discouraging. The good news is that in mid-life it gets easier to save that amount (again due to inflation), but due to compounding, it is best to get started right away.
+
+\bigskip
+
+\bye
