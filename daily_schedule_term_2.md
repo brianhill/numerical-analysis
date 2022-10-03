@@ -34,11 +34,12 @@ Course [home page](./)
 * Preparation for Tuesday, Sep. 27 &mdash; Prepare for class by doing the problem set in [Applications: Finance](./tex/na_day09.pdf)
 * Tuesday, Sep. 27 &mdash; Periodic Savings Formulas
 * Preparation for Friday, Sep. 30 &mdash; Prepare for class by following [Applications: Periodic Savings Program Modifications](./tex/na_day10.pdf)
-* Friday, Sep. 30 &mdash; An HP-45 from David and Donna Sweetman &mdash; LEDs and LCDs &mdash; Periodic Savings &mdash; Introduce wage growth and asset inflation
+* Friday, Sep. 30 &mdash; An HP-45 from David and Donna Sweetman &mdash; LEDs and LCDs &mdash; Analysis of Periodic Savings &mdash;  [Solution to Problem Set 4](./assignments/PS04-Solution.pdf) &mdash; Introduce Wage Growth and Asset Inflation into Periodic Savings
 
 ### Week 6 &mdash; Finish Finance &mdash; Term 2 Exam
 
 * Preparation for Tuesday, Oct. 4 &mdash; Prepare for class by doing the problem set in [Periodic Savings with Inflation](./tex/na_day11.pdf)
+* Tuesday, Oct. 4 &mdash;
 * Friday, Oct. 7 &mdash; Term 2 (Midterm) Exam
 
 ### Week 7 &mdash; Start Statistics!
