@@ -29,7 +29,7 @@ Course [home page](./)
 * Preparation for Friday, Sep. 23 &mdash; Prepare for class by following the directions in [Applications: Dot Products and Simultaneous Equations](./tex/na_day08.pdf) &mdash; Additionally, we will read pp. 264-282 of *Bill &amp; Dave*
 * Friday, Sep. 23 &mdash; Discussion of Reading &mdash; [Solution to Problem Set 3](./assignments/PS03-Solution.pdf) &mdash; Start Finance
 
-### Week 5 &mdash; Start Finance!
+### Week 5 &mdash; Start Finance Applications!
 
 * Preparation for Tuesday, Sep. 27 &mdash; Prepare for class by doing the problem set in [Applications: Finance](./tex/na_day09.pdf)
 * Tuesday, Sep. 27 &mdash; Periodic Savings Formulas
@@ -39,7 +39,7 @@ Course [home page](./)
 ### Week 6 &mdash; Finish Finance &mdash; Term 2 Exam
 
 * Preparation for Tuesday, Oct. 4 &mdash; Prepare for class by doing the problem set in [Periodic Savings with Inflation](./tex/na_day11.pdf)
-* Tuesday, Oct. 4 &mdash; [Periodic Savings with Inflation Solution](./assignments/PS05-Solution.pdf) &mdash; Use of &Sigma;+ and &Sigma;- Keys (*Owner's Handbook,* pp. 66-70)
+* Tuesday, Oct. 4 &mdash; [Periodic Savings with Inflation Solution](./assignments/PS05-Solution.pdf) &mdash; Use of &Sigma;+ and &Sigma;- Keys (*Owner's Handbook,* pp. 66-70) &mdash; Least Squares as a Measure of Goodness of Fit
 * Friday, Oct. 7 &mdash; Term 2 (Midterm) Exam
 
 ### Week 7 &mdash; Start Statistics Applications
