@@ -39,9 +39,9 @@ Course [home page](./)
 ### Week 6 &mdash; Finish Finance &mdash; Term 2 Exam
 
 * Preparation for Tuesday, Oct. 4 &mdash; Prepare for class by doing the problem set in [Periodic Savings with Inflation](./tex/na_day11.pdf)
-* Tuesday, Oct. 4 &mdash;
+* Tuesday, Oct. 4 &mdash; [Periodic Savings with Inflation Solution](./assignments/PS05-Solution.pdf) &mdash; Use of &Sigma;+ and &Sigma;- Keys (*Owner's Handbook,* pp. 66-70)
 * Friday, Oct. 7 &mdash; Term 2 (Midterm) Exam
 
-### Week 7 &mdash; Start Statistics!
+### Week 7 &mdash; Start Statistics Applications
 
 * Tuesday, Oct. 11
