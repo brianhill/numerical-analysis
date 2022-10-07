@@ -1,0 +1,42 @@
+% Numerical Analysis on a Pocket Calculator
+% Day 13
+
+\def\folio{\ifnum\pageno>0 \number\pageno \else
+   \ifnum\pageno<0 \romannumeral-\pageno \else\fi\fi}
+
+\font\largebf=cmbx10  scaled \magstep2
+\font\largerm=cmr12
+\font\largeit=cmti12
+\font\tensc=cmcsc10
+\font\sevensc=cmcsc10 scaled 700
+\newfam\scfam \def\sc{\fam\scfam\tensc}
+\textfont\scfam=\tensc \scriptfont\scfam=\sevensc
+\scriptscriptfont\scfam=\sevensc
+\font\largesc=cmcsc10 scaled \magstep1
+\font\ninerm=cmr9
+\newfam\srfam \def\sr{\fam\srfam\ninerm}
+\textfont\srfam=\ninerm \scriptfont\srfam=\sevenrm
+\scriptscriptfont\srfam=\fiverm
+
+\input epsf
+
+\pageno=41
+
+\null\vskip36pt
+
+\centerline{\largerm DAY 13}
+\nobreak\bigskip
+
+\centerline{\largeit Statistics}
+\nobreak\bigskip
+
+\bigskip
+
+\noindent{\bf Where are We?}
+\nobreak\bigskip
+
+We got far, far into deriving the formulas for least-squares linear fits in the class before the exam. In this, the last day before mid-semester break, we are going to finish deriving those formulae.
+
+\bigskip
+
+\bye

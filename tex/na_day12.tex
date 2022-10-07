@@ -1,0 +1,123 @@
+% Numerical Analysis on a Pocket Calculator
+% Day 12
+
+\def\folio{\ifnum\pageno>0 \number\pageno \else
+   \ifnum\pageno<0 \romannumeral-\pageno \else\fi\fi}
+
+\font\largebf=cmbx10  scaled \magstep2
+\font\largerm=cmr12
+\font\largeit=cmti12
+\font\tensc=cmcsc10
+\font\sevensc=cmcsc10 scaled 700
+\newfam\scfam \def\sc{\fam\scfam\tensc}
+\textfont\scfam=\tensc \scriptfont\scfam=\sevensc
+\scriptscriptfont\scfam=\sevensc
+\font\largesc=cmcsc10 scaled \magstep1
+\font\ninerm=cmr9
+\newfam\srfam \def\sr{\fam\srfam\ninerm}
+\textfont\srfam=\ninerm \scriptfont\srfam=\sevenrm
+\scriptscriptfont\srfam=\fiverm
+
+\input epsf
+
+\pageno=31
+
+\null\vskip36pt
+
+\centerline{\largerm DAY 12}
+\nobreak\bigskip
+
+\centerline{\largeit Midterm Exam}
+\nobreak\bigskip
+
+\noindent {\it During this exam, you can use your copy of the {\rm HP-25 Owner's Handbook} and the {\rm HP-25 Applications Programs} book, and your notes and problem sets. However, I deliberately made an exam that uses all the ideas we have been developing, but applies them to an {\it entirely} new subject.}
+
+\bigskip
+
+\noindent {\it The tables you need to make are already started on an attached sheet.}
+
+\bigskip
+
+\noindent {\it Half the exam is Problem 4, which is a programming problem. There are three program forms attached so that you have some extra chances to correct errors and re-copy your program.}
+
+\bigskip
+
+\noindent{\bf Problem 1 {\it (3 pts)}}
+\nobreak\bigskip
+
+\noindent Assume there are $R$ rabbits and $W$ wolves. For Problem~1 let $W=0$ (no wolves). If nothing eats the rabbits, they would just keep multiplying. Let's assume that the relevant time period for assessing multiplication is one month and that if you have $R$ rabbits at the beginning of a month, then you have $(1 + r)R$ rabbits at the end of the month. In the real world, you must have an integer number of rabbits, but we won't let that interfere with our model-making.
+
+Make a table that has $R=30$ rabbits at the beginning, and a multiplication rate $r=0.5$. So at Month~0 in your table, you will have 30~rabbits, and at Month~1, you will have 45~rabbits, and at Month~2, you will have 67.5~rabbits. Fill in your table using the multiplying rule all the way to Month~4.
+
+\bigskip
+
+\noindent{\bf Problem 2  {\it (2 pts)}}
+\nobreak\bigskip
+
+\noindent For Problem 2, assume there are no rabbits ($R=0$). Assume there are 6 wolves initially $W=6$. In our model, wolves starve if there are no rabbits to eat. We will call the starvation rate $w$. The formula is if you have $W$ wolves at the beginning of the month, then you have $(1-w)W$ wolves at the end of the month. Let's have half the wolves starve each month if there are no rabbits, so $w=0.5$. So at Month~0 in your wolves table, you will have 6~wolves, at Month~1, you will have 3~wolves, and at Month~2, you will have 1.5~wolves. Fill in your table all the way to Month~4.
+
+\bigskip
+
+\noindent {\it Now things are going to get really interesting!! We are going to have both rabbits and wolves. Wolves eat rabbits and when they do, they can multiply instead of starving.}
+
+\bigskip
+
+\noindent{\bf Problem 3  {\it (5 pts)}}
+
+\bigskip
+
+\noindent Here is the new model. It is called the predatory-prey model. In this model, if there are $W$ wolves and $R$ rabbits at the beginning of the month, then at the end of the month there are:
+
+$$(1 + r)R - e R W$$
+
+\noindent rabbits, and at the end of the month, there are:
+
+$$(1 - w)W + f R W$$
+
+\noindent wolves. Let's start with $R=30$ rabbits and $W=6$ wolves. So $R W = 180$ initially. Let's have $e = 0.1$ and $f = 0.025$.
+
+Use these formulas to make a table for just for Months 0 to 3. It will be helpful in the table to have $R W$ as a column because you need that for both formulas.  In Month 0, you will have $R=30, W=6,$ and $R W=180$. In Month~1, you will have $R=27$ and $W=7.5$.
+
+\vfil\break
+
+\noindent{\bf Problem 4  {\it (10 pts)}}
+\bigskip\nobreak
+\noindent Write a program that does Problem 3.
+
+\bigskip
+
+\noindent Do it however you like, but if you don't have an outline in mind immediately, I suggest the following:
+
+\bigskip
+
+\noindent Have the user put $R$ in REG0, $W$ in REG1, $r$ in REG2, $w$ in REG3, $e$ in REG4, and $f$ in REG5.
+
+\bigskip
+
+\noindent Outline:
+
+\bigskip
+
+\noindent 1.~Calculate $RW$ from the old $R$ and $W$ and update REG6.
+
+\noindent 2.~Stop and display $RW$.
+
+\noindent 3.~Calculate the new $R$ and update REG0.
+
+\noindent 4.~Stop and display $R$.
+
+\noindent 5.~Calculate the new $W$ and update REG1.
+
+\noindent 6.~Stop and display $W$.
+
+\noindent 7.~Go back to Step 1.
+
+\bigskip
+
+\noindent Use your program to quickly and efficiently fill in the table on the next page out to Month~6.
+
+\bigskip
+
+\noindent All done? Bored? Fill in a table for this problem that goes out to Month 18. The wolves and the rabbits will recover from their disastrously low population levels.
+
+\bye
