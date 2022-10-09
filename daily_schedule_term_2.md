@@ -44,4 +44,18 @@ Course [home page](./)
 
 ### Week 7 &mdash; Start Statistics Applications
 
-* Tuesday, Oct. 11
+* Preparation for Tuesday, Oct. 11 &mdash; Here is a pretty straightforward assignment for Tuesday.
+
+1. Type in the program on pp. 87-91 of the Applications Handbook (PDF of those pages attached).
+2. Do the example on pp. 90-91 to make sure you understand how the program is used and that you have typed it in correctly.
+3. This is the part you turn in:
+
+(a) Find *any* other dataset that you would like to do a linear regression on. (b) Make a table of the x and y values. (c) Document what those x and y values represent. (d) Run the program and record the slope a_1 (I usually call this m), the intercept a_0 (I usually call this b), and the r^2. (e) Plot the data, and the best fit line. (f) Make some predictions using your fit.
+
+As an example of (f), suppose you know the price of Big Macs for 2000, 2005, 2010, 2015, and 2020. Predict the price for 2025 and 2030.
+
+Also, if I were doing that example, I would subtract 2000 from each of the years. So I would record 0, 5, 10, 15, and 20, and predict 25 and 30. The intercept all the way back in the year Christ was born is not very interesting for a contemporary analysis!
+
+Turn in (3) as your 6th assignment at the beginning of class. I think this is only 1-2 hours of work. If I haven't given you enough notice and you need one more day (until Wednesday dinner), email me before Tuesday's class. It would be best though to get it done so that you can more fully appreciate what we are going to do in class on Tuesday.
+
+* Tuesday, Oct. 11 &mdash; Complete the Linear Regression Theory we started on Tuesday, Oct. 4
