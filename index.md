@@ -30,6 +30,7 @@ subjects matter just as much today.
 Detailed daily schedules will be kept retrospectively:
 
 * [Daily Schedule Term 2](./daily_schedule_term_2.html)
+* [Daily Schedule Term 3](./daily_schedule_term_3.html)
 
 ## Texts
 
