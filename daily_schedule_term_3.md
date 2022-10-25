@@ -2,7 +2,7 @@
 
 Course [home page](./)
 
-See also: * [Daily Schedule Term 2](./daily_schedule_term_2.html)
+See also: [Daily Schedule Term 2](./daily_schedule_term_2.html)
 
 ### Week 8
 

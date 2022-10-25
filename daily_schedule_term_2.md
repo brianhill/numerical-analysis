@@ -2,7 +2,7 @@
 
 Course [home page](./)
 
-See also: * [Daily Schedule Term 3](./daily_schedule_term_3.html)
+See also: [Daily Schedule Term 3](./daily_schedule_term_3.html)
 
 ### Week 1 &mdash; Before Calculators &mdash; Calculating with the HP-25C
 
