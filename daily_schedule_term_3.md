@@ -12,4 +12,4 @@ See also: [Daily Schedule Term 2](./daily_schedule_term_2.html)
 
 ### Week 9 &mdash; Properties of Distributions (Mean, Variance, Skew, Covariance, Normal Distributions, Paired t-Statistic)
 
-* Preparation for Tuesday, Nov. 1 &mdash; [Problem Set 7](./assignments/PS07.nb.pdf) on Standard Deviation and *r*-Value &mdash; Study Covariance and Correlation Coefficient pp. 101-102 of [HP-25 Applications Programs](./resources/HP25-ApplicationsPrograms-Chapter6.pdf) &mdash; Finish Chapter 2 (&ldquo;Apprentices&rdquo;) pp. 47-69 of *Bill &amp; Dave
+* Preparation for Tuesday, Nov. 1 &mdash; [Problem Set 7](./assignments/PS07.nb.pdf) on Standard Deviation and *r*-Value &mdash; Study Covariance and Correlation Coefficient pp. 101-102 of [HP-25 Applications Programs](./resources/HP25-ApplicationsPrograms-Chapter6.pdf) &mdash; Finish Chapter 2 (&ldquo;Apprentices&rdquo;) pp. 47-69 of *Bill &amp; Dave*
