@@ -1,0 +1,1073 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     43825,       1065]
+NotebookOptionsPosition[     39490,        980]
+NotebookOutlinePosition[     39942,        998]
+CellTagsIndexPosition[     39899,        995]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Numerical Analysis \[LongDash] Problem Set 7 \[LongDash] Standard Deviation \
+and ",
+ Cell[BoxData[
+  FormBox["r", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "9c66c590-8334-45d3-b5be-526f2695fc99"],
+ "-Value"
+}], "Section",
+ CellChangeTimes->{{3.8713829840911713`*^9, 3.871382989885779*^9}, {
+  3.871383097198255*^9, 3.871383109472487*^9}, {3.871383326862706*^9, 
+  3.8713833808344088`*^9}, {3.871426734155431*^9, 3.871426735236566*^9}, {
+  3.871993556107719*^9, 3.8719935809500523`*^9}, {3.872439966969939*^9, 
+  3.872440000871526*^9}, {3.875982640087123*^9, 3.8759826505652122`*^9}, {
+  3.8759826818176603`*^9, 3.875982684056402*^9}, {3.876001209312512*^9, 
+  3.87600122116895*^9}},ExpressionUUID->"47b43857-58c2-4fa2-b265-\
+428f10ab71de"],
+
+Cell[CellGroupData[{
+
+Cell["Due Tuesday, Nov. 1 (beginning of class)", "Subtitle",
+ CellChangeTimes->{{3.871430751344658*^9, 3.871430776838911*^9}, {
+  3.8719935421166697`*^9, 3.871993550674225*^9}, {3.87199378491018*^9, 
+  3.871993808590932*^9}, {3.872440003785226*^9, 3.872440008296516*^9}, {
+  3.875982695891411*^9, 3.875982698614297*^9}},
+ FontSize->16,
+ FontSlant->"Italic",ExpressionUUID->"b96dcb3f-f75b-48bf-aaac-47d330c376ac"],
+
+Cell["\<\
+We are going to work with Aaron Judge\[CloseCurlyQuote]s run-value-weighted \
+Offensive Batting Average (rOBA) as found on Max\[CloseCurlyQuote]s Problem \
+Set 6. Max had the following table:\
+\>", "Text",
+ CellChangeTimes->{{3.875993683987784*^9, 3.875993687351074*^9}, {
+   3.875993782683455*^9, 3.8759938910571136`*^9}, 3.875996276549121*^9, {
+   3.875996314462059*^9, 3.875996326173007*^9}, {3.875996455929899*^9, 
+   3.875996595262088*^9}, {3.875996749036873*^9, 3.87599676045378*^9}, {
+   3.876001228910377*^9, 
+   3.8760012303501368`*^9}},ExpressionUUID->"c0482c7d-cb15-480a-97a5-\
+a7a7b229bb16"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"data", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\"\<Year\>\"", ",", " ", "\"\<Average\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2016", ",", "0.272"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2017", ",", "0.435"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2018", ",", "0.396"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2019", ",", "0.393"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2020", ",", "0.379"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2021", ",", "0.392"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2022", ",", "0.463"}], "}"}]}], "}"}]}], ";", 
+  RowBox[{"Grid", "[", "data", "]"}]}]], "Input",
+ CellChangeTimes->{{3.87599661223263*^9, 3.8759967265865803`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"2e8018c7-b189-4837-b67b-4aa38823b809"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Year\"\>", "\<\"Average\"\>"},
+    {"2016", "0.272`"},
+    {"2017", "0.435`"},
+    {"2018", "0.396`"},
+    {"2019", "0.393`"},
+    {"2020", "0.379`"},
+    {"2021", "0.392`"},
+    {"2022", "0.463`"}
+   },
+   AutoDelete->False,
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{
+  3.875996613249995*^9, 3.8759966461664124`*^9, {3.8759967182127247`*^9, 
+   3.8759967270931168`*^9}, 3.876001265841577*^9},
+ CellLabel->"Out[1]=",ExpressionUUID->"e85ebb87-411a-4778-a234-8e8fa24de8f1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"Drop", "[", "data", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.876001479451745*^9, 3.8760014908327093`*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"c501828c-0c84-4226-9c07-304ebdf50b5a"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`], 
+    AbsoluteThickness[1.6], 
+    PointBox[{{2016., 0.272}, {2017., 0.435}, {2018., 0.396}, {2019., 
+     0.393}, {2020., 0.379}, {2021., 0.392}, {2022., 0.463}}]}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{2015.8750000000048`, 0.26138888888888967`},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->{524.9779663085938, Automatic},
+  Method->{
+   "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotRange->{{2015.8750000000048`, 2022.}, {0.26138888888888967`, 0.463}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.8760014922732058`*^9},
+ CellLabel->"Out[11]=",ExpressionUUID->"27f4f38e-3896-433e-8f13-54189230afcd"]
+}, Open  ]],
+
+Cell["Let\[CloseCurlyQuote]s ignore the years for a moment:", "Text",
+ CellChangeTimes->{{3.875993683987784*^9, 3.875993687351074*^9}, {
+   3.875993782683455*^9, 3.8759938910571136`*^9}, 3.875996276549121*^9, {
+   3.875996314462059*^9, 3.875996326173007*^9}, {3.875996455929899*^9, 
+   3.875996595262088*^9}, {3.875996749036873*^9, 3.87599676045378*^9}, {
+   3.875996829272251*^9, 3.875996849803835*^9}, {3.8759975231964893`*^9, 
+   3.875997526257553*^9}},ExpressionUUID->"84f6cb1d-ce85-44f2-8778-\
+a2894d413dbd"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"battingAverages", " ", "=", 
+  RowBox[{
+   RowBox[{"Transpose", "[", " ", 
+    RowBox[{"Drop", "[", 
+     RowBox[{"data", ",", " ", "1"}], "]"}], "]"}], "[", 
+   RowBox[{"[", "2", "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8759968634668016`*^9, 3.8759968741269484`*^9}, {
+  3.8759969847166567`*^9, 3.875996990271459*^9}, {3.875997535339714*^9, 
+  3.875997544449491*^9}, {3.875999405219618*^9, 3.8759994079404497`*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"36109e67-825c-475d-be18-6a6c3a9a3200"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0.272`", ",", "0.435`", ",", "0.396`", ",", "0.393`", ",", "0.379`", ",", 
+   "0.392`", ",", "0.463`"}], "}"}]], "Output",
+ CellChangeTimes->{3.8759968779435596`*^9, 3.875996991214121*^9, 
+  3.875997545381898*^9, 3.875999410088366*^9, 3.876001265997221*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"3159300e-0162-4fa8-9123-2f1a3ffebec1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["1. Mean and Total Deviation of the Batting Averages", "Subsection",
+ CellChangeTimes->{{3.8713830600656424`*^9, 3.871383085838428*^9}, 
+   3.87199382472436*^9, {3.87199851398885*^9, 3.871998515158553*^9}, {
+   3.871998773166749*^9, 3.8719988089823017`*^9}, {3.872440166696653*^9, 
+   3.872440172051412*^9}, {3.875996246691972*^9, 3.875996273579298*^9}, {
+   3.8759974606926537`*^9, 3.8759974652033443`*^9}, {3.875997901960972*^9, 
+   3.875997906494639*^9}, {3.875998085547489*^9, 3.875998092640204*^9}, {
+   3.875999367239081*^9, 
+   3.875999370051594*^9}},ExpressionUUID->"c4d68ccc-9dc0-41f2-b33a-\
+453426ae1e1a"],
+
+Cell["\<\
+(a) There are 7 numbers in the battingAverages list at the bottom of the \
+previous page. The first thing to do is calculate their mean. \
+\[OpenCurlyDoubleQuote]Mean\[CloseCurlyDoubleQuote] is a fancy word for \
+average commonly used in the world of statistics. So I am asking you to take \
+an average of seven things (which themselves are averages). So you just add \
+the seven numbers up and divide by 7. Store the average in some register (for \
+example R0). You will use the average a lot in the next part and you don\
+\[CloseCurlyQuote]t want to have to type it in over and over again.
+
+(b) Make a new list from the original list. For each number in the old list, \
+you just subtract the mean you stored in R0 to get the corresponding number \
+in the new list. Record that list as your answer to this part.
+
+(c) This new list tells you how much each number in the original list \
+deviates from the mean. You could add up all the numbers in this new list to \
+find the total deviation. Do that. The answer may surprise you.
+
+(d) Try it again with a different list to make sure that the surprise wasn\
+\[CloseCurlyQuote]t an accident. We\[CloseCurlyQuote]ll use this list, {20, \
+40, 50, 65, 15, 8}, of six numbers. Find its mean. Store that in R1 so that \
+you can use it repeatedly.
+
+(e) Subtract the mean you stored in R1 from each number in the list. This is \
+the list of deviations from the mean.
+
+(f) Sum up the deviations. The surprise is not an accident.\
+\>", "Text",
+ CellChangeTimes->{{3.87599701030615*^9, 3.8759970272717657`*^9}, {
+  3.8759970632592707`*^9, 3.8759975070309896`*^9}, {3.875997580898942*^9, 
+  3.875997749368722*^9}, {3.8759978235947237`*^9, 3.875997916132099*^9}, {
+  3.875997960732031*^9, 3.8759980974061203`*^9}, {3.8759981528715677`*^9, 
+  3.8759982391585407`*^9}, {3.8759996520180197`*^9, 3.875999653345627*^9}, {
+  3.8760022880376587`*^9, 
+  3.87600230193115*^9}},ExpressionUUID->"038bc76f-71f2-4f5d-8ee0-\
+2de04a1a9e76"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2. Variance of the Batting Averages", "Subsection",
+ CellChangeTimes->{{3.8713830600656424`*^9, 3.871383085838428*^9}, 
+   3.87199382472436*^9, {3.87199851398885*^9, 3.871998515158553*^9}, {
+   3.871998773166749*^9, 3.8719988089823017`*^9}, {3.872440166696653*^9, 
+   3.872440172051412*^9}, {3.875996246691972*^9, 3.875996273579298*^9}, {
+   3.8759974606926537`*^9, 3.8759974652033443`*^9}, {3.875997901960972*^9, 
+   3.875997906494639*^9}, {3.875998085547489*^9, 3.8759981068646173`*^9}, {
+   3.875999372391553*^9, 
+   3.875999375697607*^9}},ExpressionUUID->"52936696-c894-48f6-8b11-\
+c46267e6d893"],
+
+Cell[TextData[{
+ "From 1(c) and 1(f), you are starting to get the idea that summing up the \
+deviations is useless. The total deviation is always going to be 0.\n\n(a) \
+From the list in 1(b) make another list by squaring each of the numbers.\n\n\
+(b) Sum up the numbers you got in 2(a). Divide it by 7. This is called the \
+variance.\n\nThe truth is, if you are a serious statistician, you don\
+\[CloseCurlyQuote]t divide by 7. You divide by 6. That is because the 7 \
+deviations are not independent. They add up to 0, so of course they are not \
+fully independent! One of the deviations is somehow redundant. The upshot of \
+this redundancy is that you don\[CloseCurlyQuote]t have 7 estimates of the \
+variance. You really only have 6.\n\n(c) Sum up the numbers you got in 2(a) \
+again. Divide it by 6.",
+ StyleBox[" This is what statisticians actually use for the variance.",
+  FontSlant->"Italic"]
+}], "Text",
+ CellChangeTimes->{{3.875998130710161*^9, 3.875998131452701*^9}, {
+  3.875998211281851*^9, 3.8759982188624363`*^9}, {3.875998255909225*^9, 
+  3.875998454784986*^9}, {3.875998619628427*^9, 3.875998848801731*^9}, {
+  3.87599888723153*^9, 3.87599888775776*^9}, {3.8760023399107437`*^9, 
+  3.8760023720209713`*^9}},ExpressionUUID->"4cc9008c-2ed0-40eb-b763-\
+8f59aeb754e6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["3. Standard Deviation of the Batting Averages", "Subsection",
+ CellChangeTimes->{{3.8713830600656424`*^9, 3.871383085838428*^9}, 
+   3.87199382472436*^9, {3.87199851398885*^9, 3.871998515158553*^9}, {
+   3.871998773166749*^9, 3.8719988089823017`*^9}, {3.872440166696653*^9, 
+   3.872440172051412*^9}, {3.875996246691972*^9, 3.875996273579298*^9}, {
+   3.8759974606926537`*^9, 3.8759974652033443`*^9}, {3.875997901960972*^9, 
+   3.875997906494639*^9}, {3.875998085547489*^9, 3.8759981068646173`*^9}, {
+   3.875998475451008*^9, 3.8759984836749563`*^9}, {3.875999340587508*^9, 
+   3.8759993595098143`*^9}},ExpressionUUID->"239403f7-d785-44f2-b6d3-\
+242568979eed"],
+
+Cell[TextData[{
+ "Take the square root of the number you found in 2(c). This is called the \
+standard deviation. What I had you calculate in Problems 1-3 is:\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["s", "y"], "=", 
+    SqrtBox[
+     FractionBox[
+      RowBox[{"\[Sum]", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          SubscriptBox["y", "i"], "-", 
+          OverscriptBox["y", "_"]}], ")"}], "2"]}], 
+      RowBox[{"n", "-", "1"}]]]}], TraditionalForm]],ExpressionUUID->
+  "08d5f592-6c37-4be6-852d-9e37994509ed"],
+ "\n\nTake a look at p. 101 of the ",
+ StyleBox["HP-25 Applications Programs",
+  FontSlant->"Italic"],
+ " book now. Specifically, take a look at the formula for ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["s", "y"], TraditionalForm]],ExpressionUUID->
+  "508815a3-a4ec-432e-b1d1-8335cb9d8bda"],
+ ". You just calculated ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["s", "y"], TraditionalForm]],ExpressionUUID->
+  "7900c7fe-2a5e-41f7-b6af-96932b8fdffd"],
+ " for Max\[CloseCurlyQuote]s Aaron Judge data! There are actually subtle \
+differences between this formula and what I had you do above. However, with \
+some rearrangement, I will show you on Tuesday that the procedure you used to \
+get ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["s", "y"], TraditionalForm]],ExpressionUUID->
+  "c08ac673-648c-4068-8670-bfc0a0a8cc0c"],
+ " and the one on p. 101 are the same."
+}], "Text",
+ CellChangeTimes->{{3.875998130710161*^9, 3.875998131452701*^9}, {
+  3.875998211281851*^9, 3.8759982188624363`*^9}, {3.875998255909225*^9, 
+  3.875998454784986*^9}, {3.8759984942599707`*^9, 3.875998601662212*^9}, {
+  3.875998894442132*^9, 3.87599890534371*^9}, {3.8759989763416653`*^9, 
+  3.875998999516465*^9}, {3.8759990765216923`*^9, 3.8759991826693497`*^9}, {
+  3.87599924625764*^9, 3.8759993099775953`*^9}, {3.8759998402747183`*^9, 
+  3.875999840535521*^9}, {3.876000304001564*^9, 3.876000313856456*^9}, {
+  3.8760004099522753`*^9, 3.876000415611371*^9}, {3.87600241908887*^9, 
+  3.8760024691177692`*^9}, {3.87600253942966*^9, 
+  3.876002539721284*^9}},ExpressionUUID->"e441b351-26eb-435d-a259-\
+f032e2d707a0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["4. Standard Deviation of the Years!?!", "Subsection",
+ CellChangeTimes->{{3.8713830600656424`*^9, 3.871383085838428*^9}, 
+   3.87199382472436*^9, {3.87199851398885*^9, 3.871998515158553*^9}, {
+   3.871998773166749*^9, 3.8719988089823017`*^9}, {3.872440166696653*^9, 
+   3.872440172051412*^9}, {3.875996246691972*^9, 3.875996273579298*^9}, {
+   3.8759974606926537`*^9, 3.8759974652033443`*^9}, {3.875997901960972*^9, 
+   3.875997906494639*^9}, {3.875998085547489*^9, 3.8759981068646173`*^9}, {
+   3.875998475451008*^9, 3.8759984836749563`*^9}, {3.875999194877934*^9, 
+   3.8759992133205147`*^9}, {3.8759993789758253`*^9, 
+   3.875999387342696*^9}},ExpressionUUID->"2fd26721-4a1d-497f-913f-\
+d0e3ffca1cdd"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"years", " ", "=", 
+  RowBox[{
+   RowBox[{"Transpose", "[", " ", 
+    RowBox[{"Drop", "[", 
+     RowBox[{"data", ",", " ", "1"}], "]"}], "]"}], "[", 
+   RowBox[{"[", "1", "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8759968634668016`*^9, 3.8759968741269484`*^9}, {
+  3.8759969847166567`*^9, 3.875996990271459*^9}, {3.875997535339714*^9, 
+  3.875997544449491*^9}, {3.875999405219618*^9, 3.8759994299555902`*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"88497de9-5e49-494b-be68-59eaca0ee974"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "2016", ",", "2017", ",", "2018", ",", "2019", ",", "2020", ",", "2021", 
+   ",", "2022"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.8759968779435596`*^9, 3.875996991214121*^9, 3.875997545381898*^9, {
+   3.875999410088366*^9, 3.8759994304992847`*^9}, 3.876001266028236*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"2d068ed4-8d6b-4b06-b15f-05db1c11f9d6"]
+}, Open  ]],
+
+Cell[TextData[{
+ "(a) Take the mean of the years. Go ahead and put that in R1.\n\n(b) Make a \
+new list from the years list. For each number in the years list, you just \
+subtract the mean you stored in R1 to get the corresponding number in the new \
+list. Record that list as your answer to this part.\n\nIsn\[CloseCurlyQuote]t \
+it kind of weird that we are doing the same thing to the years as we did to \
+the data!?! Years are not uncertain. They do not really have statistical \
+variance. And yet we are going to calculate their variance and their standard \
+deviation....\n\n(c) Square the numbers you got in (b), add them up, and \
+divide by 6. This is the variance of the years.\n\n(d) Take the square root \
+of what you got in (c). This is the standard deviation of the years.\n\nTake \
+a look at p. 101 again. Specifically, look at the formula for ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["s", "x"], TraditionalForm]],ExpressionUUID->
+  "75fb3376-d1b3-48fd-8f72-dce4e663f86a"],
+ ". You just calculated ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["s", "x"], TraditionalForm]],ExpressionUUID->
+  "31120ced-c80d-458f-b6ad-cc0d2837625a"],
+ " for Max\[CloseCurlyQuote]s Aaron Judge data! If you scrutinize carefully, \
+you will see that I had you calculate in this Problem is:\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["s", "x"], "=", 
+    SqrtBox[
+     FractionBox[
+      RowBox[{"\[Sum]", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          SubscriptBox["x", "i"], "-", 
+          OverscriptBox["x", "_"]}], ")"}], "2"]}], 
+      RowBox[{"n", "-", "1"}]]]}], TraditionalForm]],ExpressionUUID->
+  "3759aa79-2274-4f88-ad2e-aec87269fde8"],
+ "\n\nJust like for ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["s", "y"], TraditionalForm]],ExpressionUUID->
+  "1743bf36-ef0b-4a74-9680-734cf31fe063"],
+ " this are subtle differences between this formula for ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["s", "x"], TraditionalForm]],ExpressionUUID->
+  "80465a87-3b23-405a-a6f8-85252eb89a5f"],
+ " and what is in the ",
+ StyleBox["HP-25 Applications Programs",
+  FontSlant->"Italic"],
+ " book, but when I have a blackboard I will show you that they are the \
+same."
+}], "Text",
+ CellChangeTimes->{{3.875999514589939*^9, 3.875999850398513*^9}, {
+  3.8759999479360437`*^9, 3.876000281073661*^9}, {3.8760003515886593`*^9, 
+  3.8760003885338*^9}, {3.876002475958336*^9, 3.876002481263094*^9}, {
+  3.876002526503388*^9, 
+  3.8760025269766397`*^9}},ExpressionUUID->"36c450c7-ffc6-4fe3-a0ad-\
+38f09e85010a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "5. Covariance and ",
+ Cell[BoxData[
+  FormBox["r", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "0170824f-4a5c-4abd-89b8-f06229bb817d"],
+ "-value"
+}], "Subsection",
+ CellChangeTimes->{{3.8713830600656424`*^9, 3.871383085838428*^9}, 
+   3.87199382472436*^9, {3.87199851398885*^9, 3.871998515158553*^9}, {
+   3.871998773166749*^9, 3.8719988089823017`*^9}, {3.872440166696653*^9, 
+   3.872440172051412*^9}, {3.875996246691972*^9, 3.875996273579298*^9}, {
+   3.8759974606926537`*^9, 3.8759974652033443`*^9}, {3.875997901960972*^9, 
+   3.875997906494639*^9}, {3.875998085547489*^9, 3.8759981068646173`*^9}, {
+   3.875998475451008*^9, 3.8759984836749563`*^9}, {3.875999194877934*^9, 
+   3.8759992133205147`*^9}, {3.8759993789758253`*^9, 3.875999387342696*^9}, {
+   3.8759998603671427`*^9, 3.875999860504179*^9}, {3.875999905108371*^9, 
+   3.8759999075050793`*^9}, {3.876000707298635*^9, 
+   3.87600071024658*^9}},ExpressionUUID->"44c5366e-a0a0-4713-af8f-\
+945e4c97dcbb"],
+
+Cell[TextData[{
+ "The HP-25 Applications book also defines the covariance and the ",
+ Cell[BoxData[
+  FormBox["r", TraditionalForm]],ExpressionUUID->
+  "88217df7-9335-4cf6-9154-fca8d308ff62"],
+ " value.\n\nIf there is a strong positive correlation between the ",
+ Cell[BoxData[
+  FormBox["y", TraditionalForm]],ExpressionUUID->
+  "7d322bf7-480b-4311-86b0-330f37e00081"],
+ "-values and the ",
+ Cell[BoxData[
+  FormBox["x", TraditionalForm]],ExpressionUUID->
+  "ff25aeab-bc21-47cc-8821-d9ec54812731"],
+ "-values, then the ",
+ Cell[BoxData[
+  FormBox["r", TraditionalForm]],ExpressionUUID->
+  "8d25d518-3225-47fb-a54f-9023d574465f"],
+ " value will be close to 1.\n\nIf there is a strong negative correlation \
+between the ",
+ Cell[BoxData[
+  FormBox["y", TraditionalForm]],ExpressionUUID->
+  "31770376-6cc6-4313-973d-4d82c6a4087c"],
+ "-values and the ",
+ Cell[BoxData[
+  FormBox["x", TraditionalForm]],ExpressionUUID->
+  "146eac93-e38e-435f-b249-666b0d4fc995"],
+ "-values, then the ",
+ Cell[BoxData[
+  FormBox["r", TraditionalForm]],ExpressionUUID->
+  "3dad35d3-5703-4e05-8d2d-00cbae517280"],
+ " value will be close to -1.\n\nType in the program on p. 101. Apply the \
+program to Max\[CloseCurlyQuote]s data. What are ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["s", "x"], TraditionalForm]],ExpressionUUID->
+  "391b6700-7d33-4473-aabc-708941695973"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["s", "y"], TraditionalForm]],ExpressionUUID->
+  "f3092da8-955a-4635-924d-b471e1b4e496"],
+ ", and ",
+ Cell[BoxData[
+  FormBox["r", TraditionalForm]],ExpressionUUID->
+  "58febd7b-e605-41cf-8e43-7363f236a264"],
+ "?"
+}], "Text",
+ CellChangeTimes->{{3.875999514589939*^9, 3.875999850398513*^9}, {
+  3.8759999479360437`*^9, 3.876000281073661*^9}, {3.8760003515886593`*^9, 
+  3.8760003885338*^9}, {3.876000438067027*^9, 3.876000450282793*^9}, {
+  3.87600051265243*^9, 3.8760006888152647`*^9}, {3.876000920103092*^9, 
+  3.876000925929037*^9}, {3.8760026634275513`*^9, 
+  3.876002663977194*^9}},ExpressionUUID->"ece6bdad-684b-4d69-ac33-\
+c7c3493055da"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "6. Covariance and ",
+ Cell[BoxData[
+  FormBox["r", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "fb856bf2-89c3-4c99-98c4-ccb0c4c38994"],
+ "-Value Again"
+}], "Subsection",
+ CellChangeTimes->{{3.8713830600656424`*^9, 3.871383085838428*^9}, 
+   3.87199382472436*^9, {3.87199851398885*^9, 3.871998515158553*^9}, {
+   3.871998773166749*^9, 3.8719988089823017`*^9}, {3.872440166696653*^9, 
+   3.872440172051412*^9}, {3.875996246691972*^9, 3.875996273579298*^9}, {
+   3.8759974606926537`*^9, 3.8759974652033443`*^9}, {3.875997901960972*^9, 
+   3.875997906494639*^9}, {3.875998085547489*^9, 3.8759981068646173`*^9}, {
+   3.875998475451008*^9, 3.8759984836749563`*^9}, {3.875999194877934*^9, 
+   3.8759992133205147`*^9}, {3.8759993789758253`*^9, 3.875999387342696*^9}, {
+   3.8759998603671427`*^9, 3.875999860504179*^9}, {3.875999905108371*^9, 
+   3.8759999075050793`*^9}, {3.876000701604849*^9, 3.8760007017304983`*^9}, {
+   3.8760007344560843`*^9, 3.876000735199175*^9}, {3.8760011487882423`*^9, 
+   3.876001154661043*^9}},ExpressionUUID->"fdb66e62-984c-41a7-9e5e-\
+8d6421a832bd"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"rearrangedAscendingData", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\"\<Year\>\"", ",", " ", "\"\<Average\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2016", ",", "0.272"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2017", ",", "0.379"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2018", ",", "0.392"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2019", ",", "0.393"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2020", ",", "0.396"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2021", ",", "0.435"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2022", ",", "0.463"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Grid", "[", "rearrangedAscendingData", "]"}]}], "Input",
+ CellChangeTimes->{{3.87599661223263*^9, 3.8759967265865803`*^9}, {
+  3.876000759735787*^9, 3.876000872685265*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"2f08a7de-38ba-4c61-996e-aabc0621241b"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Year\"\>", "\<\"Average\"\>"},
+    {"2016", "0.272`"},
+    {"2017", "0.379`"},
+    {"2018", "0.392`"},
+    {"2019", "0.393`"},
+    {"2020", "0.396`"},
+    {"2021", "0.435`"},
+    {"2022", "0.463`"}
+   },
+   AutoDelete->False,
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{3.876000874852255*^9, 3.876001266039304*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"86ea6832-f19a-483c-94ad-6cf625a6e7fb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"Drop", "[", "rearrangedAscendingData", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.876001428050227*^9, 3.876001466532002*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"648ffc73-7dc3-4924-ad82-fc51c0d076f0"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`], 
+    AbsoluteThickness[1.6], 
+    PointBox[{{2016., 0.272}, {2017., 0.379}, {2018., 0.392}, {2019., 
+     0.393}, {2020., 0.396}, {2021., 0.435}, {2022., 0.463}}]}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{2015.8750000000048`, 0.26138888888888967`},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->{322.872802734375, Automatic},
+  Method->{
+   "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotRange->{{2015.8750000000048`, 2022.}, {0.26138888888888967`, 0.463}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.876001467194652*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"527292d1-8bbc-4c0d-b4a7-eedc10f50dce"]
+}, Open  ]],
+
+Cell[TextData[{
+ "You can see that all I did was rearrange the data from the different years \
+so that Aaron Judge\[CloseCurlyQuote]s batting average is constantly \
+improving. Apply the program to this data. What are ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["s", "x"], TraditionalForm]],ExpressionUUID->
+  "56354727-b861-49f4-87af-ce62073dfac0"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["s", "y"], TraditionalForm]],ExpressionUUID->
+  "2efa0da2-f08f-4916-b6b2-b83e93f3cc11"],
+ ", and ",
+ Cell[BoxData[
+  FormBox["r", TraditionalForm]],ExpressionUUID->
+  "12389385-a1c3-4b80-9fe6-edf9fb222944"],
+ "?\n\nNB: If you didn\[CloseCurlyQuote]t get the same values for ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["s", "x"], TraditionalForm]],ExpressionUUID->
+  "4a8a96c4-02e7-4ddb-bb7d-92de751ec9c6"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["s", "y"], TraditionalForm]],ExpressionUUID->
+  "974b84e7-e1c0-4723-9973-6b6b950e55a0"],
+ " something is wrong. Can you see that ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["s", "x"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "8071a0a2-5c1a-4016-ab14-dc195147142b"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["s", "y"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "2a7d0d94-33aa-4817-9b5e-95281e96c01b"],
+ " should have been the same?"
+}], "Text",
+ CellChangeTimes->{{3.875999514589939*^9, 3.875999850398513*^9}, {
+   3.8759999479360437`*^9, 3.876000281073661*^9}, {3.8760003515886593`*^9, 
+   3.8760003885338*^9}, {3.876000438067027*^9, 3.876000450282793*^9}, {
+   3.87600051265243*^9, 3.8760006888152647`*^9}, 3.8760007541883087`*^9, {
+   3.876000888040491*^9, 3.8760009893341618`*^9}, {3.8760010668568707`*^9, 
+   3.8760010701296597`*^9}, {3.876001522633333*^9, 3.876001525154477*^9}, {
+   3.87600266023277*^9, 3.8760026606376762`*^9}, {3.876002733998905*^9, 
+   3.8760027456233*^9}},ExpressionUUID->"9c05bbcd-51c8-4aed-b7f5-\
+3459450fa42f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "7. Covariance and ",
+ Cell[BoxData[
+  FormBox["r", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "57bc6e43-9b04-401a-83b4-306550774e4b"],
+ "-Value One More Time"
+}], "Subsection",
+ CellChangeTimes->{{3.8713830600656424`*^9, 3.871383085838428*^9}, 
+   3.87199382472436*^9, {3.87199851398885*^9, 3.871998515158553*^9}, {
+   3.871998773166749*^9, 3.8719988089823017`*^9}, {3.872440166696653*^9, 
+   3.872440172051412*^9}, {3.875996246691972*^9, 3.875996273579298*^9}, {
+   3.8759974606926537`*^9, 3.8759974652033443`*^9}, {3.875997901960972*^9, 
+   3.875997906494639*^9}, {3.875998085547489*^9, 3.8759981068646173`*^9}, {
+   3.875998475451008*^9, 3.8759984836749563`*^9}, {3.875999194877934*^9, 
+   3.8759992133205147`*^9}, {3.8759993789758253`*^9, 3.875999387342696*^9}, {
+   3.8759998603671427`*^9, 3.875999860504179*^9}, {3.875999905108371*^9, 
+   3.8759999075050793`*^9}, {3.876000701604849*^9, 3.8760007017304983`*^9}, {
+   3.8760007344560843`*^9, 3.876000735199175*^9}, {3.8760010853729343`*^9, 
+   3.876001090682774*^9}, {3.876001141544505*^9, 
+   3.876001159577311*^9}},ExpressionUUID->"a85b0ab5-e7c6-4939-9a6e-\
+8050c8ddb856"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"rearrangedDescendingData", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\"\<Year\>\"", ",", " ", "\"\<Average\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2016", ",", "0.463"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2017", ",", "0.435"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2018", ",", "0.396"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2019", ",", "0.393"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2020", ",", "0.392"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2021", ",", "0.379"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2022", ",", "0.272"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Grid", "[", "rearrangedDescendingData", "]"}]}], "Input",
+ CellChangeTimes->{{3.87599661223263*^9, 3.8759967265865803`*^9}, {
+  3.876000759735787*^9, 3.876000872685265*^9}, {3.876001093721764*^9, 
+  3.876001137474922*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"8020c4e6-a784-47ce-86d4-d8bd9058d555"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Year\"\>", "\<\"Average\"\>"},
+    {"2016", "0.463`"},
+    {"2017", "0.435`"},
+    {"2018", "0.396`"},
+    {"2019", "0.393`"},
+    {"2020", "0.392`"},
+    {"2021", "0.379`"},
+    {"2022", "0.272`"}
+   },
+   AutoDelete->False,
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{3.876000874852255*^9, 3.876001266071679*^9},
+ CellLabel->"Out[7]=",ExpressionUUID->"5aec4ce9-579e-4a76-a2dc-a1dc5b93f419"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"Drop", "[", "rearrangedDescendingData", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.876001428050227*^9, 3.876001451311296*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"1c0e5290-6c79-4945-abf9-cbed99d44aaf"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`], 
+    AbsoluteThickness[1.6], 
+    PointBox[{{2016., 0.463}, {2017., 0.435}, {2018., 0.396}, {2019., 
+     0.393}, {2020., 0.392}, {2021., 0.379}, {2022., 0.272}}]}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{2015.8750000000048`, 0.26138888888888967`},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->{329.8964538574219, Automatic},
+  Method->{
+   "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotRange->{{2015.8750000000048`, 2022.}, {0.26138888888888967`, 0.463}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.8760014445630703`*^9, 3.876001452325774*^9}},
+ CellLabel->"Out[9]=",ExpressionUUID->"71bf5796-c5a2-4637-8c31-a9d2edc02af5"]
+}, Open  ]],
+
+Cell[TextData[{
+ "You can see that all I did was rearrange the data from the different years \
+so that Aaron Judge\[CloseCurlyQuote]s batting average is now constantly \
+deteriorating. Apply the program to this data.\n\nNow what are ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["s", "x"], TraditionalForm]],ExpressionUUID->
+  "28e46d25-4062-4158-b71d-7de44d022a49"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["s", "y"], TraditionalForm]],ExpressionUUID->
+  "a7709cc3-697f-481f-8fe0-9e63fdcc09f3"],
+ ", and ",
+ Cell[BoxData[
+  FormBox["r", TraditionalForm]],ExpressionUUID->
+  "024fdd8e-38e0-497d-8468-511666f26f6e"],
+ "?"
+}], "Text",
+ CellChangeTimes->{{3.875999514589939*^9, 3.875999850398513*^9}, {
+   3.8759999479360437`*^9, 3.876000281073661*^9}, {3.8760003515886593`*^9, 
+   3.8760003885338*^9}, {3.876000438067027*^9, 3.876000450282793*^9}, {
+   3.87600051265243*^9, 3.8760006888152647`*^9}, 3.8760007541883087`*^9, {
+   3.876000888040491*^9, 3.8760009893341618`*^9}, {3.8760010668568707`*^9, 
+   3.8760010701296597`*^9}, {3.876001171558875*^9, 3.8760011825385847`*^9}, {
+   3.876001515549767*^9, 
+   3.876001533963635*^9}},ExpressionUUID->"3e578935-9789-4038-aa36-\
+0c849b724d71"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Conclusion", "Subsection",
+ CellChangeTimes->{{3.8713830600656424`*^9, 3.871383085838428*^9}, 
+   3.87199382472436*^9, {3.87199851398885*^9, 3.871998515158553*^9}, {
+   3.871998773166749*^9, 3.8719988089823017`*^9}, {3.872440166696653*^9, 
+   3.872440172051412*^9}, {3.875996246691972*^9, 3.875996273579298*^9}, {
+   3.8759974606926537`*^9, 3.8759974652033443`*^9}, {3.875997901960972*^9, 
+   3.875997906494639*^9}, {3.875998085547489*^9, 3.8759981068646173`*^9}, {
+   3.875998475451008*^9, 3.8759984836749563`*^9}, {3.875999194877934*^9, 
+   3.8759992133205147`*^9}, {3.8759993789758253`*^9, 3.875999387342696*^9}, {
+   3.8759998603671427`*^9, 3.875999860504179*^9}, {3.875999905108371*^9, 
+   3.8759999075050793`*^9}, {3.876000701604849*^9, 3.8760007017304983`*^9}, {
+   3.8760007344560843`*^9, 3.876000735199175*^9}, {3.8760010853729343`*^9, 
+   3.876001090682774*^9}, {3.876001141544505*^9, 3.876001159577311*^9}, {
+   3.87600127806133*^9, 3.876001285700017*^9}, {3.87600180474746*^9, 
+   3.87600180509501*^9}},ExpressionUUID->"ceab66f6-66a6-4ff3-a943-\
+01b8709eb181"],
+
+Cell[TextData[{
+ "You will see ",
+ Cell[BoxData[
+  FormBox["r", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "288cf905-7098-4652-bf65-a27e545b9494"],
+ "-value and ",
+ Cell[BoxData[
+  FormBox["r", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "e003e75a-e33a-48a0-968f-6d04d559523d"],
+ "-squared-value quoted a lot when data is fitted. An ",
+ Cell[BoxData[
+  FormBox["r", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "4309bdc0-bbea-4199-b865-e72f5d7712d0"],
+ "-value near 1 is interpreted as \[OpenCurlyDoubleQuote]the data on the ",
+ Cell[BoxData[
+  FormBox["y", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "70de70b1-34c9-451a-935e-d2da35f5608d"],
+ "-axis is positively correlated with the data on the ",
+ Cell[BoxData[
+  FormBox["x", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "1d9d2836-db86-491b-b6ac-6c8cdacb883a"],
+ "-axis.\[CloseCurlyDoubleQuote] An ",
+ Cell[BoxData[
+  FormBox["r", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "f820d669-5627-4799-a5b9-aa8c68b76ce5"],
+ "-value near -1 is interpreted as \[OpenCurlyDoubleQuote]the data on the ",
+ Cell[BoxData[
+  FormBox["y", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "44b0d360-140d-4b69-bc2c-fb77137c974a"],
+ "-axis is negatively correlated with the data on the ",
+ Cell[BoxData[
+  FormBox["x", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "30558131-9d87-41d7-b6c5-f5759a65a025"],
+ "-axis.\[CloseCurlyDoubleQuote] Often the ",
+ Cell[BoxData[
+  FormBox["r", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "7fe64dec-226b-4a52-b131-2a4b1f8f8037"],
+ "-value is squared. Then an ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["r", "2"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "f5e98a28-0a09-4f5b-8b0f-892b0d811d18"],
+ "-value near 1 means that the data on the ",
+ Cell[BoxData[
+  FormBox["y", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "6e9e354f-cb12-4ee9-a6dc-ecb75aa941aa"],
+ "-axis is correlated with the data on the ",
+ Cell[BoxData[
+  FormBox["x", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "333721c8-5edc-4125-a86f-dba33af34c36"],
+ "-axis, but because you have squared ",
+ Cell[BoxData[
+  FormBox["r", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "5293cf4c-99c2-458f-91a9-f346a404d59e"],
+ ", it is no longer possible to tell whether it is positively or negatively \
+correlated. In all cases an ",
+ Cell[BoxData[
+  FormBox["r", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "0cbc5e52-04f8-481b-8da1-8f7241190acb"],
+ "-value or an ",
+ Cell[BoxData[
+  FormBox["r", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "c6349c80-1c51-472b-b6ca-2a9db8f1da34"],
+ "-squared value near 0 means that the values on the ",
+ Cell[BoxData[
+  FormBox["x", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "c96947c1-bc80-4818-aefa-1356b9ae9dbd"],
+ "-axis do little to help explain the values on the ",
+ Cell[BoxData[
+  FormBox["y", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "2c86687b-aae9-495d-bdaa-11dba024f4b3"],
+ "-axis. To put it another way, if ",
+ Cell[BoxData[
+  FormBox["r", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "20d1e5c7-b2bb-4013-8c1c-206deba532d6"],
+ " is near 0, a simple mean is just as good an approximation to the ",
+ Cell[BoxData[
+  FormBox["y", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "af39a6fa-8e30-4189-917c-faf8e1fc3ce3"],
+ "-values as a linear fit.\n\nTake a look at the attached pages to develop \
+some additional intuition on ",
+ Cell[BoxData[
+  FormBox["r", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "b2fc237c-daa5-4314-bc50-c589cd122793"],
+ "-squared."
+}], "Text",
+ CellChangeTimes->{{3.8760012933505783`*^9, 3.876001415659639*^9}, {
+  3.876001545122862*^9, 3.8760017312078667`*^9}, {3.876001771886381*^9, 
+  3.876001797132968*^9}, {3.876002146624424*^9, 3.8760021766283712`*^9}, {
+  3.8760022083550797`*^9, 3.8760022097598543`*^9}, {3.876002869079734*^9, 
+  3.876002871814345*^9}},ExpressionUUID->"13084b29-7f94-4860-8e29-\
+7aee4111e6d7"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1334, 1226},
+WindowMargins->{{-1623, Automatic}, {Automatic, 51}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+FrontEndVersion->"13.1 for Mac OS X x86 (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"fdb56f20-f88b-4f34-a223-df27a3586917"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 784, 16, 68, "Section",ExpressionUUID->"47b43857-58c2-4fa2-b265-428f10ab71de"],
+Cell[CellGroupData[{
+Cell[1367, 40, 412, 6, 43, "Subtitle",ExpressionUUID->"b96dcb3f-f75b-48bf-aaac-47d330c376ac"],
+Cell[1782, 48, 613, 11, 35, "Text",ExpressionUUID->"c0482c7d-cb15-480a-97a5-a7a7b229bb16"],
+Cell[CellGroupData[{
+Cell[2420, 63, 876, 23, 30, "Input",ExpressionUUID->"2e8018c7-b189-4837-b67b-4aa38823b809"],
+Cell[3299, 88, 588, 17, 151, "Output",ExpressionUUID->"e85ebb87-411a-4778-a234-8e8fa24de8f1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3924, 110, 242, 4, 30, "Input",ExpressionUUID->"c501828c-0c84-4226-9c07-304ebdf50b5a"],
+Cell[4169, 116, 1474, 38, 335, "Output",ExpressionUUID->"27f4f38e-3896-433e-8f13-54189230afcd"]
+}, Open  ]],
+Cell[5658, 157, 513, 7, 35, "Text",ExpressionUUID->"84f6cb1d-ce85-44f2-8778-a2894d413dbd"],
+Cell[CellGroupData[{
+Cell[6196, 168, 525, 10, 30, "Input",ExpressionUUID->"36109e67-825c-475d-be18-6a6c3a9a3200"],
+Cell[6724, 180, 378, 7, 34, "Output",ExpressionUUID->"3159300e-0162-4fa8-9123-2f1a3ffebec1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7139, 192, 620, 9, 54, "Subsection",ExpressionUUID->"c4d68ccc-9dc0-41f2-b33a-453426ae1e1a"],
+Cell[7762, 203, 1970, 35, 380, "Text",ExpressionUUID->"038bc76f-71f2-4f5d-8ee0-2de04a1a9e76"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9769, 243, 606, 9, 54, "Subsection",ExpressionUUID->"52936696-c894-48f6-8b11-c46267e6d893"],
+Cell[10378, 254, 1282, 20, 242, "Text",ExpressionUUID->"4cc9008c-2ed0-40eb-b763-8f59aeb754e6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11697, 279, 666, 9, 54, "Subsection",ExpressionUUID->"239403f7-d785-44f2-b6d3-242568979eed"],
+Cell[12366, 290, 2153, 50, 200, "Text",ExpressionUUID->"e441b351-26eb-435d-a259-f032e2d707a0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14556, 345, 710, 10, 54, "Subsection",ExpressionUUID->"2fd26721-4a1d-497f-913f-d0e3ffca1cdd"],
+Cell[CellGroupData[{
+Cell[15291, 359, 515, 10, 30, "Input",ExpressionUUID->"88497de9-5e49-494b-be68-59eaca0ee974"],
+Cell[15809, 371, 394, 8, 34, "Output",ExpressionUUID->"2d068ed4-8d6b-4b06-b15f-05db1c11f9d6"]
+}, Open  ]],
+Cell[16218, 382, 2539, 58, 450, "Text",ExpressionUUID->"36c450c7-ffc6-4fe3-a0ad-38f09e85010a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18794, 445, 1005, 19, 54, "Subsection",ExpressionUUID->"44c5366e-a0a0-4713-af8f-945e4c97dcbb"],
+Cell[19802, 466, 2041, 53, 176, "Text",ExpressionUUID->"ece6bdad-684b-4d69-ac33-c7c3493055da"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21880, 524, 1114, 20, 54, "Subsection",ExpressionUUID->"fdb66e62-984c-41a7-9e5e-8d6421a832bd"],
+Cell[CellGroupData[{
+Cell[23019, 548, 990, 25, 52, "Input",ExpressionUUID->"2f08a7de-38ba-4c61-996e-aabc0621241b"],
+Cell[24012, 575, 507, 15, 151, "Output",ExpressionUUID->"86ea6832-f19a-483c-94ad-6cf625a6e7fb"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24556, 595, 259, 4, 30, "Input",ExpressionUUID->"648ffc73-7dc3-4924-ad82-fc51c0d076f0"],
+Cell[24818, 601, 1471, 38, 211, "Output",ExpressionUUID->"527292d1-8bbc-4c0d-b4a7-eedc10f50dce"]
+}, Open  ]],
+Cell[26304, 642, 1966, 49, 87, "Text",ExpressionUUID->"9c05bbcd-51c8-4aed-b7f5-3459450fa42f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28307, 696, 1172, 21, 54, "Subsection",ExpressionUUID->"a85b0ab5-e7c6-4939-9a6e-8050c8ddb856"],
+Cell[CellGroupData[{
+Cell[29504, 721, 1041, 26, 52, "Input",ExpressionUUID->"8020c4e6-a784-47ce-86d4-d8bd9058d555"],
+Cell[30548, 749, 507, 15, 151, "Output",ExpressionUUID->"5aec4ce9-579e-4a76-a2dc-a1dc5b93f419"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31092, 769, 259, 4, 30, "Input",ExpressionUUID->"1c0e5290-6c79-4945-abf9-cbed99d44aaf"],
+Cell[31354, 775, 1497, 38, 215, "Output",ExpressionUUID->"71bf5796-c5a2-4637-8c31-a9d2edc02af5"]
+}, Open  ]],
+Cell[32866, 816, 1194, 27, 84, "Text",ExpressionUUID->"3e578935-9789-4038-aa36-0c849b724d71"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34097, 848, 1078, 15, 54, "Subsection",ExpressionUUID->"ceab66f6-66a6-4ff3-a943-01b8709eb181"],
+Cell[35178, 865, 4284, 111, 173, "Text",ExpressionUUID->"13084b29-7f94-4860-8e29-7aee4111e6d7"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
