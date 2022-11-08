@@ -22,22 +22,22 @@ See also: [Daily Schedule Term 2](./daily_schedule_term_2.html)
 * Preparation for Friday, Nov. 11 &mdash; Study the [Paired t-Test](https://www.jmp.com/en_us/statistics-knowledge-portal/t-test/paired-t-test.html) and the program on pp. 121-123 of the *HP-25 Applications Programs* book &mdash; Type in the program and do the example on p. 123 to make sure it works
 * Friday, Nov. 11 &mdash; Discussion of paired t-Test &mdash; Introduction to Chi-Squared
 
-### Week 11
+### Week 11 &mdash; Begin Numerical Methods
 
 * Tuesday, Nov. 15 &mdash;
 * Friday, Nov. 18 &mdash;
 
-### Week 12
+### Week 12 &mdash; Numerical Methods, Continued
 
 * Saturday, Nov. 19 &mdash;
 * Tuesday, Nov. 22 &mdash;
 
-### Week 13
+### Week 13 &mdash; Numerical Methods, Concluded
 
 * Tuesday, Nov. 29 &mdash;
-* Friday, Dec. 2 &mdash;
+* Friday, Dec. 2 &mdash; Term 3 Exam on this Day?
 
-### Week 14
+### Week 14 &mdash; Special Projects or Additional Topics?
 
 * Tuesday, Dec. 6 &mdash;
 * Friday, Dec. 9 &mdash;
