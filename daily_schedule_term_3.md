@@ -19,12 +19,12 @@ See also: [Daily Schedule Term 2](./daily_schedule_term_2.html)
 
 * Preparation for Tuesday, Nov. 8 &mdash; [Problem Set 8](./assignments/PS08.nb.pdf) on Uniform and Binomial Distributions
 * Tuesday, Nov. 8 &mdash; The Binomial Distribution
-* Preparation for Friday, Nov. 11 &mdash; Study the [Paired t-Test](https://www.jmp.com/en_us/statistics-knowledge-portal/t-test/paired-t-test.html) and the program on pp. 121-123 of the *HP-25 Applications Programs* book &mdash; Type in the program and do the example on p. 123 to make sure it works
-* Friday, Nov. 11 &mdash; Discussion of paired t-Test &mdash; Introduction to Chi-Squared
+* Preparation for Friday, Nov. 11 &mdash; Study the [t-Test](./resources/StatisticalTests.pdf) (from https://www.jmp.com/en_us/statistics-knowledge-portal) and the program on pp. 121-123 of the *HP-25 Applications Programs* book &mdash; Type in the program and do the example on p. 123 to make sure it works
+* Friday, Nov. 11 &mdash; Discussion of paired t-Test
 
-### Week 11 &mdash; Begin Numerical Methods
+### Week 11 &mdash; Statistical Tests, Concluded &mdash; Numerical Methods
 
-* Tuesday, Nov. 15 &mdash;
+* Preparation for Tuesday, Nov. 15 &mdash; Study the [&chi;-squared Test](./resources/StatisticalTests.pdf) (from https://www.jmp.com/en_us/statistics-knowledge-portal) and the program on pp. 118-120 of the *HP-25 Applications Programs* book &mdash; Type in the program and do the example on p. 120 to make sure it works
 * Friday, Nov. 18 &mdash;
 
 ### Week 12 &mdash; Numerical Methods, Continued
@@ -35,15 +35,15 @@ See also: [Daily Schedule Term 2](./daily_schedule_term_2.html)
 ### Week 13 &mdash; Numerical Methods, Concluded
 
 * Tuesday, Nov. 29 &mdash;
-* Friday, Dec. 2 &mdash; Term 3 Exam on this Day?
+* Friday, Dec. 2 &mdash; 
 
 ### Week 14 &mdash; Special Projects or Additional Topics?
 
-* Tuesday, Dec. 6 &mdash;
+* Tuesday, Dec. 6 &mdash; Term 3 Exam on this Day?
 * Friday, Dec. 9 &mdash;
 
 ### Week 15
 
-* Tuesday, Dec. 13 &mdash;
+* Tuesday, Dec. 13 &mdash; Special Projects or Additional Topics?
 
 
