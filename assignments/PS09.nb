@@ -1,0 +1,578 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     23323,        570]
+NotebookOptionsPosition[     21331,        526]
+NotebookOutlinePosition[     21782,        544]
+CellTagsIndexPosition[     21739,        541]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Numerical Analysis \[LongDash] Problem Set 9 \[LongDash] Statistical \
+Significance \[LongDash] Paired t-Squared Test\
+\>", "Section",
+ CellChangeTimes->{{3.8713829840911713`*^9, 3.871382989885779*^9}, {
+  3.871383097198255*^9, 3.871383109472487*^9}, {3.871383326862706*^9, 
+  3.8713833808344088`*^9}, {3.871426734155431*^9, 3.871426735236566*^9}, {
+  3.871993556107719*^9, 3.8719935809500523`*^9}, {3.872439966969939*^9, 
+  3.872440000871526*^9}, {3.875982640087123*^9, 3.8759826505652122`*^9}, {
+  3.8759826818176603`*^9, 3.875982684056402*^9}, {3.876001209312512*^9, 
+  3.87600122116895*^9}, {3.876743067971345*^9, 3.876743074444668*^9}, {
+  3.877222233126729*^9, 
+  3.877222266768793*^9}},ExpressionUUID->"47b43857-58c2-4fa2-b265-\
+428f10ab71de"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Due Tuesday, Nov. 15 (beginning of class)\n\nIn our discussion on Friday, \
+Nov. 11 we all understand, that just because an event is unlikely does not \
+mean that it is impossible. For example, Clara could visit a casino, play a \
+perfectly fair game where you win half the time, but nonetheless lose the \
+first three times she plays it. It does not mean the game is rigged.\n\nOr a \
+heart medication might be studied, and 5 people in the medicated group might \
+get heart attacks, whereas 10 people in the unmedicated group might get heart \
+attacks, but this does not mean that the medication is effective. It might \
+just be good luck for the medicated patients, and bad luck for the \
+unmedicated ones, and have nothing to do with the effectiveness of the \
+medication.\n\nAll statistical studies suffer from this kind of uncertainty. \
+The result could be due to chance, not a real effect. Often studies that \
+showed promising results are repeated, and the good luck disappears. The new \
+study fails to find an effect. There is even a parody journal, called ",
+ StyleBox["The Journal of Irreproducible Results,",
+  FontSlant->"Plain"],
+ " whose title is about this problem. A great tool is being able to \
+critically look at scientific claims, and decide for yourself whether they \
+are significant."
+}], "Subtitle",
+ CellChangeTimes->{{3.871430751344658*^9, 3.871430776838911*^9}, {
+  3.8719935421166697`*^9, 3.871993550674225*^9}, {3.87199378491018*^9, 
+  3.871993808590932*^9}, {3.872440003785226*^9, 3.872440008296516*^9}, {
+  3.875982695891411*^9, 3.875982698614297*^9}, {3.876743081926457*^9, 
+  3.876743084266677*^9}, {3.876743149504279*^9, 3.8767431793387947`*^9}, {
+  3.876743229152956*^9, 3.8767432927484694`*^9}, {3.87674741671094*^9, 
+  3.876747447614367*^9}, {3.8772222506924143`*^9, 3.877222535383209*^9}, {
+  3.877222570448797*^9, 3.877222831285266*^9}},
+ FontSize->16,
+ FontSlant->"Italic",ExpressionUUID->"b96dcb3f-f75b-48bf-aaac-47d330c376ac"],
+
+Cell[CellGroupData[{
+
+Cell["1. Quantifying Unlikeliness", "Subsection",
+ CellChangeTimes->{{3.8713830600656424`*^9, 3.871383085838428*^9}, 
+   3.87199382472436*^9, {3.87199851398885*^9, 3.871998515158553*^9}, {
+   3.871998773166749*^9, 3.8719988089823017`*^9}, {3.872440166696653*^9, 
+   3.872440172051412*^9}, {3.875996246691972*^9, 3.875996273579298*^9}, {
+   3.8759974606926537`*^9, 3.8759974652033443`*^9}, {3.875997901960972*^9, 
+   3.875997906494639*^9}, {3.875998085547489*^9, 3.875998092640204*^9}, {
+   3.875999367239081*^9, 3.875999370051594*^9}, {3.876743301253574*^9, 
+   3.8767433052356367`*^9}, {3.877222838271246*^9, 
+   3.8772228475974503`*^9}},ExpressionUUID->"c4d68ccc-9dc0-41f2-b33a-\
+453426ae1e1a"],
+
+Cell[TextData[{
+ "We looked closely at 20 coin tosses. The formula for the fraction of the 20 \
+coin tosses that will have ",
+ StyleBox["k",
+  FontSlant->"Italic"],
+ " heads was\n\n",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["1", 
+    SuperscriptBox["2", "20"]], TraditionalForm]],
+  FormatType->TraditionalForm,
+  FontSize->24,ExpressionUUID->"cd5aa6d3-a048-4ef7-972f-efd0d1fd609d"],
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    RowBox[{"20", "!"}], 
+    RowBox[{
+     RowBox[{"k", "!"}], 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"20", "-", "k"}], ")"}], "!"}]}]], TraditionalForm]],
+  FormatType->TraditionalForm,
+  FontSize->24,ExpressionUUID->"ac1bc398-7308-4b54-bb61-9a21c1ac99bb"],
+ "\n\nWe graphed this for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"k", "=", "0"}], ",", " ", "1", ",", " ", "2", ",", "...", " ", 
+    ",", " ", "20"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "50b537d3-4fba-427a-8da8-3f69438348b1"],
+ ", and saw that it peaked around 18% at ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"k", "=", "10"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "c7a29585-ac37-4422-a49d-e9006a4abb1a"],
+ ".\n\nIf the coin is weighted, so that the probability of getting heads on \
+each toss is ",
+ Cell[BoxData[
+  FormBox["w", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "5a0e3f76-e72b-44a9-8886-3ece71814c1b"],
+ ", then the probability is instead:\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{
+      SuperscriptBox["w", "k"], "(", 
+      RowBox[{"1", " ", "-", " ", "w"}], ")"}], 
+     RowBox[{"20", "-", "k", " "}]], 
+    StyleBox[
+     FractionBox[
+      RowBox[{"20", "!"}], 
+      RowBox[{
+       RowBox[{"k", "!"}], 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"20", "-", "k"}], ")"}], "!"}]}]],
+     FontSize->18]}], TraditionalForm]],
+  FormatType->TraditionalForm,
+  FontSize->16,ExpressionUUID->"91265546-f6c4-432d-8e87-e3e4e21168fd"],
+ "\n\nMake sure you see that if ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"w", "=", 
+    FractionBox["1", "2"]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "87266ef1-ed0e-44f3-81d8-5dfeb26233a2"],
+ " then you get the original formula.\n\nIf instead of 20, we use the \
+variable ",
+ Cell[BoxData[
+  FormBox["n", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "77038854-322e-4b79-a0e4-ec4caa5f174d"],
+ " for the number of tosses, then the formula is\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{
+      SuperscriptBox["w", "k"], "(", 
+      RowBox[{"1", " ", "-", " ", "w"}], ")"}], 
+     RowBox[{"n", "-", "k", " "}]], 
+    StyleBox[
+     FractionBox[
+      RowBox[{"n", "!"}], 
+      RowBox[{
+       RowBox[{"k", "!"}], 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"n", "-", "k"}], ")"}], "!"}]}]],
+     FontSize->18]}], TraditionalForm]],
+  FormatType->TraditionalForm,
+  FontSize->16,ExpressionUUID->"4d09695d-ca67-4492-a81d-6d52cf526937"],
+ "\n\n(a) Write a little program that expects ",
+ Cell[BoxData[
+  FormBox["w", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "e919d3d9-8fe2-4d7b-83eb-4581acd2f0b5"],
+ " in a register, expects ",
+ Cell[BoxData[
+  FormBox["n", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "f6af3652-5832-4cbd-9df3-7de5239e6f22"],
+ " in another register, and the user just types ",
+ Cell[BoxData[
+  FormBox["k", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "ffe43d2c-472c-4c2d-b1f3-dbf257052d6d"],
+ " and hits R/S, and boom, the answer comes out.\n\n(b) Use your program to \
+make a table and a graph of this function for \n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"n", "=", "9"}], ",", " ", 
+    RowBox[{"w", "=", 
+     RowBox[{"1", "/", "3"}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "e5a81351-e0cc-4d8a-ae98-864ac3dfdb3b"],
+ "\n\nTo make the graph, you are going to have to run your program for the 10 \
+different values of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"k", "=", "0"}], ",", " ", "1", ",", " ", "2", ",", "...", " ", 
+    ",", " ", "9"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "48b5b3d9-ea47-4f89-a917-a94198372921"],
+ ".\n\n(c) Do the same thing again for \n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"n", "=", "21"}], ",", 
+    RowBox[{"w", "=", 
+     RowBox[{"1", "/", "3"}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "f4b0a932-4ee3-454e-9ba5-689faca5effc"],
+ "\n\nYou are going to have to run your program for 22 different values of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"k", "=", "0"}], ",", " ", "1", ",", " ", "2", ",", "...", " ", 
+    ",", " ", "21"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "26bfedc7-ea77-451a-b60c-5b282cd01c70"],
+ ".\n\n(d)  You expect to get an average of 3 heads out of 9 tosses with this \
+weighted coin. By adding up the percentages in your table for part (c) for 6, \
+7, 8, and 9, what are the odds of getting 6 or more heads?\n\n(e) You expect \
+to get an average of 7 heads of 21 tosses. By adding up the percentages in \
+your table for part (d) for 14, 15, 16, 17, 18, 19, 20, and 21, what are the \
+odds of getting 14 or more heads?\n"
+}], "Text",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQBmIQ/fu056oHD944+m3KWAOiP3m/2ACi7/1NeAGilY7M
++QiiJ51ZzfYQSP9i/8wPojWsWqRB9JkccUUQ/eGfjhGIfvRY2hJEHxF66gyi
+501u+AKiE/hXg+kGE0a7x0D69+m99iD6mMFeGd9Hbxx/yrvog2iBg702INrP
+LMoVRNcdnuQLog/dnBYEovXMvHNBdFjNyXwQHddvI+0PpG0cvqmC6J3bErVA
+tL9wjgmIlvjxxsL88RtHpzKpahBt8b2wGUSLlT45CKIPaxsfB9F/vliAaXc5
+vocg2sxx8isQnRG96T2IXvZu8mcQDQAEua9s
+  "],ExpressionUUID->"038bc76f-71f2-4f5d-8ee0-2de04a1a9e76"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Discussion: Getting twice as many heads as expected is a lot less likely if \
+there are 21 rolls than 7 rolls, I hope you agree after doing (d) and (e). If \
+you got twice as many heads as expected after 21 rolls, \
+you\[CloseCurlyQuote]d be really suspicious that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"w", "=", 
+    FractionBox["2", "3"]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "ceb12ee2-b410-46b2-ae75-b7752dca38dd"],
+ " not ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"w", "=", 
+    FractionBox["1", "3"]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "c18728a2-0fd9-46a8-9913-99ba2df50d66"],
+ "."
+}], "Subtitle",
+ CellChangeTimes->{{3.871430751344658*^9, 3.871430776838911*^9}, {
+  3.8719935421166697`*^9, 3.871993550674225*^9}, {3.87199378491018*^9, 
+  3.871993808590932*^9}, {3.872440003785226*^9, 3.872440008296516*^9}, {
+  3.875982695891411*^9, 3.875982698614297*^9}, {3.876743081926457*^9, 
+  3.876743084266677*^9}, {3.876743149504279*^9, 3.8767431793387947`*^9}, {
+  3.876743229152956*^9, 3.8767432927484694`*^9}, {3.87674741671094*^9, 
+  3.876747447614367*^9}, {3.8772222506924143`*^9, 3.877222535383209*^9}, {
+  3.877222570448797*^9, 3.877222831285266*^9}, {3.877224005444963*^9, 
+  3.877224037010944*^9}, {3.877224352626997*^9, 3.877224364473769*^9}, {
+  3.8772243969747334`*^9, 3.877224434414727*^9}},
+ FontSize->16,
+ FontSlant->"Italic",ExpressionUUID->"a30c0998-6ddb-436f-97fc-0a753e6f5d57"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "2. The Paired ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"t", "-", "Test"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "f6721133-ea68-47c8-8937-52b82597e0f9"]
+}], "Subsection",
+ CellChangeTimes->{{3.8713830600656424`*^9, 3.871383085838428*^9}, 
+   3.87199382472436*^9, {3.87199851398885*^9, 3.871998515158553*^9}, {
+   3.871998773166749*^9, 3.8719988089823017`*^9}, {3.872440166696653*^9, 
+   3.872440172051412*^9}, {3.875996246691972*^9, 3.875996273579298*^9}, {
+   3.8759974606926537`*^9, 3.8759974652033443`*^9}, {3.875997901960972*^9, 
+   3.875997906494639*^9}, {3.875998085547489*^9, 3.875998092640204*^9}, {
+   3.875999367239081*^9, 3.875999370051594*^9}, {3.876743301253574*^9, 
+   3.8767433052356367`*^9}, {3.877222838271246*^9, 3.8772228475974503`*^9}, {
+   3.877224522657844*^9, 
+   3.8772245334466467`*^9}},ExpressionUUID->"4d882a8c-5592-4019-b634-\
+b3057b75c46f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TableForm", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<\>\"", ",", " ", "\"\<Medicated (Left) Arm\>\"", ",", " ", 
+      "\"\<Unmedicated (Right) Arm\>\""}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Bri\>\"", ",", " ", "18", ",", " ", "25"}], "}"}], ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Bra\>\"", ",", " ", "22", ",", " ", "21"}], "}"}], ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Che\>\"", ",", " ", "5", ",", " ", "7"}], "}"}], ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Cla\>\"", ",", " ", "5", ",", " ", "17"}], "}"}], ",", " ", 
+    
+    RowBox[{"{", 
+     RowBox[{"\"\<Max\>\"", ",", " ", "0", ",", " ", "20"}], "}"}]}], "}"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.877224563360969*^9, 3.8772247211184263`*^9}, {
+  3.877225124684099*^9, 3.877225130049831*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"e97f5bce-248f-44b0-8981-73ce616f5c78"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"\"\>", "\<\"Medicated (Left) Arm\"\>", "\<\"Unmedicated (Right) Arm\
+\"\>"},
+    {"\<\"Bri\"\>", "18", "25"},
+    {"\<\"Bra\"\>", "22", "21"},
+    {"\<\"Che\"\>", "5", "7"},
+    {"\<\"Cla\"\>", "5", "17"},
+    {"\<\"Max\"\>", "0", "20"}
+   },
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.877225130619467*^9},
+ CellLabel->
+  "Out[2]//TableForm=",ExpressionUUID->"ecf64061-b3eb-4f7b-85f1-955990773dea"]
+}, Open  ]],
+
+Cell[TextData[{
+ "The average number of square centimeters of poison oak rash on the \
+medicated arms, was 10. For the unmedicated arms, it is 18. The paired ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"t", "-", "test"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "71f0307f-48ac-4f0e-92da-b5b1d567c280"],
+ " tells you whether this was might be due to chance. Of course, just like \
+with the casino, there is always some possibility the study result was just \
+good luck (for the medication manufacturer\[CloseCurlyQuote]s sales \
+department), and that actually the medication has no effect. The paired ",
+ Cell[BoxData[
+  FormBox["t", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "a9298e82-5d7e-49ef-bb8f-bb7a292fb73e"],
+ "-test quantifies how unlikely it is that the effect is due to chance.\n\n\
+(a) What is the mean of the  left column? What is the mean of the right \
+column? What is the difference (right - left) of the means? Make another \
+column above that is just the difference (right - left).\n\n(b) Look at the \
+JMP documentation I passed out and the ",
+ StyleBox["HP-25 Applications Programs",
+  FontSlant->"Italic"],
+ " book. Make a table of the differences (between the right arm and the left \
+arm).\n\n(c) Using the definitions for std deviation and std error of the \
+mean, compute both of those.\n\n(d) Apply the paired ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"t", "-", "test"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "94e3db67-62f9-485b-87c3-9b3fd1dd9019"],
+ " program the data. What does the program have to say about the significance?"
+}], "Text",
+ CellChangeTimes->{{3.87722481742729*^9, 3.877225114327257*^9}, {
+  3.87722515513589*^9, 3.877225241197978*^9}, {3.877225575985876*^9, 
+  3.877225595605629*^9}},ExpressionUUID->"6be3b409-545a-4c47-afb7-\
+07bf07b7f121"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "3. The Paired ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"t", "-", "Test"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "da4aae51-8416-44c0-aa1c-ba9cfe5a283a"],
+ " Again"
+}], "Subsection",
+ CellChangeTimes->{{3.8713830600656424`*^9, 3.871383085838428*^9}, 
+   3.87199382472436*^9, {3.87199851398885*^9, 3.871998515158553*^9}, {
+   3.871998773166749*^9, 3.8719988089823017`*^9}, {3.872440166696653*^9, 
+   3.872440172051412*^9}, {3.875996246691972*^9, 3.875996273579298*^9}, {
+   3.8759974606926537`*^9, 3.8759974652033443`*^9}, {3.875997901960972*^9, 
+   3.875997906494639*^9}, {3.875998085547489*^9, 3.875998092640204*^9}, {
+   3.875999367239081*^9, 3.875999370051594*^9}, {3.876743301253574*^9, 
+   3.8767433052356367`*^9}, {3.877222838271246*^9, 3.8772228475974503`*^9}, {
+   3.877224522657844*^9, 3.8772245334466467`*^9}, {3.877225252448217*^9, 
+   3.877225254731991*^9}, {3.877225512917965*^9, 
+   3.877225513030892*^9}},ExpressionUUID->"4140c6be-662a-45f5-acd1-\
+7abcb5364715"],
+
+Cell["\<\
+I\[CloseCurlyQuote]m going to re-do the fake data, and make it jump around \
+less. The difference in the means will still be 8. There are still 5 subjects.\
+\>", "Text",
+ CellChangeTimes->{{3.87722481742729*^9, 3.877225114327257*^9}, {
+  3.87722515513589*^9, 3.877225241197978*^9}, {3.877225272957321*^9, 
+  3.877225312500626*^9}},ExpressionUUID->"0c978393-5efb-4517-82cc-\
+4ab5a3cae88b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TableForm", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<\>\"", ",", " ", "\"\<Medicated (Left) Arm\>\"", ",", " ", 
+      "\"\<Unmedicated (Right) Arm\>\""}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Bri\>\"", ",", " ", "18", ",", " ", "25"}], "}"}], ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Bra\>\"", ",", " ", "21", ",", " ", "27"}], "}"}], ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Che\>\"", ",", " ", "3", ",", " ", "12"}], "}"}], ",", " ", 
+    
+    RowBox[{"{", 
+     RowBox[{"\"\<Cla\>\"", ",", " ", "7", ",", " ", "17"}], "}"}], ",", " ", 
+    
+    RowBox[{"{", 
+     RowBox[{"\"\<Max\>\"", ",", " ", "12", ",", " ", "20"}], "}"}]}], "}"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.877224563360969*^9, 3.8772247211184263`*^9}, {
+  3.877225124684099*^9, 3.877225130049831*^9}, {3.8772253294008083`*^9, 
+  3.877225367513788*^9}, {3.877225435847582*^9, 3.877225447759733*^9}, {
+  3.877225497890733*^9, 3.877225549942981*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"8fa73562-5d88-492a-a8b7-da2de7a52938"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"\"\>", "\<\"Medicated (Left) Arm\"\>", "\<\"Unmedicated (Right) Arm\
+\"\>"},
+    {"\<\"Bri\"\>", "18", "25"},
+    {"\<\"Bra\"\>", "21", "27"},
+    {"\<\"Che\"\>", "3", "12"},
+    {"\<\"Cla\"\>", "7", "17"},
+    {"\<\"Max\"\>", "12", "20"}
+   },
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.877225522311186*^9, 3.877225550327273*^9}},
+ CellLabel->
+  "Out[6]//TableForm=",ExpressionUUID->"08c36461-8cb3-4e25-bc49-3190e9ed8a41"]
+}, Open  ]],
+
+Cell["\<\
+Do all of (a)-(d) for this less jumpy data. If things go well, even though \
+the difference in the means is still 8, it is much less likely that that \
+difference occurred by chance.
+\
+\>", "Text",
+ CellChangeTimes->{{3.8772256341253023`*^9, 3.877225681545813*^9}, {
+  3.8772259956640167`*^9, 
+  3.877226003238945*^9}},ExpressionUUID->"ae0f32b8-b6d0-4c12-b967-\
+d26cfc1ed26a"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[TextData[{
+ "Discussion: It is a bit of a stretch, because we haven\[CloseCurlyQuote]t \
+done the theory of the ",
+ Cell[BoxData[
+  FormBox["t", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "8f2869c4-979e-4c88-8cb2-d2ec8dc5497e"],
+ "-test. We have just claimed it is a good test. I haven\[CloseCurlyQuote]t \
+been through the theory myself. But I can see that what the ",
+ Cell[BoxData[
+  FormBox["t", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "8113ea68-ff06-4dc6-b422-7a95aecd3619"],
+ "-test is doing is very much like what we did in 1(d) and 1(e).\n\nMore \
+Thought: Try to compare 2 and 3 and see why making the data less jumpy makes \
+the difference of 8 more significant."
+}], "Subtitle",
+ CellChangeTimes->{{3.871430751344658*^9, 3.871430776838911*^9}, {
+  3.8719935421166697`*^9, 3.871993550674225*^9}, {3.87199378491018*^9, 
+  3.871993808590932*^9}, {3.872440003785226*^9, 3.872440008296516*^9}, {
+  3.875982695891411*^9, 3.875982698614297*^9}, {3.876743081926457*^9, 
+  3.876743084266677*^9}, {3.876743149504279*^9, 3.8767431793387947`*^9}, {
+  3.876743229152956*^9, 3.8767432927484694`*^9}, {3.87674741671094*^9, 
+  3.876747447614367*^9}, {3.8772222506924143`*^9, 3.877222535383209*^9}, {
+  3.877222570448797*^9, 3.877222831285266*^9}, {3.877224005444963*^9, 
+  3.877224037010944*^9}, {3.877224352626997*^9, 3.877224364473769*^9}, {
+  3.8772243969747334`*^9, 3.877224434414727*^9}, {3.8772260077518463`*^9, 
+  3.877226203280978*^9}},
+ FontSize->16,
+ FontSlant->"Italic",ExpressionUUID->"d5c1e965-43d9-4557-8ff2-e7e762aa243d"]
+},
+WindowSize->{1334, 1226},
+WindowMargins->{{-1919, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+FrontEndVersion->"13.1 for Mac OS X x86 (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"fdb56f20-f88b-4f34-a223-df27a3586917"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 760, 13, 67, "Section",ExpressionUUID->"47b43857-58c2-4fa2-b265-428f10ab71de"],
+Cell[CellGroupData[{
+Cell[1343, 37, 1988, 30, 263, "Subtitle",ExpressionUUID->"b96dcb3f-f75b-48bf-aaac-47d330c376ac"],
+Cell[CellGroupData[{
+Cell[3356, 71, 696, 10, 54, "Subsection",ExpressionUUID->"c4d68ccc-9dc0-41f2-b33a-453426ae1e1a"],
+Cell[4055, 83, 5783, 161, 844, "Text",ExpressionUUID->"038bc76f-71f2-4f5d-8ee0-2de04a1a9e76"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9887, 250, 1479, 31, 70, "Subtitle",ExpressionUUID->"a30c0998-6ddb-436f-97fc-0a753e6f5d57"],
+Cell[CellGroupData[{
+Cell[11391, 285, 916, 18, 54, "Subsection",ExpressionUUID->"4d882a8c-5592-4019-b634-b3057b75c46f"],
+Cell[CellGroupData[{
+Cell[12332, 307, 931, 22, 30, "Input",ExpressionUUID->"e97f5bce-248f-44b0-8981-73ce616f5c78"],
+Cell[13266, 331, 783, 22, 135, "Output",ExpressionUUID->"ecf64061-b3eb-4f7b-85f1-955990773dea"]
+}, Open  ]],
+Cell[14064, 356, 1864, 36, 265, "Text",ExpressionUUID->"6be3b409-545a-4c47-afb7-07bf07b7f121"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15965, 397, 1023, 20, 54, "Subsection",ExpressionUUID->"4140c6be-662a-45f5-acd1-7abcb5364715"],
+Cell[16991, 419, 398, 7, 35, "Text",ExpressionUUID->"0c978393-5efb-4517-82cc-4ab5a3cae88b"],
+Cell[CellGroupData[{
+Cell[17414, 430, 1084, 25, 30, "Input",ExpressionUUID->"8fa73562-5d88-492a-a8b7-da2de7a52938"],
+Cell[18501, 457, 809, 22, 135, "Output",ExpressionUUID->"08c36461-8cb3-4e25-bc49-3190e9ed8a41"]
+}, Open  ]],
+Cell[19325, 482, 386, 9, 58, "Text",ExpressionUUID->"ae0f32b8-b6d0-4c12-b967-d26cfc1ed26a"]
+}, Open  ]]
+}, Open  ]],
+Cell[19738, 495, 1589, 29, 109, "Subtitle",ExpressionUUID->"d5c1e965-43d9-4557-8ff2-e7e762aa243d"]
+}
+]
+*)
+

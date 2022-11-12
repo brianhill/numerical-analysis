@@ -24,7 +24,7 @@ See also: [Daily Schedule Term 2](./daily_schedule_term_2.html)
 
 ### Week 11 &mdash; Statistical Tests, Concluded &mdash; Numerical Methods
 
-* Preparation for Tuesday, Nov. 15 &mdash; Study the [&chi;-Squared Test](./resources/StatisticalTests.pdf) (from [JMP (maker of SAS))](https://www.jmp.com/en_us/statistics-knowledge-portal) and the program on pp. 118-120 of the *HP-25 Applications Programs* book &mdash; Type in the program and do the example on p. 120 to make sure it works
+* Preparation for Tuesday, Nov. 15 &mdash; [Problem Set 9](./assignments/PS09.nb.pdf) &mdash; Study the [&chi;-Squared Test](./resources/StatisticalTests.pdf) (from [JMP (maker of SAS))](https://www.jmp.com/en_us/statistics-knowledge-portal) and the program on pp. 118-120 of the *HP-25 Applications Programs* book &mdash; Type in the program and do the example on p. 120 to make sure it works
 * Tuesday, Nov. 15 &mdash; Discussion of &chi-Squared Test
 * Friday, Nov. 18 &mdash;
 
