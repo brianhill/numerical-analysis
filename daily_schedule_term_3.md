@@ -19,12 +19,12 @@ See also: [Daily Schedule Term 2](./daily_schedule_term_2.html)
 
 * Preparation for Tuesday, Nov. 8 &mdash; [Problem Set 8](./assignments/PS08.nb.pdf) on Uniform and Binomial Distributions
 * Tuesday, Nov. 8 &mdash; The Binomial Distribution
-* Preparation for Friday, Nov. 11 &mdash; Study the [t-Test](./resources/StatisticalTests-t-Test.pdf) (from [JMP (maker of SAS)](https://www.jmp.com/en_us/statistics-knowledge-portal/t-test.html) and the program on pp. 121-123 of the *HP-25 Applications Programs* book &mdash; Type in the program and do the example on p. 123 to make sure it works
+* Preparation for Friday, Nov. 11 &mdash; Study the [t-Test](./resources/StatisticalTests-t-Test.pdf) (from [JMP (maker of SAS)](https://www.jmp.com/en_us/statistics-knowledge-portal/t-test.html)) and the program on pp. 121-123 of the *HP-25 Applications Programs* book &mdash; Type in the program and do the example on p. 123 to make sure it works
 * Friday, Nov. 11 &mdash; Discussion of paired t-Test
 
 ### Week 11 &mdash; Statistical Tests, Concluded &mdash; Numerical Methods
 
-* Preparation for Tuesday, Nov. 15 &mdash; [Problem Set 9](./assignments/PS09.nb.pdf) &mdash; Study the [&chi;-Squared Test](./resources/StatisticalTests-ChiSquared.pdf) (also from [JMP (maker of SAS)](https://www.jmp.com/en_us/statistics-knowledge-portal/chi-square-test.html) and the program on pp. 118-120 of the *HP-25 Applications Programs* book &mdash; Type in the program and do the example on p. 120 to make sure it works
+* Preparation for Tuesday, Nov. 15 &mdash; [Problem Set 9](./assignments/PS09.nb.pdf) &mdash; Study the [&chi;-Squared Test](./resources/StatisticalTests-ChiSquared.pdf) (also from [JMP (maker of SAS)](https://www.jmp.com/en_us/statistics-knowledge-portal/chi-square-test.html)) and the program on pp. 118-120 of the *HP-25 Applications Programs* book &mdash; Type in the program and do the example on p. 120 to make sure it works
 * Tuesday, Nov. 15 &mdash; Discussion of &chi-Squared Test
 * Friday, Nov. 18 &mdash;
 
