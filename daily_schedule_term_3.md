@@ -25,26 +25,30 @@ See also: [Daily Schedule Term 2](./daily_schedule_term_2.html)
 ### Week 11 &mdash; Statistical Tests, Concluded &mdash; Numerical Methods
 
 * Preparation for Tuesday, Nov. 15 &mdash; [Problem Set 9](./assignments/PS09.nb.pdf) &mdash; Study the [&chi;-Squared Test](./resources/StatisticalTests-ChiSquared.pdf) (also from [JMP (maker of SAS)](https://www.jmp.com/en_us/statistics-knowledge-portal/chi-square-test.html)) and the program on pp. 118-120 of the *HP-25 Applications Programs* book &mdash; Type in the program and do the example on p. 120 to make sure it works
-* Tuesday, Nov. 15 &mdash; Discussion of &chi;-Squared Test
-* Friday, Nov. 18 &mdash;
+* Tuesday, Nov. 15 &mdash; Discussion of &chi;-squared Test
+* Friday, Nov. 18 &mdash; Class will prepare for and lead discussion of Newton's method &mdash; pp. 71-99 of Bill &amp; Dave (which takes us well into WWII)
 
 ### Week 12 &mdash; Numerical Methods, Continued
 
-* Saturday, Nov. 19 &mdash;
+*Makeup class on weekend before Thanksgiving*
+
+* Sunday, Nov. 20 &mdash; A look at various historical materials
 * Tuesday, Nov. 22 &mdash;
 
 ### Week 13 &mdash; Numerical Methods, Concluded
 
+*Odd schedule this week due to Friday all-hands preg check*
+
 * Tuesday, Nov. 29 &mdash;
-* Friday, Dec. 2 &mdash; 
+* Thursday, Dec. 1 &mdash; 
 
-### Week 14 &mdash; Special Projects or Additional Topics?
+### Week 14 &mdash; Term 3 Exam &mdash; Special Projects
 
-* Tuesday, Dec. 6 &mdash; Term 3 Exam on this Day?
-* Friday, Dec. 9 &mdash;
+*Special Projects: Choose a program we have not worked through or extend a program that we have already worked through. Explain the theory. Illustrate it with examples. We will have four 15-minute presentations (I could do one too?) on the last day.*
 
-### Week 15
+* Tuesday, Dec. 6 &mdash; Term 3 Exam
+* Friday, Dec. 9 &mdash; Discuss Special Project Ideas
 
-* Tuesday, Dec. 13 &mdash; Special Projects or Additional Topics?
+### Week 15 &mdash; Present Special Projects
 
-
+* Tuesday, Dec. 13 &mdash; Special Project Presentations
