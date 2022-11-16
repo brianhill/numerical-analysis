@@ -32,7 +32,7 @@ See also: [Daily Schedule Term 2](./daily_schedule_term_2.html)
 
 *Makeup class on weekend before Thanksgiving*
 
-* Sunday, Nov. 20 &mdash; A look at various historical materials
+* 2:30pm, Sunday, Nov. 20 &mdash; A look at various historical materials
 * Tuesday, Nov. 22 &mdash;
 
 ### Week 13 &mdash; Numerical Methods, Concluded
