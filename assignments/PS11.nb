@@ -1,0 +1,510 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     20796,        502]
+NotebookOptionsPosition[     19805,        475]
+NotebookOutlinePosition[     20256,        493]
+CellTagsIndexPosition[     20213,        490]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["Numerical Analysis \[LongDash] Problem Set 11 \[LongDash] Differential \
+Equations", "Section",
+ CellChangeTimes->{{3.8713829840911713`*^9, 3.871382989885779*^9}, {
+  3.871383097198255*^9, 3.871383109472487*^9}, {3.871383326862706*^9, 
+  3.8713833808344088`*^9}, {3.871426734155431*^9, 3.871426735236566*^9}, {
+  3.871993556107719*^9, 3.8719935809500523`*^9}, {3.872439966969939*^9, 
+  3.872440000871526*^9}, {3.875982640087123*^9, 3.8759826505652122`*^9}, {
+  3.8759826818176603`*^9, 3.875982684056402*^9}, {3.876001209312512*^9, 
+  3.87600122116895*^9}, {3.876743067971345*^9, 3.876743074444668*^9}, {
+  3.877222233126729*^9, 3.877222266768793*^9}, {3.878719983803261*^9, 
+  3.878719994908884*^9}},ExpressionUUID->"47b43857-58c2-4fa2-b265-\
+428f10ab71de"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Due Thursday, Dec. 1 (beginning of class)
+
+This problem set does extremely sophisticated stuff based on the quite simple \
+theory and program we worked through last week.
+
+The idea is to: (a) give you two additional examples to illustrate the \
+theory, and (b) to give you a sense of how a real field that you might be \
+interested in (the field of mathematical ecology) can use the techniques to \
+find solutions to ecological models.
+
+It will be a good challenge to code these differential equations in lines \
+17-30 of the program on p. 78, which is all you have available. If you can\
+\[CloseCurlyQuote]t do it in only 14 lines, our HP-25 emulation actually \
+allows for more than 49 steps, unlike a real HP-25.\
+\>", "Subtitle",
+ CellChangeTimes->{{3.871430751344658*^9, 3.871430776838911*^9}, {
+  3.8719935421166697`*^9, 3.871993550674225*^9}, {3.87199378491018*^9, 
+  3.871993808590932*^9}, {3.872440003785226*^9, 3.872440008296516*^9}, {
+  3.875982695891411*^9, 3.875982698614297*^9}, {3.876743081926457*^9, 
+  3.876743084266677*^9}, {3.876743149504279*^9, 3.8767431793387947`*^9}, {
+  3.876743229152956*^9, 3.8767432927484694`*^9}, {3.87674741671094*^9, 
+  3.876747447614367*^9}, {3.8772222506924143`*^9, 3.877222535383209*^9}, {
+  3.877222570448797*^9, 3.877222831285266*^9}, {3.878719998644246*^9, 
+  3.8787199994544764`*^9}, {3.878723272138772*^9, 3.878723485765641*^9}, {
+  3.878723673492532*^9, 3.8787236895017347`*^9}, {3.878723739135792*^9, 
+  3.878723791391941*^9}, {3.87872382767309*^9, 3.878723902429697*^9}},
+ FontSize->16,
+ FontSlant->"Italic",ExpressionUUID->"b96dcb3f-f75b-48bf-aaac-47d330c376ac"],
+
+Cell[CellGroupData[{
+
+Cell["1. The Allee Effect", "Subsection",
+ CellChangeTimes->{{3.8713830600656424`*^9, 3.871383085838428*^9}, 
+   3.87199382472436*^9, {3.87199851398885*^9, 3.871998515158553*^9}, {
+   3.871998773166749*^9, 3.8719988089823017`*^9}, {3.872440166696653*^9, 
+   3.872440172051412*^9}, {3.875996246691972*^9, 3.875996273579298*^9}, {
+   3.8759974606926537`*^9, 3.8759974652033443`*^9}, {3.875997901960972*^9, 
+   3.875997906494639*^9}, {3.875998085547489*^9, 3.875998092640204*^9}, {
+   3.875999367239081*^9, 3.875999370051594*^9}, {3.876743301253574*^9, 
+   3.8767433052356367`*^9}, {3.877222838271246*^9, 3.8772228475974503`*^9}, {
+   3.878720077403716*^9, 3.8787200821070004`*^9}, {3.878720406024432*^9, 
+   3.87872041145886*^9}, {3.878723924871557*^9, 
+   3.878723926323277*^9}},ExpressionUUID->"c4d68ccc-9dc0-41f2-b33a-\
+453426ae1e1a"],
+
+Cell[TextData[{
+ "In ecology, the population of a species is an interesting thing to model. A \
+species grows when there is plenty of resources. It falls when resources are \
+exhausted and/or too much waste is generated. So it would seem that if there \
+are very few of a species, then there are plenty of resources and not much \
+waste, and the population should grow. However(!), there is an additional way \
+that it can fall: the population can fall because there are so few of a \
+species that they cannot find mates. For example, what if there is only one \
+mountain lion in our entire valley. Even if it has plenty of rabbits to eat, \
+it may not find a mate. This is called the Allee effect.\n\nThere is a \
+differential equation for population growth that takes this into account:\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"P", "'"}], 
+      RowBox[{"(", "t", ")"}]}], "\[Congruent]", 
+     FractionBox[
+      RowBox[{"d", "\[VeryThinSpace]", "P"}], 
+      RowBox[{"d", "\[VeryThinSpace]", "t"}]], "\[Congruent]", 
+     RowBox[{
+      UnderscriptBox["limit", 
+       RowBox[{
+       "as", " ", "teeny", " ", "as", " ", "\[CapitalDelta]", 
+        "\[VeryThinSpace]", "t", " ", "can", " ", "be", " ", "made"}]], 
+      FractionBox[
+       RowBox[{
+       "\[CapitalDelta]", "\[VeryThinSpace]", "P", "\[VeryThinSpace]"}], 
+       RowBox[{"\[CapitalDelta]", "\[VeryThinSpace]", "t"}]]}]}], "=", 
+    RowBox[{"r", "\[VeryThinSpace]", 
+     RowBox[{"P", "\[VeryThinSpace]\[VeryThinSpace]", "(", 
+      RowBox[{
+       FractionBox["P", "a"], "-", "1"}], ")"}], 
+     RowBox[{"(", 
+      RowBox[{"1", "-", 
+       FractionBox["P", "k"]}], ")"}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "e087686a-8354-4e42-b9fb-5d250cb5b3f8"],
+ "\n\nIn this equation, ",
+ Cell[BoxData[
+  FormBox["r", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "f8dc71c0-b7b6-44f7-8b68-7b4f634fa8da"],
+ ", ",
+ Cell[BoxData[
+  FormBox["a", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "4b94bc0f-b37a-4399-a58f-4009dc4e2a34"],
+ ", and ",
+ Cell[BoxData[
+  FormBox["k", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "6b5188dc-e2de-4722-9a6e-db8ba57b6853"],
+ " are just numbers. The number ",
+ Cell[BoxData[
+  FormBox["k", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "bb7d836d-5c59-4130-9f97-597a3e83c273"],
+ " has the interpretation of being the stable population amount. The number \
+",
+ Cell[BoxData[
+  FormBox["a", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "72653e84-e6f9-49f9-9de0-8b57b3ec84d4"],
+ " has the interpretation of being the population amount below which mates \
+get too hard to find. The number ",
+ Cell[BoxData[
+  FormBox["r", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "5548917f-dd56-4866-9095-19913729ac48"],
+ " just sets the time scale: do booms happen on the scale of hours (as in \
+mold on warm food), or decades (as in humans on new terrain)?\n\nWe are going \
+to choose ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"r", "=", "1"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "4e197fd5-5537-4f33-b1ed-4647c9561601"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"a", "=", "2"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "96b83bf7-578f-465f-b7eb-6cbf8c8262ca"],
+ ", and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"k", "=", "5"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "610fcd51-a7b6-495d-829f-319543808d86"],
+ ". So the equation is:\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"P", "'"}], 
+     RowBox[{"(", "t", ")"}]}], "=", 
+    RowBox[{
+     RowBox[{"P", "\[VeryThinSpace]\[VeryThinSpace]", "(", 
+      RowBox[{
+       FractionBox["P", "2"], "-", "1"}], ")"}], 
+     RowBox[{"(", 
+      RowBox[{"1", "-", 
+       FractionBox["P", "5"]}], ")"}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "0bdf1b2b-7c25-491f-932f-2cbc965fbddc"],
+ "\n\n(a) Apply the differential equations solver to this equation with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"P", "(", "0", ")"}], "=", "1"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "6cd341a6-98af-43e5-8663-0faa8b277c74"],
+ ", where we expect collapse.\n\n(b) Apply it again with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"P", "(", "0", ")"}], "=", "3"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "9e54766a-f2c6-4de9-8d09-4985b564e213"],
+ ", where we expect growth toward equilibrium.\n\n(c) Apply it one more time \
+with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"P", "(", "0", ")"}], "=", "10"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "c34171ec-f55e-4b14-9b09-04887218cb9c"],
+ ", where we expect a decline toward equilibrium.\n\nMake tables and graphs \
+for all three cases."
+}], "Text",
+ CellChangeTimes->{{3.87599701030615*^9, 3.8759970272717657`*^9}, {
+   3.8759970632592707`*^9, 3.8759975070309896`*^9}, {3.875997580898942*^9, 
+   3.875997749368722*^9}, {3.8759978235947237`*^9, 3.875997916132099*^9}, {
+   3.875997960732031*^9, 3.8759980974061203`*^9}, {3.8759981528715677`*^9, 
+   3.8759982391585407`*^9}, {3.8759996520180197`*^9, 3.875999653345627*^9}, {
+   3.8760022880376587`*^9, 3.87600230193115*^9}, {3.876743397912204*^9, 
+   3.876743546128903*^9}, {3.876743652429817*^9, 3.876743722819129*^9}, {
+   3.876743788586364*^9, 3.876743828714082*^9}, {3.8767440423503637`*^9, 
+   3.8767440622964277`*^9}, {3.876747481892501*^9, 3.876747567695341*^9}, {
+   3.876747603053555*^9, 3.876747683377357*^9}, {3.877222855405285*^9, 
+   3.877223384826936*^9}, {3.877223451561428*^9, 3.8772239511392927`*^9}, {
+   3.877223993599092*^9, 3.8772239937799053`*^9}, {3.877224200441196*^9, 
+   3.8772242766017103`*^9}, {3.877224317573658*^9, 3.877224348622882*^9}, 
+   3.8787200897585077`*^9, {3.8787201227446117`*^9, 3.878720489118359*^9}, {
+   3.878720524263421*^9, 3.878721189415081*^9}, {3.87872356077977*^9, 
+   3.878723585618128*^9}, {3.878723957363275*^9, 
+   3.878723958305695*^9}},ExpressionUUID->"038bc76f-71f2-4f5d-8ee0-\
+2de04a1a9e76"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2. Eutrophication", "Subsection",
+ CellChangeTimes->{{3.8713830600656424`*^9, 3.871383085838428*^9}, 
+   3.87199382472436*^9, {3.87199851398885*^9, 3.871998515158553*^9}, {
+   3.871998773166749*^9, 3.8719988089823017`*^9}, {3.872440166696653*^9, 
+   3.872440172051412*^9}, {3.875996246691972*^9, 3.875996273579298*^9}, {
+   3.8759974606926537`*^9, 3.8759974652033443`*^9}, {3.875997901960972*^9, 
+   3.875997906494639*^9}, {3.875998085547489*^9, 3.875998092640204*^9}, {
+   3.875999367239081*^9, 3.875999370051594*^9}, {3.876743301253574*^9, 
+   3.8767433052356367`*^9}, {3.877222838271246*^9, 3.8772228475974503`*^9}, {
+   3.877224522657844*^9, 3.8772245334466467`*^9}, {3.8787213055935*^9, 
+   3.878721330014741*^9}},ExpressionUUID->"4d882a8c-5592-4019-b634-\
+b3057b75c46f"],
+
+Cell[TextData[{
+ "In agricultural areas, humans often put a lot of fertilizer on their crops, \
+especially phosphates, and the excess runs off into streams and then into \
+lakes. It is pretty common to see the lakes covered with a thick mat of \
+algae. This isn\[CloseCurlyQuote]t a big surprise. The algae on the surface \
+gets both fertilizer and sunlight and grows fast. The algae at the bottom of \
+the mat rots, and rotting consumes oxygen, and the animal life underneath the \
+algae bloom suffocates. (I am not an ecologist, but this is the basic idea. \
+Feel free to read up on eutrophication if you want more detail and accuracy.)\
+\n\nEutrophication can be modeled by focusing on the phosphorus \
+concentration:\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"P", "'"}], 
+      RowBox[{"(", "t", ")"}]}], "\[Congruent]", 
+     FractionBox[
+      RowBox[{"d", "\[VeryThinSpace]", "P"}], 
+      RowBox[{"d", "\[VeryThinSpace]", "t"}]], "\[Congruent]", 
+     RowBox[{
+      UnderscriptBox["limit", 
+       RowBox[{
+       "as", " ", "teeny", " ", "as", " ", "\[CapitalDelta]", 
+        "\[VeryThinSpace]", "t", " ", "can", " ", "be", " ", "made"}]], 
+      FractionBox[
+       RowBox[{
+       "\[CapitalDelta]", "\[VeryThinSpace]", "P", "\[VeryThinSpace]"}], 
+       RowBox[{"\[CapitalDelta]", "\[VeryThinSpace]", "t"}]]}]}], "=", 
+    RowBox[{"I", "-", 
+     RowBox[{"s", "\[VeryThinSpace]", "P"}], "+", 
+     RowBox[{"r", 
+      StyleBox[
+       FractionBox[
+        SuperscriptBox["P", "n"], 
+        RowBox[{
+         SuperscriptBox["M", "n"], "+", 
+         SuperscriptBox["P", "n"]}]],
+       FontSize->18]}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "57bb0981-6123-471e-b78b-0788a46c9279"],
+ "\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"I", ",", " ", "s", ",", " ", "M", ",", " ", 
+    RowBox[{"and", " ", "n"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "c4151a83-872f-4c3c-9ac2-2c065174e6ba"],
+ " are just numbers that ecologists put into the model. ",
+ Cell[BoxData[
+  FormBox["I", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "c0e9acee-4efb-427e-bbec-fc1937638ae8"],
+ " is the input rate of the phosphorus into the body of water. ",
+ Cell[BoxData[
+  FormBox["s", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "0f333211-b6bd-4cac-834c-f6305abd92f1"],
+ " sets the rate of outflow and sedimentation.\n\nThe last term is the one \
+that is responsible for the algae explosion if it dominates. The \
+interpretation is that it represents the spread into the water of the \
+phosphorus from the sediment. If ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"P", "\[LessLess]", "M"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "04b01aeb-e207-4a81-b1cb-c2b256505490"],
+ ", the last term is negligible. If ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"P", "\[GreaterGreater]", "M"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "1ed30d0b-5e09-43ba-8d51-47fb015ea5e8"],
+ " the last term simplifies to ",
+ Cell[BoxData[
+  FormBox["r", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "175a4b55-b053-4d85-95f6-ffb8312a8eb9"],
+ ". Don\[CloseCurlyQuote]t take my word for it. Definitely contemplate those \
+two cases and understand the behavior of the last term.\n\nA simplified \
+version of this model has ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"s", "=", "1"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "2a00f4a6-9c2f-4509-b25e-0f29ad3abdf9"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"M", "=", "1"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "2234ff57-d15b-454d-846a-9d25f532ff82"],
+ ". This simplification actually just corresponds to changing the units for \
+time and the units for concentration. So we are down to:\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"P", "'"}], 
+     RowBox[{"(", "t", ")"}]}], "=", 
+    RowBox[{"I", "-", "\[VeryThinSpace]", "P", "+", 
+     RowBox[{"r", 
+      StyleBox[
+       FractionBox[
+        SuperscriptBox["P", "n"], 
+        RowBox[{"1", " ", "+", " ", 
+         SuperscriptBox["P", "n"]}]],
+       FontSize->18]}]}]}], TraditionalForm]],ExpressionUUID->
+  "b621c4f6-7ff1-4abf-b90c-948468e772f7"],
+ "\n\n",
+ Cell[BoxData[
+  FormBox["r", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "7a020dea-9c44-458d-85d0-869e39db7161"],
+ " and ",
+ Cell[BoxData[
+  FormBox["n", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "241b3339-503d-4206-a90b-7aaf122097b7"],
+ " are the next things that have to be chosen. Take ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"r", "=", "5"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "8ee062a1-be38-457b-8aef-c4a67ac1e7f1"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"n", "=", "8"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "1cf161f0-5ea9-421f-af11-54f2a96ffeef"],
+ ". (Don\[CloseCurlyQuote]t ask me for the experimental justification for \
+those choices. From here on, I am just making an example that I don\
+\[CloseCurlyQuote]t personally have any particular understanding of even \
+though up to this point, I understood the ecologist\[CloseCurlyQuote]s \
+model.) So now we have:\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"P", "'"}], 
+     RowBox[{"(", "t", ")"}]}], "=", 
+    RowBox[{"I", "-", "\[VeryThinSpace]", "P", "+", 
+     RowBox[{"5", 
+      StyleBox[
+       FractionBox[
+        SuperscriptBox["P", "8"], 
+        RowBox[{"1", " ", "+", " ", 
+         SuperscriptBox["P", "8"]}]],
+       FontSize->18]}]}]}], TraditionalForm]],ExpressionUUID->
+  "a8ef8d7b-40da-4e0d-a47a-6ccfbd633568"],
+ "\n\nThe last thing to choose is ",
+ Cell[BoxData[
+  FormBox["I", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "ec966f0b-c988-4a50-953a-82772f991578"],
+ ". The interesting thing about this differential equation is that it has a \
+completely different behavior for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"I", "=", 
+    RowBox[{"1", "/", "4"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "ebb0dcc4-eb78-491d-81c0-c28c4fc586c7"],
+ " vs. ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"I", "=", 
+    RowBox[{"3", "/", "4"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "f0754250-d81f-4c33-92ff-e8d9a26fcfc0"],
+ ".\n\nIn other words, a small change in the input rate can result in a wild \
+change in how much algae bloom forms, and this is exactly what happens in the \
+real world: a lake seems fine until the conditions change a little (perhaps a \
+modest decrease in rainfall or a modest increase in fertilizer, either of \
+which have the effect of changing the concentration of the  phosphorus in the \
+input), and then it suddenly eutrophies.\n\nWe would like to see if we can \
+see this sensitive effect. \n\n(a) Apply the differential equations solver to \
+this equation with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"P", "(", "0", ")"}], "=", "1"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "1dfdb0f1-7010-460b-b25d-53548787746e"],
+ ", and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"a", "=", 
+    RowBox[{"1", "/", "4"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "600b17ea-bc3b-4ea5-b862-6fcc37d62c79"],
+ ". With some luck, we will see that the phosphorus settles out into the \
+sediment.\n\n(b) Apply it again with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"P", "(", "0", ")"}], "=", "1"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "1a6c8645-32f5-4973-8ea0-9c0338cb939c"],
+ ", and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"a", "=", 
+    RowBox[{"3", "/", "4"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "9b159d6c-27c9-48b6-b933-d2f10ca321bb"],
+ ". We should see that the lake eutrophies.\n\nAs usual, make tables and \
+graphs for the cases."
+}], "Text",
+ CellChangeTimes->{{3.878721356419096*^9, 3.878721471079261*^9}, {
+  3.878721571384651*^9, 3.8787217295039387`*^9}, {3.878721759675503*^9, 
+  3.878721979708419*^9}, {3.878722015696692*^9, 3.878722172521234*^9}, {
+  3.87872220356035*^9, 3.87872230007342*^9}, {3.8787224944394073`*^9, 
+  3.8787226036546*^9}, {3.878722727797323*^9, 3.8787228779735117`*^9}, {
+  3.878722915452482*^9, 3.878723060473639*^9}, {3.8787231281070223`*^9, 
+  3.878723251733309*^9}, {3.878723538507036*^9, 3.878723553929027*^9}, {
+  3.878723622238227*^9, 3.878723622407473*^9}, {3.8787236678912888`*^9, 
+  3.878723668285606*^9}, {3.878724005783752*^9, 3.878724006640082*^9}, {
+  3.878724040308868*^9, 3.8787240415271673`*^9}, {3.878724079684588*^9, 
+  3.878724080572926*^9}, {3.878724110802841*^9, 
+  3.878724167307748*^9}},ExpressionUUID->"3fed3a1c-bc18-4cda-9672-\
+ce7dfbc26fcd"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1334, 1226},
+WindowMargins->{{-1919, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+FrontEndVersion->"13.1 for Mac OS X x86 (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"fdb56f20-f88b-4f34-a223-df27a3586917"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 763, 11, 67, "Section",ExpressionUUID->"47b43857-58c2-4fa2-b265-428f10ab71de"],
+Cell[CellGroupData[{
+Cell[1346, 35, 1630, 28, 219, "Subtitle",ExpressionUUID->"b96dcb3f-f75b-48bf-aaac-47d330c376ac"],
+Cell[CellGroupData[{
+Cell[3001, 67, 835, 12, 54, "Subsection",ExpressionUUID->"c4d68ccc-9dc0-41f2-b33a-453426ae1e1a"],
+Cell[3839, 81, 6229, 149, 557, "Text",ExpressionUUID->"038bc76f-71f2-4f5d-8ee0-2de04a1a9e76"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10105, 235, 782, 11, 54, "Subsection",ExpressionUUID->"4d882a8c-5592-4019-b634-b3057b75c46f"],
+Cell[10890, 248, 8887, 223, 843, "Text",ExpressionUUID->"3fed3a1c-bc18-4cda-9672-ce7dfbc26fcd"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
