@@ -40,17 +40,17 @@ See also: [Daily Schedule Term 2](./daily_schedule_term_2.html)
 
 *Odd schedule this week due to Friday all-hands preg check*
 
-* Tuesday, Nov. 29 &mdash; Introduction to Simpson's Rule
+* Tuesday, Nov. 29 &mdash; Introduction to Integrals and Simpson's Rule
 * Preparation for Thursday, Dec. 1 &mdash; Complete [Problem Set 11](./assignments/PS11.nb.pdf) on differential equations
-* Thursday, Dec. 1 &mdash; Applications of Simpson's Rule
+* Thursday, Dec. 1 &mdash; Proof of Simpson's Rule (Brian and Brandon) &mdash; Applications of Simpson's Rule
 
 ### Week 14 &mdash; Term 3 Exam &mdash; Special Projects
 
 *Special Projects: Choose a program we have not worked through or extend a program that we have already worked through. Explain the theory. Illustrate it with examples. We will have four 15-minute presentations (I could do one too?) on the last day.*
 
-* Tuesday, Dec. 6 &mdash; Term 3 Exam
-* Friday, Dec. 9 &mdash; Discuss Special Project Ideas
+* Tuesday, Dec. 6 &mdash; Term 3 Exam &mdash; There will be a statistics problem &mdash; There will be three more problems from which you will choose two: the three additional problems will be on Newton's method, on differential equations (Euler's method), and on integrals (Simpson's rule)
+* Friday, Dec. 9 &mdash; Discuss and get started on special projects
 
 ### Week 15 &mdash; Present Special Projects
 
-* Tuesday, Dec. 13 &mdash; Special Project Presentations
+* Tuesday, Dec. 13 &mdash; Special Project presentations
