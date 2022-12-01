@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     20353,        484]
-NotebookOptionsPosition[     19362,        457]
-NotebookOutlinePosition[     19813,        475]
-CellTagsIndexPosition[     19770,        472]
+NotebookDataLength[     20257,        491]
+NotebookOptionsPosition[     19266,        464]
+NotebookOutlinePosition[     19717,        482]
+CellTagsIndexPosition[     19674,        479]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -60,7 +60,8 @@ allows for more than 49 steps, unlike a real HP-25.\
   3.8787199994544764`*^9}, {3.878723272138772*^9, 3.878723485765641*^9}, {
   3.878723673492532*^9, 3.8787236895017347`*^9}, {3.878723739135792*^9, 
   3.878723791391941*^9}, {3.87872382767309*^9, 3.878723902429697*^9}, {
-  3.8787425403988667`*^9, 3.8787425484622803`*^9}},
+  3.8787425403988667`*^9, 3.8787425484622803`*^9}, {3.878863331150465*^9, 
+  3.878863340261978*^9}},
  FontSize->16,
  FontSlant->"Italic",ExpressionUUID->"b96dcb3f-f75b-48bf-aaac-47d330c376ac"],
 
@@ -370,7 +371,17 @@ time and the units for concentration. So we are down to:\n\n",
 those choices. From here on, I am just making an example that I don\
 \[CloseCurlyQuote]t personally have any particular understanding of even \
 though up to this point, I understood, and hopefully made understandable to \
-you, the ecological model.) So now we have:\n\n",
+you, the ecological model.)\n\nWith these choices for ",
+ Cell[BoxData[
+  FormBox["r", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "eea84e9a-7d11-41d8-ac87-ac6e04286c23"],
+ " and ",
+ Cell[BoxData[
+  FormBox["n", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "7d4c1d2d-5576-40da-ab64-4ed8d5522ea3"],
+ ", we have:\n\n",
  Cell[BoxData[
   FormBox[
    RowBox[{
@@ -414,8 +425,9 @@ this equation with ",
  Cell[BoxData[
   FormBox[
    RowBox[{
-    RowBox[{"P", "(", "0", ")"}], "=", "1"}], TraditionalForm]],
-  ExpressionUUID->"1dfdb0f1-7010-460b-b25d-53548787746e"],
+    RowBox[{"P", "(", "0", ")"}], "=", 
+    RowBox[{"1", "/", "2"}]}], TraditionalForm]],ExpressionUUID->
+  "1dfdb0f1-7010-460b-b25d-53548787746e"],
  ", and ",
  Cell[BoxData[
   FormBox[
@@ -427,8 +439,9 @@ sediment.\n\n(b) Apply it again with ",
  Cell[BoxData[
   FormBox[
    RowBox[{
-    RowBox[{"P", "(", "0", ")"}], "=", "1"}], TraditionalForm]],
-  ExpressionUUID->"1a6c8645-32f5-4973-8ea0-9c0338cb939c"],
+    RowBox[{"P", "(", "0", ")"}], "=", 
+    RowBox[{"1", "/", "2"}]}], TraditionalForm]],ExpressionUUID->
+  "1a6c8645-32f5-4973-8ea0-9c0338cb939c"],
  ", and ",
  Cell[BoxData[
   FormBox[
@@ -438,20 +451,14 @@ sediment.\n\n(b) Apply it again with ",
  ". We should see that the lake eutrophies.\n\nAs usual, make tables and \
 graphs for the cases."
 }], "Text",
- CellChangeTimes->{{3.878721356419096*^9, 3.878721471079261*^9}, {
-  3.878721571384651*^9, 3.8787217295039387`*^9}, {3.878721759675503*^9, 
-  3.878721979708419*^9}, {3.878722015696692*^9, 3.878722172521234*^9}, {
-  3.87872220356035*^9, 3.87872230007342*^9}, {3.8787224944394073`*^9, 
-  3.8787226036546*^9}, {3.878722727797323*^9, 3.8787228779735117`*^9}, {
-  3.878722915452482*^9, 3.878723060473639*^9}, {3.8787231281070223`*^9, 
-  3.878723251733309*^9}, {3.878723538507036*^9, 3.878723553929027*^9}, {
-  3.878723622238227*^9, 3.878723622407473*^9}, {3.8787236678912888`*^9, 
-  3.878723668285606*^9}, {3.878724005783752*^9, 3.878724006640082*^9}, {
-  3.878724040308868*^9, 3.8787240415271673`*^9}, {3.878724079684588*^9, 
-  3.878724080572926*^9}, {3.878724110802841*^9, 3.878724167307748*^9}, {
-  3.878742520497733*^9, 3.8787425284655743`*^9}, {3.8787435760744553`*^9, 
-  3.878743588066424*^9}},ExpressionUUID->"3fed3a1c-bc18-4cda-9672-\
-ce7dfbc26fcd"]
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQAWIQbZPZ+1Lo2RtHv85H30G0gH8OizCQdlEwkADRO+Z+
+lQbRcavLzEG0r/c3axD9ee0EfxCd/K4wGESXRjbFg+gF/OfKQXTNp5JWEL2m
++ecUEM2kvn85iN5TlbcGRPNq9O8D0btymI+D7Ssvvwail1gG/ALR03fZ/gHR
+ffOPs4gAaVaus2C6oLWGC0SvV+4E0/UiO01AdG/1FTBt/4jTEkT33TMA06ov
+vtqC6MxQITsQ/WDDTUcQLXTzpQeIznvLby8LpP885XMA0R8SmQ6DaFWFpiMg
++gLvPPMIIK2UXWUBolXUc5xA9IHdyi4gGgBkqKJe
+  "],ExpressionUUID->"3fed3a1c-bc18-4cda-9672-ce7dfbc26fcd"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -476,14 +483,14 @@ CellTagsIndex->{}
 Notebook[{
 Cell[558, 20, 763, 11, 67, "Section",ExpressionUUID->"47b43857-58c2-4fa2-b265-428f10ab71de"],
 Cell[CellGroupData[{
-Cell[1346, 35, 1683, 29, 219, "Subtitle",ExpressionUUID->"b96dcb3f-f75b-48bf-aaac-47d330c376ac"],
+Cell[1346, 35, 1732, 30, 219, "Subtitle",ExpressionUUID->"b96dcb3f-f75b-48bf-aaac-47d330c376ac"],
 Cell[CellGroupData[{
-Cell[3054, 68, 835, 12, 54, "Subsection",ExpressionUUID->"c4d68ccc-9dc0-41f2-b33a-453426ae1e1a"],
-Cell[3892, 82, 6229, 149, 557, "Text",ExpressionUUID->"038bc76f-71f2-4f5d-8ee0-2de04a1a9e76"]
+Cell[3103, 69, 835, 12, 54, "Subsection",ExpressionUUID->"c4d68ccc-9dc0-41f2-b33a-453426ae1e1a"],
+Cell[3941, 83, 6229, 149, 557, "Text",ExpressionUUID->"038bc76f-71f2-4f5d-8ee0-2de04a1a9e76"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[10158, 236, 782, 11, 54, "Subsection",ExpressionUUID->"4d882a8c-5592-4019-b634-b3057b75c46f"],
-Cell[10943, 249, 8391, 204, 843, "Text",ExpressionUUID->"3fed3a1c-bc18-4cda-9672-ce7dfbc26fcd"]
+Cell[10207, 237, 782, 11, 54, "Subsection",ExpressionUUID->"4d882a8c-5592-4019-b634-b3057b75c46f"],
+Cell[10992, 250, 8246, 210, 889, "Text",ExpressionUUID->"3fed3a1c-bc18-4cda-9672-ce7dfbc26fcd"]
 }, Open  ]]
 }, Open  ]]
 }

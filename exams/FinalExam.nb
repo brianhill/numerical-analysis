@@ -1,0 +1,370 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12859,        362]
+NotebookOptionsPosition[     11464,        332]
+NotebookOutlinePosition[     11861,        348]
+CellTagsIndexPosition[     11818,        345]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Final Exam", "Chapter",
+ CellChangeTimes->{{3.879027617590579*^9, 
+  3.8790276412364798`*^9}},ExpressionUUID->"d64a1196-af85-405f-9fb6-\
+7ea5f6b82fc6"],
+
+Cell["\<\
+During this exam, you are welcome to use your copies of the HP-25 Owner\
+\[CloseCurlyQuote]s Handbook and the HP-25 Applications Programs book, and \
+your notes and problem sets, but not the internet.\
+\>", "Subtitle",
+ CellChangeTimes->{{3.8790276958222723`*^9, 3.879027713044964*^9}, {
+  3.879034875687742*^9, 3.879034900550788*^9}},
+ FontSize->18,ExpressionUUID->"dd513414-7e71-431c-9085-fc8fd42a08db"],
+
+Cell["Problem 1 \[LongDash] Statistics \[LongDash] Power Law Fit", "Section",
+ CellChangeTimes->{{3.8790277387405376`*^9, 3.879027744095573*^9}, {
+  3.87903639665082*^9, 
+  3.879036401274899*^9}},ExpressionUUID->"cd9249a5-bc54-4581-9fea-\
+97650abed18d"],
+
+Cell["Problem 2 \[LongDash] Differential Equations \[LongDash] Euler\
+\[CloseCurlyQuote]s Method", "Section",
+ CellChangeTimes->{{3.8790277387405376`*^9, 3.879027744095573*^9}, {
+  3.87903639665082*^9, 3.879036408846179*^9}, {3.8790364586939087`*^9, 
+  3.879036467829029*^9}},ExpressionUUID->"48064d5a-8c9a-40b1-8ce6-\
+77a9946ae4b3"],
+
+Cell[CellGroupData[{
+
+Cell["Problem 3 \[LongDash] Interpolation \[LongDash] Using Quadratic \
+Functions", "Section",
+ CellChangeTimes->{{3.8790277387405376`*^9, 3.879027744095573*^9}, {
+  3.87903639665082*^9, 3.879036408846179*^9}, {3.8790364586939087`*^9, 
+  3.879036504953314*^9}},ExpressionUUID->"4358ff98-6daf-4d95-a743-\
+15529dad697a"],
+
+Cell[TextData[{
+ "Suppose you have three points with x-values at -1, 0, and 1, but the \
+y-values can be anything. I\[CloseCurlyQuote]ll write the three points as:\n\n\
+",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "1"}], ",", " ", 
+      SubscriptBox["y", 
+       RowBox[{"-", "1"}]]}], ")"}], ",", " ", 
+    RowBox[{"(", 
+     RowBox[{"0", ",", " ", 
+      SubscriptBox["y", "0"]}], ")"}], ",", " ", 
+    RowBox[{"and", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", ",", " ", 
+       SubscriptBox["y", "1"]}], ")"}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "3ccf45c7-5010-4ec1-8462-951c972a2d70"],
+ ".\n\nThere is a formula for the parabola that goes through these three \
+points:\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"y", "=", 
+    RowBox[{
+     RowBox[{"a", "\[VeryThinSpace]", 
+      SuperscriptBox["x", "2"]}], "+", 
+     RowBox[{"b", "\[VeryThinSpace]", "x"}], " ", "+", " ", "c"}]}], 
+   TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "e9d35b70-ad4f-4f49-a057-a6e21265f523"],
+ "\n\nThe formulas for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"a", ",", " ", "b", ",", " ", "and", ",", " ", "c"}], 
+   TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "b6c05412-7f17-4897-b2d4-c6eb7c860b8e"],
+ " are:\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"a", "=", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "2"], 
+      RowBox[{"(", 
+       RowBox[{
+        SubscriptBox["y", "1"], "+", 
+        SubscriptBox["y", 
+         RowBox[{"-", "1"}]]}], ")"}]}], "-", 
+     SubscriptBox["y", "0"]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "c43b8693-794b-41d9-91e0-fec63eaafd4b"],
+ "\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"b", "=", 
+    RowBox[{
+     FractionBox["1", "2"], 
+     RowBox[{"(", 
+      RowBox[{
+       SubscriptBox["y", "1"], "-", 
+       SubscriptBox["y", 
+        RowBox[{"-", "1"}]]}], ")"}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "162547fe-e29e-4eb9-958b-c820dfb80207"],
+ "\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"c", "=", 
+    SubscriptBox["y", "0"]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "24822707-c03f-45b3-97b1-dbf43f60c72f"],
+ "\n\nWrite a program that does two things:\n\n(a) Assuming that ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["y", 
+    RowBox[{"-", "1"}]], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "9b9c2cc3-9641-4941-bcfd-868277776433"],
+ " is in R0, ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["y", "0"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "229c63de-2492-4d51-9ee4-44fdd740953f"],
+ " is in R1, and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["y", "1"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "086e83f5-d458-4f78-a0f9-c5a8e51a8c73"],
+ " is in R2, have your program compute ",
+ Cell[BoxData[
+  FormBox["a", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "efcd487f-3327-4fa0-a184-6926f5e953fc"],
+ " and put it in R3, and ",
+ Cell[BoxData[
+  FormBox["b", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "c35a23a1-d97e-484f-b2a7-77e8f2eb450c"],
+ " and put it in R4. You don\[CloseCurlyQuote]t need to compute ",
+ Cell[BoxData[
+  FormBox["c", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "f3ed06d4-06b1-4595-bb4d-de979396d4de"],
+ ", because it is just ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["y", "0"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "7a5b5544-a670-4bd2-9481-625e4cc7290c"],
+ " which is already in R1. At this point the program stops, but if the user \
+puts an ",
+ Cell[BoxData[
+  FormBox["x", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "8111e06f-7589-403a-8e85-e404cd2a11e8"],
+ "-value into the X-register and hits R/S again, ...\n\n(b) Your program \
+should then compute ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"a", " ", 
+     SuperscriptBox["x", "2"]}], "+", 
+    RowBox[{"b", "\[VeryThinSpace]", "x"}], "+", "c"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "ba5ae2dd-3b25-4138-86e6-0de486ee7f75"],
+ " and then return to the same spot that it stopped before so that it can be \
+ready to do this again with a new ",
+ Cell[BoxData[
+  FormBox["x", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "9560f5f4-ea5c-42fe-8242-19ec56fb04bd"],
+ "-value.\n\nIf you run out of time to do (b), bummer, but at least document \
+what you wrote for part (a) so I can give you partial credit.\n\n(c) Using \
+the example:"
+}], "Text",
+ CellChangeTimes->{{3.879038450575449*^9, 3.879038531428369*^9}, {
+   3.87903863963064*^9, 3.8790387329848337`*^9}, {3.8790388519067183`*^9, 
+   3.879039255350319*^9}, {3.879039289819693*^9, 3.8790396091029873`*^9}, {
+   3.879039687011712*^9, 3.879039798956113*^9}, 
+   3.879040210353868*^9},ExpressionUUID->"9f573a7e-fac7-433b-9310-\
+12b1d4663fb3"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   SubscriptBox["y", 
+    RowBox[{"-", "1"}]], "=", "0.60653"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["y", "0"], "=", "1.00000"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["y", "1"], "=", "1.64872"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.879040213784643*^9, 3.879040254882866*^9}, 
+   3.8790402948200493`*^9},
+ CellLabel->"In[15]:=",ExpressionUUID->"3afebd0a-eeda-45a1-9045-c04f2667b1ca"],
+
+Cell[TextData[{
+ "run your program and write down the ",
+ Cell[BoxData[
+  FormBox["a", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "a03eec48-0d46-455e-936f-28eb509e00c3"],
+ " and ",
+ Cell[BoxData[
+  FormBox["b", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "a30f3196-2240-46d0-96fb-848965dad38b"],
+ ", it has calculated.\n\n(d) Put your calculator into f FIX 5 mode (so that \
+it shows 5 digits after the decimal place). Use the program you wrote in part \
+(b) to fill in the following table:"
+}], "Text",
+ CellChangeTimes->{{3.879038450575449*^9, 3.879038531428369*^9}, {
+   3.87903863963064*^9, 3.8790387329848337`*^9}, {3.8790388519067183`*^9, 
+   3.879039255350319*^9}, {3.879039289819693*^9, 3.8790396091029873`*^9}, {
+   3.879039687011712*^9, 3.879039798956113*^9}, {3.879040248197673*^9, 
+   3.879040250661231*^9}, {3.879040696907343*^9, 3.879040698123672*^9}, 
+   3.8790407509539013`*^9},ExpressionUUID->"12b5e093-cf06-465c-9168-\
+d4ddb98f64fc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{"TableForm", "[", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", " ", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"x", "==", 
+          RowBox[{"-", "1"}]}], ",", " ", 
+         SubscriptBox["y", 
+          RowBox[{"-", "1"}]], ",", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"x", "==", "0"}], ",", " ", "\"\<1.00000\>\"", ",", " ", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{"x", "==", "1"}], ",", " ", 
+             SubscriptBox["y", "1"], ",", "\"\<    \>\""}], "]"}]}], "]"}]}], 
+        "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", " ", 
+       RowBox[{"Range", "[", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", " ", "1", ",", " ", "0.2"}], "]"}]}], 
+      "}"}]}], "]"}], "]"}],
+  FontSize->10]], "Input",
+ CellChangeTimes->{{3.879039808188315*^9, 3.879039915913972*^9}, {
+  3.879039956199038*^9, 3.879040128659607*^9}, {3.879040162309952*^9, 
+  3.8790402005817347`*^9}, {3.879040351461878*^9, 3.8790404849518137`*^9}, {
+  3.879040517141535*^9, 3.879040681048213*^9}, {3.879040766020821*^9, 
+  3.879040770193288*^9}},
+ CellLabel->"In[26]:=",ExpressionUUID->"45ed6634-dfd6-4db1-a701-b039b2d22744"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     RowBox[{"-", "1.`"}], "0.60653`"},
+    {
+     RowBox[{"-", "0.8`"}], "\<\"    \"\>"},
+    {
+     RowBox[{"-", "0.6`"}], "\<\"    \"\>"},
+    {
+     RowBox[{"-", "0.3999999999999999`"}], "\<\"    \"\>"},
+    {
+     RowBox[{"-", "0.19999999999999996`"}], "\<\"    \"\>"},
+    {"0.`", "\<\"1.00000\"\>"},
+    {"0.20000000000000018`", "\<\"    \"\>"},
+    {"0.40000000000000013`", "\<\"    \"\>"},
+    {"0.6000000000000001`", "\<\"    \"\>"},
+    {"0.8`", "\<\"    \"\>"},
+    {"1.`", "1.64872`"}
+   },
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.879040667474127*^9, 3.87904068150243*^9}, 
+   3.879040771356453*^9},
+ CellLabel->
+  "Out[26]//TableForm=",ExpressionUUID->"32a9d365-afb4-4c0e-a457-\
+00c136f6add6"]
+}, Open  ]],
+
+Cell["\<\
+Of course, a good test of your program is that it works for the three given \
+values.
+
+If you got all that done, congratulations! You just approximated an \
+exponential by a parabola, which of course doesn\[CloseCurlyQuote]t work \
+perfectly, but \
+\>", "Text",
+ CellChangeTimes->{{3.87904073722718*^9, 3.879040741009317*^9}, {
+  3.879040779269534*^9, 
+  3.879040847950782*^9}},ExpressionUUID->"db74c776-d3a9-411f-a585-\
+184172a86bd0"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 911},
+WindowMargins->{{-1487, Automatic}, {Automatic, 120}},
+FrontEndVersion->"13.1 for Mac OS X x86 (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"add422b7-c53f-480f-889c-4d22c9b9f12f"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 157, 3, 69, "Chapter",ExpressionUUID->"d64a1196-af85-405f-9fb6-7ea5f6b82fc6"],
+Cell[740, 27, 415, 7, 69, "Subtitle",ExpressionUUID->"dd513414-7e71-431c-9085-fc8fd42a08db"],
+Cell[1158, 36, 253, 4, 67, "Section",ExpressionUUID->"cd9249a5-bc54-4581-9fea-97650abed18d"],
+Cell[1414, 42, 333, 5, 53, "Section",ExpressionUUID->"48064d5a-8c9a-40b1-8ce6-77a9946ae4b3"],
+Cell[CellGroupData[{
+Cell[1772, 51, 318, 5, 53, "Section",ExpressionUUID->"4358ff98-6daf-4d95-a743-15529dad697a"],
+Cell[2093, 58, 4998, 146, 698, "Text",ExpressionUUID->"9f573a7e-fac7-433b-9310-12b1d4663fb3"],
+Cell[7094, 206, 485, 13, 73, "Input",ExpressionUUID->"3afebd0a-eeda-45a1-9045-c04f2667b1ca"],
+Cell[7582, 221, 1000, 21, 104, "Text",ExpressionUUID->"12b5e093-cf06-465c-9168-d4ddb98f64fc"],
+Cell[CellGroupData[{
+Cell[8607, 246, 1274, 33, 29, "Input",ExpressionUUID->"45ed6634-dfd6-4db1-a701-b039b2d22744"],
+Cell[9884, 281, 1092, 33, 215, "Output",ExpressionUUID->"32a9d365-afb4-4c0e-a457-00c136f6add6"]
+}, Open  ]],
+Cell[10991, 317, 445, 11, 104, "Text",ExpressionUUID->"db74c776-d3a9-411f-a585-184172a86bd0"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
