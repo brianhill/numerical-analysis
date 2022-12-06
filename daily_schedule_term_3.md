@@ -45,15 +45,15 @@ See also: [Daily Schedule Term 2](./daily_schedule_term_2.html)
 
 ### Week 14 &mdash; Term 3 Exam &mdash; Start Special Projects
 
-*Special Projects: Choose a program we have not worked through or extend a program that we have already worked through. Explain the theory. Illustrate it with examples. We will have four 15-minute presentations (I could do one too?) on the last day.*
-
 * Tuesday, Dec. 6 &mdash; Term 3 Exam &mdash; Directions for Term 3 Exam Follow:
   * There will be three problems. (In class I said four and that you would pick three of the four, but I am just going to make it three because I have not been creative enough to come up with four good problems.)
   * The first problem will be a statistics problem. Come to the exam with the power curve fit program on p. 99 already typed in. Make sure your program works on HP's example on p. 100.
   * The second problem will be another differential equation problem using Euler's method.
-  * The third problem will use the parabola fit ideas we developed in Friday's class, but you don't have to study the theory, because I will have exactly the theory you need all written up.  It might to review the linear interpolation program on p. 85.
+  * The third problem will use the parabola fit ideas we developed in Friday's class, but you don't have to study the theory, because I will have exactly the theory you need all written up.  It might help to review the linear interpolation program on p. 85.
 * Friday, Dec. 9 &mdash; Choose, discuss, and get started on special projects
 
 ### Week 15 &mdash; Present Special Projects
+
+*Special Projects: Choose a program we have not worked through or extend a program that we have already worked through. Explain the theory. Illustrate it with examples. We will have four 15-minute presentations (I could do one too?) on the last day.*
 
 * Tuesday, Dec. 13 &mdash; Special Project presentations
