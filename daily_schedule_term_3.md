@@ -45,7 +45,7 @@ See also: [Daily Schedule Term 2](./daily_schedule_term_2.html)
 
 ### Week 14 &mdash; Term 3 Exam &mdash; Start Special Projects
 
-* Tuesday, Dec. 6 &mdash; Term 3 Exam &mdash; Directions for Term 3 Exam Follow:
+* Tuesday, Dec. 6 &mdash; Term 3 Exam (directions follow)
   * There will be three problems. (In class I said four and that you would pick three of the four, but I am just going to make it three because I have not been creative enough to come up with four good problems.)
   * The first problem will be a statistics problem. Come to the exam with the power curve fit program on p. 99 already typed in. Make sure your program works on HP's example on p. 100.
   * The second problem will be another differential equation problem using Euler's method.
