@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     38285,       1001]
-NotebookOptionsPosition[     35518,        947]
-NotebookOutlinePosition[     35969,        965]
-CellTagsIndexPosition[     35926,        962]
+NotebookDataLength[     38684,       1001]
+NotebookOptionsPosition[     36005,        948]
+NotebookOutlinePosition[     36456,        966]
+CellTagsIndexPosition[     36413,        963]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -22,18 +22,21 @@ Notebook[{
 Cell[CellGroupData[{
 Cell["Numerical Analysis \[LongDash] Final Exam", "Chapter",
  CellChangeTimes->{{3.879027617590579*^9, 3.8790276412364798`*^9}, {
-  3.879296575970932*^9, 
-  3.879296586411531*^9}},ExpressionUUID->"d64a1196-af85-405f-9fb6-\
-7ea5f6b82fc6"],
+  3.879296575970932*^9, 3.879296586411531*^9}},
+ FontSize->36,ExpressionUUID->"d64a1196-af85-405f-9fb6-7ea5f6b82fc6"],
 
 Cell["\<\
 Dec. 6, 2022. During this exam, you are welcome to use your copies of the \
 HP-25 Owner\[CloseCurlyQuote]s Handbook and the HP-25 Applications Programs \
-book, and your notes, but not the internet.\
+book, and your notes, but not the internet. The relevant pages from the HP-25 \
+Applications Programs book are attached, as are several copies of the HP-25 \
+Program Form to help you document the programs you write in Problems 2 and 3. \
+There are three problems. Budget 30 minutes for each of them.\
 \>", "Subtitle",
  CellChangeTimes->{{3.8790276958222723`*^9, 3.879027713044964*^9}, {
   3.879034875687742*^9, 3.879034900550788*^9}, {3.8792965592985077`*^9, 
-  3.879296559501586*^9}, {3.879296595624487*^9, 3.879296609260985*^9}},
+  3.879296559501586*^9}, {3.879296595624487*^9, 3.879296609260985*^9}, {
+  3.87932494594457*^9, 3.8793250476321297`*^9}},
  FontSize->18,ExpressionUUID->"dd513414-7e71-431c-9085-fc8fd42a08db"],
 
 Cell[CellGroupData[{
@@ -43,14 +46,6 @@ Cell["Problem 1 \[LongDash] Statistics \[LongDash] Power Law Fit", "Section",
   3.87903639665082*^9, 
   3.879036401274899*^9}},ExpressionUUID->"cd9249a5-bc54-4581-9fea-\
 97650abed18d"],
-
-Cell["\<\
-Perhaps the most famous power law relationship of all time is captured in \
-this table:\
-\>", "Text",
- CellChangeTimes->{{3.8792756070156097`*^9, 
-  3.879275637019635*^9}},ExpressionUUID->"098b3eb9-1b19-4a10-ad2a-\
-5b9a5a154189"],
 
 Cell[CellGroupData[{
 
@@ -115,6 +110,7 @@ Cell[BoxData[{
   3.879276065434537*^9}, {3.879276132462727*^9, 3.879276152891416*^9}, {
   3.879293563347719*^9, 3.8792936085507517`*^9}, {3.879293641819408*^9, 
   3.879293699856226*^9}},
+ FontSize->10,
  CellLabel->"In[25]:=",ExpressionUUID->"83e70a18-9f3f-494c-b523-bfd3c0241016"],
 
 Cell[BoxData[
@@ -239,24 +235,27 @@ a7f6eae74a01"]
 }, Open  ]],
 
 Cell[TextData[{
- "The upper row of data is the planet\[CloseCurlyQuote]s distance from the \
-Sun. This plays the role of ",
+ "Perhaps the most famous power law relationship of all time is captured in \
+this table above. The upper row of data is the planet\[CloseCurlyQuote]s \
+distance from the Sun. This plays the role of ",
  Cell[BoxData[
   FormBox["x", TraditionalForm]],ExpressionUUID->
   "1389a6ff-48c0-4e64-93b8-741e102b78b1"],
- ".\n\nThe lower row is how long the planet takes to go around the Sun. This \
-is called the period. It plays the role of ",
+ ". The lower row is how long the planet takes to go around the Sun. This is \
+called the period. It plays the role of ",
  Cell[BoxData[
   FormBox["y", TraditionalForm]],ExpressionUUID->
   "7ac9f215-5143-4040-8205-e94b305c2e8a"],
  ". \n\nYou might find it odd that the distance and period are both 1.000 for \
-Earth, but that\[CloseCurlyQuote]s because we have chosen(!) to measure \
-distances using the Earth\[CloseCurlyQuote]s distance from the Sun, and we \
-measure times in Earth years."
+Earth, but that\[CloseCurlyQuote]s because I have chosen(!) to measure \
+distances using the Earth\[CloseCurlyQuote]s distance from the Sun as the \
+yardstick, and to measure times in the unit of Earth-years."
 }], "Text",
  CellChangeTimes->{{3.879276617382329*^9, 3.8792767969784527`*^9}, {
   3.879276975360202*^9, 3.879277015973839*^9}, {3.879296138660544*^9, 
-  3.879296138942108*^9}},ExpressionUUID->"140af0dc-0b90-4941-b8e2-\
+  3.879296138942108*^9}, {3.879324915111652*^9, 3.879324919721595*^9}, {
+  3.879325111959421*^9, 
+  3.879325153066608*^9}},ExpressionUUID->"140af0dc-0b90-4941-b8e2-\
 febbd57a44d7"],
 
 Cell[TextData[{
@@ -270,14 +269,14 @@ program give for the ",
  Cell[BoxData[
   FormBox["b", TraditionalForm]],ExpressionUUID->
   "4c801085-1035-492e-8597-039dc9bc5321"],
- " values in the formula\n\n",
+ " values in the formula ",
  Cell[BoxData[
   FormBox[
    RowBox[{"y", "=", 
     RowBox[{"a", "\[VeryThinSpace]", 
      SuperscriptBox["x", "b"]}]}], TraditionalForm]],ExpressionUUID->
   "d0cafacc-e50a-450e-89ea-90bf214e6ac4"],
- "\n\nHINT/NOTE: Since Earth has 1.000, 1.000 as its values, a good \
+ "?\n\nHINT/NOTE: Since Earth has 1.000, 1.000 as its values, a good \
 cross-check on your data entry is that ",
  Cell[BoxData[
   FormBox["a", TraditionalForm]],ExpressionUUID->
@@ -285,8 +284,7 @@ cross-check on your data entry is that ",
  " should come out extremely close \[LongDash] if not identically equal \
 \[LongDash] to 1.000. ",
  Cell[BoxData[
-  FormBox["b", TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+  FormBox["b", TraditionalForm]],ExpressionUUID->
   "9840c4c9-c744-4de5-a40f-a3679cb5dfde"],
  " is what is really interesting. It is Kepler\[CloseCurlyQuote]s Third Law.\n\
 \n(b) If an asteroid was found to be orbiting at a distance from the Sun of \
@@ -300,8 +298,9 @@ Sun following the same laws as planets. Asteroids are just smaller."
    3.879277031575692*^9, 3.879277096695212*^9}, {3.879281008937441*^9, 
    3.879281055770979*^9}, {3.879281132711133*^9, 3.8792811635696507`*^9}, {
    3.879293760695429*^9, 3.8792937962999163`*^9}, {3.879295682920793*^9, 
-   3.879295725784212*^9}, {3.879295758262988*^9, 
-   3.879295764979272*^9}},ExpressionUUID->"e016249a-e5f3-48e2-9bc8-\
+   3.879295725784212*^9}, {3.879295758262988*^9, 3.879295764979272*^9}, {
+   3.879325182091357*^9, 
+   3.879325183936201*^9}},ExpressionUUID->"e016249a-e5f3-48e2-9bc8-\
 ef895f815754"]
 }, Open  ]],
 
@@ -657,13 +656,13 @@ Cell[BoxData[
 }, Open  ]],
 
 Cell["\<\
-Congratulations! You just found how something pulled out of a forge at 2000K \
-(that\[CloseCurlyQuote]s 1727 Centigrade or 3140\.ba Fahrenheit) would cool \
-towards room temperature in its first five minutes.\
+Congratulations! You just found how something pulled out of a forge at 2000 \
+Kelvin (that\[CloseCurlyQuote]s about 3140\.ba Fahrenheit) would cool towards \
+room temperature (300 Kelvin) in its first five minutes.\
 \>", "Text",
  CellChangeTimes->{{3.879295535725109*^9, 3.879295625409976*^9}, {
-  3.879296513915799*^9, 
-  3.879296517561862*^9}},ExpressionUUID->"6d9af2c6-89da-46cf-915c-\
+  3.879296513915799*^9, 3.879296517561862*^9}, {3.879325241715764*^9, 
+  3.8793252609392653`*^9}},ExpressionUUID->"6d9af2c6-89da-46cf-915c-\
 aec82ac4da00"]
 }, Open  ]],
 
@@ -931,8 +930,9 @@ you do were to approximate the exponential ",
     RowBox[{"x", "/", "2"}]], TraditionalForm]],ExpressionUUID->
   "eed4aa66-96bb-4e35-8995-1d22a0eeae76"],
  " by a parabola, which of course doesn\[CloseCurlyQuote]t work perfectly, \
-because an exponential is not a parabola. I checked all the values and the \
-approximation works to better than 1%."
+except at x of -1, 0, and 1, where we made the fit work, because an \
+exponential is not a parabola. I checked all the values and the approximation \
+works to better than 1%."
 }], "Text",
  CellChangeTimes->{{3.87904073722718*^9, 3.879040741009317*^9}, {
   3.879040779269534*^9, 3.879040847950782*^9}, {3.879271181078197*^9, 
@@ -940,7 +940,8 @@ approximation works to better than 1%."
   3.879296725237308*^9, 3.879296760079406*^9}, {3.879296815846518*^9, 
   3.8792968272350388`*^9}, {3.879296948539567*^9, 3.879296953680552*^9}, {
   3.879297016208119*^9, 3.8792970220932293`*^9}, {3.87929812827218*^9, 
-  3.879298129542738*^9}},ExpressionUUID->"db74c776-d3a9-411f-a585-\
+  3.879298129542738*^9}, {3.879325360090567*^9, 
+  3.8793253963833017`*^9}},ExpressionUUID->"db74c776-d3a9-411f-a585-\
 184172a86bd0"]
 }, Open  ]]
 }, Open  ]]
@@ -965,42 +966,41 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 237, 4, 69, "Chapter",ExpressionUUID->"d64a1196-af85-405f-9fb6-7ea5f6b82fc6"],
-Cell[820, 28, 509, 8, 69, "Subtitle",ExpressionUUID->"dd513414-7e71-431c-9085-fc8fd42a08db"],
+Cell[580, 22, 247, 3, 71, "Chapter",ExpressionUUID->"d64a1196-af85-405f-9fb6-7ea5f6b82fc6"],
+Cell[830, 27, 815, 12, 141, "Subtitle",ExpressionUUID->"dd513414-7e71-431c-9085-fc8fd42a08db"],
 Cell[CellGroupData[{
-Cell[1354, 40, 253, 4, 67, "Section",ExpressionUUID->"cd9249a5-bc54-4581-9fea-97650abed18d"],
-Cell[1610, 46, 239, 6, 35, "Text",ExpressionUUID->"098b3eb9-1b19-4a10-ad2a-5b9a5a154189"],
+Cell[1670, 43, 253, 4, 67, "Section",ExpressionUUID->"cd9249a5-bc54-4581-9fea-97650abed18d"],
 Cell[CellGroupData[{
-Cell[1874, 56, 2178, 61, 136, "Input",ExpressionUUID->"83e70a18-9f3f-494c-b523-bfd3c0241016"],
-Cell[4055, 119, 4168, 118, 83, "Output",ExpressionUUID->"c18b4e63-dbca-46ae-a5ea-a7f6eae74a01"]
+Cell[1948, 51, 2193, 62, 107, "Input",ExpressionUUID->"83e70a18-9f3f-494c-b523-bfd3c0241016"],
+Cell[4144, 115, 4168, 118, 83, "Output",ExpressionUUID->"c18b4e63-dbca-46ae-a5ea-a7f6eae74a01"]
 }, Open  ]],
-Cell[8238, 240, 961, 19, 150, "Text",ExpressionUUID->"140af0dc-0b90-4941-b8e2-febbd57a44d7"],
-Cell[9202, 261, 2074, 43, 307, "Text",ExpressionUUID->"e016249a-e5f3-48e2-9bc8-ef895f815754"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[11313, 309, 333, 5, 67, "Section",ExpressionUUID->"48064d5a-8c9a-40b1-8ce6-77a9946ae4b3"],
-Cell[11649, 316, 4605, 118, 391, "Text",ExpressionUUID->"41e94c6e-f65d-41fa-bd6e-8b4e159103d3"],
-Cell[CellGroupData[{
-Cell[16279, 438, 946, 25, 25, "Input",ExpressionUUID->"d4b5c363-9a67-4c23-8c6b-897307ed1586"],
-Cell[17228, 465, 1700, 50, 403, "Output",ExpressionUUID->"dbdcf0c7-67cf-43b7-b65b-9cb6c8b2f6db"]
-}, Open  ]],
-Cell[18943, 518, 947, 14, 35, "Text",ExpressionUUID->"250727e2-e02f-4412-a99a-18eb3633b6f0"],
-Cell[CellGroupData[{
-Cell[19915, 536, 1509, 38, 41, "Input",ExpressionUUID->"dcfe54dc-365c-4bef-95f7-30b842ddd581"],
-Cell[21427, 576, 3288, 79, 380, "Output",ExpressionUUID->"5498049b-2a86-43bd-9252-1b4a2a7c7fb1"]
-}, Open  ]],
-Cell[24730, 658, 407, 8, 58, "Text",ExpressionUUID->"6d9af2c6-89da-46cf-915c-aec82ac4da00"]
+Cell[8327, 236, 1178, 22, 173, "Text",ExpressionUUID->"140af0dc-0b90-4941-b8e2-febbd57a44d7"],
+Cell[9508, 260, 2091, 43, 265, "Text",ExpressionUUID->"e016249a-e5f3-48e2-9bc8-ef895f815754"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[25174, 671, 367, 6, 67, "Section",ExpressionUUID->"4358ff98-6daf-4d95-a743-15529dad697a"],
-Cell[25544, 679, 4932, 132, 748, "Text",ExpressionUUID->"9f573a7e-fac7-433b-9310-12b1d4663fb3"],
-Cell[30479, 813, 485, 13, 73, "Input",ExpressionUUID->"3afebd0a-eeda-45a1-9045-c04f2667b1ca"],
-Cell[30967, 828, 938, 19, 104, "Text",ExpressionUUID->"12b5e093-cf06-465c-9168-d4ddb98f64fc"],
+Cell[11636, 308, 333, 5, 67, "Section",ExpressionUUID->"48064d5a-8c9a-40b1-8ce6-77a9946ae4b3"],
+Cell[11972, 315, 4605, 118, 391, "Text",ExpressionUUID->"41e94c6e-f65d-41fa-bd6e-8b4e159103d3"],
 Cell[CellGroupData[{
-Cell[31930, 851, 1274, 33, 29, "Input",ExpressionUUID->"45ed6634-dfd6-4db1-a701-b039b2d22744"],
-Cell[33207, 886, 1092, 33, 215, "Output",ExpressionUUID->"32a9d365-afb4-4c0e-a457-00c136f6add6"]
+Cell[16602, 437, 946, 25, 25, "Input",ExpressionUUID->"d4b5c363-9a67-4c23-8c6b-897307ed1586"],
+Cell[17551, 464, 1700, 50, 403, "Output",ExpressionUUID->"dbdcf0c7-67cf-43b7-b65b-9cb6c8b2f6db"]
 }, Open  ]],
-Cell[34314, 922, 1176, 21, 104, "Text",ExpressionUUID->"db74c776-d3a9-411f-a585-184172a86bd0"]
+Cell[19266, 517, 947, 14, 35, "Text",ExpressionUUID->"250727e2-e02f-4412-a99a-18eb3633b6f0"],
+Cell[CellGroupData[{
+Cell[20238, 535, 1509, 38, 41, "Input",ExpressionUUID->"dcfe54dc-365c-4bef-95f7-30b842ddd581"],
+Cell[21750, 575, 3288, 79, 380, "Output",ExpressionUUID->"5498049b-2a86-43bd-9252-1b4a2a7c7fb1"]
+}, Open  ]],
+Cell[25053, 657, 461, 8, 58, "Text",ExpressionUUID->"6d9af2c6-89da-46cf-915c-aec82ac4da00"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25551, 670, 367, 6, 67, "Section",ExpressionUUID->"4358ff98-6daf-4d95-a743-15529dad697a"],
+Cell[25921, 678, 4932, 132, 748, "Text",ExpressionUUID->"9f573a7e-fac7-433b-9310-12b1d4663fb3"],
+Cell[30856, 812, 485, 13, 73, "Input",ExpressionUUID->"3afebd0a-eeda-45a1-9045-c04f2667b1ca"],
+Cell[31344, 827, 938, 19, 104, "Text",ExpressionUUID->"12b5e093-cf06-465c-9168-d4ddb98f64fc"],
+Cell[CellGroupData[{
+Cell[32307, 850, 1274, 33, 29, "Input",ExpressionUUID->"45ed6634-dfd6-4db1-a701-b039b2d22744"],
+Cell[33584, 885, 1092, 33, 215, "Output",ExpressionUUID->"32a9d365-afb4-4c0e-a457-00c136f6add6"]
+}, Open  ]],
+Cell[34691, 921, 1286, 23, 127, "Text",ExpressionUUID->"db74c776-d3a9-411f-a585-184172a86bd0"]
 }, Open  ]]
 }, Open  ]]
 }
