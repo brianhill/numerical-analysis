@@ -50,7 +50,7 @@ See also: [Daily Schedule Term 2](./daily_schedule_term_2.html)
   * The first problem will be a statistics problem. Come to the exam with the power curve fit program on p. 99 already typed in. Make sure your program works on HP's example on p. 100.
   * The second problem will be another differential equation problem using Euler's method.
   * The third problem will use the parabola fit ideas we developed in Friday's class, but you don't have to study the theory, because I will have exactly the theory you need all written up.  It might help to review the linear interpolation program on p. 85.
-* Friday, Dec. 9 &mdash; Choose, discuss, and get started on special projects
+* Friday, Dec. 9 &mdash; Choose, discuss, and get started on [special projects](./special_projects.html)
 
 ### Week 15 &mdash; Present Special Projects
 
