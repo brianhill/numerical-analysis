@@ -2,7 +2,7 @@
 
 ### Brandon
 
-Matrices -- Linear Algebra -- or Euler's method
+[Cubic Interpolation](./projects/CubicInterpolation.pdf)
 
 ### Max
 
@@ -14,9 +14,7 @@ Navigation &mdash; Rhumb-line and great circle navigation
 
 ### Clara
 
-Extinction Predictor &mdash; some important first-order non-linear differential equation from Liz's class
-
-Or, use the boundaries of the Deep Springs Property and determine the area.
+The species-area correlation for the island of Hawai&#699;i
 
 ### Brian
 
