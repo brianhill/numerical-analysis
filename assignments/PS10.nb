@@ -1,0 +1,167 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6887,        159]
+NotebookOptionsPosition[      5901,        132]
+NotebookOutlinePosition[      6355,        150]
+CellTagsIndexPosition[      6312,        147]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["Numerical Analysis \[LongDash] Problem Set 10 \[LongDash] Euler\
+\[CloseCurlyQuote]s Method", "Section",
+ CellChangeTimes->{{3.8713829840911713`*^9, 3.871382989885779*^9}, {
+  3.871383097198255*^9, 3.871383109472487*^9}, {3.871383326862706*^9, 
+  3.8713833808344088`*^9}, {3.871426734155431*^9, 3.871426735236566*^9}, {
+  3.871993556107719*^9, 3.8719935809500523`*^9}, {3.872439966969939*^9, 
+  3.872440000871526*^9}, {3.875982640087123*^9, 3.8759826505652122`*^9}, {
+  3.8759826818176603`*^9, 3.875982684056402*^9}, {3.876001209312512*^9, 
+  3.87600122116895*^9}, {3.876743067971345*^9, 3.876743074444668*^9}, {
+  3.877222233126729*^9, 3.877222266768793*^9}, {3.880398571641902*^9, 
+  3.880398572163018*^9}, {3.8803987874407682`*^9, 
+  3.880398789240739*^9}},ExpressionUUID->"47b43857-58c2-4fa2-b265-\
+428f10ab71de"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Due Tuesday, Nov. 22 (beginning of class)
+
+In Chapter 5 of the HP-25 Applications Programs book, study the program on \
+pp. 83-84.\
+\>", "Subtitle",
+ CellChangeTimes->{{3.871430751344658*^9, 3.871430776838911*^9}, {
+  3.8719935421166697`*^9, 3.871993550674225*^9}, {3.87199378491018*^9, 
+  3.871993808590932*^9}, {3.872440003785226*^9, 3.872440008296516*^9}, {
+  3.875982695891411*^9, 3.875982698614297*^9}, {3.876743081926457*^9, 
+  3.876743084266677*^9}, {3.876743149504279*^9, 3.8767431793387947`*^9}, {
+  3.876743229152956*^9, 3.8767432927484694`*^9}, {3.87674741671094*^9, 
+  3.876747447614367*^9}, {3.8772222506924143`*^9, 3.877222535383209*^9}, {
+  3.877222570448797*^9, 3.877222831285266*^9}, {3.880398581072809*^9, 
+  3.880398613753738*^9}},
+ FontSize->16,
+ FontSlant->"Italic",ExpressionUUID->"b96dcb3f-f75b-48bf-aaac-47d330c376ac"],
+
+Cell[CellGroupData[{
+
+Cell["1. HP\[CloseCurlyQuote]s Example Program Using Euler\[CloseCurlyQuote]s \
+Method", "Subsection",
+ CellChangeTimes->{{3.8713830600656424`*^9, 3.871383085838428*^9}, 
+   3.87199382472436*^9, {3.87199851398885*^9, 3.871998515158553*^9}, {
+   3.871998773166749*^9, 3.8719988089823017`*^9}, {3.872440166696653*^9, 
+   3.872440172051412*^9}, {3.875996246691972*^9, 3.875996273579298*^9}, {
+   3.8759974606926537`*^9, 3.8759974652033443`*^9}, {3.875997901960972*^9, 
+   3.875997906494639*^9}, {3.875998085547489*^9, 3.875998092640204*^9}, {
+   3.875999367239081*^9, 3.875999370051594*^9}, {3.876743301253574*^9, 
+   3.8767433052356367`*^9}, {3.877222838271246*^9, 3.8772228475974503`*^9}, {
+   3.8803986445559883`*^9, 
+   3.880398659799492*^9}},ExpressionUUID->"c4d68ccc-9dc0-41f2-b33a-\
+453426ae1e1a"],
+
+Cell["\<\
+Make sure that the example HP gives works as expected. Then, ...
+
+(a) Continue making the table for the example program from x = 0 to x = 5. \
+That is 41 data points.
+
+(b) Graph the data accurately even thought this is not a very exciting \
+function.
+\
+\>", "Text",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQA2IQ/fu056oHD944+m3KWAOiP3m/2ACi7/1NeAGilY7M
++QiiJ51ZzfYQSP9i/8wPojWsWqRB9JkccUUQ/eGfjhGIfvRY2hJEHxF66gyi
+501u+AKiE/hXg+kGE0a7x0D69+m99iD6mMFeGd9Hbxx/yrvog2iBg702INrP
+LMoVRNcdnuQLog/dnBYEovXMvHNBdFjNyXwQHddvI+0PpG0cvqmC6J3bErVA
+tL9wjgmIlvjxxsL88RtHpzKpahBt8b2wGUSLlT45CKIPaxsfB9F/vliAaXc5
+vocg2sxx8isQnRG96T2IXvZu8mcQvcmr97HrS6B/2WaBaRsBnVcges2ek69B
+tEzFr58geoIcw38QDQCXr8si
+  "],ExpressionUUID->"038bc76f-71f2-4f5d-8ee0-2de04a1a9e76"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2. y\[CloseCurlyQuote](x) = y cos(x+y) Using Euler\[CloseCurlyQuote]s \
+Method", "Subsection",
+ CellChangeTimes->{{3.8713830600656424`*^9, 3.871383085838428*^9}, 
+   3.87199382472436*^9, {3.87199851398885*^9, 3.871998515158553*^9}, {
+   3.871998773166749*^9, 3.8719988089823017`*^9}, {3.872440166696653*^9, 
+   3.872440172051412*^9}, {3.875996246691972*^9, 3.875996273579298*^9}, {
+   3.8759974606926537`*^9, 3.8759974652033443`*^9}, {3.875997901960972*^9, 
+   3.875997906494639*^9}, {3.875998085547489*^9, 3.875998092640204*^9}, {
+   3.875999367239081*^9, 3.875999370051594*^9}, {3.876743301253574*^9, 
+   3.8767433052356367`*^9}, {3.877222838271246*^9, 3.8772228475974503`*^9}, {
+   3.8803986445559883`*^9, 3.880398659799492*^9}, {3.880398710007771*^9, 
+   3.880398737423759*^9}, {3.8803991172101183`*^9, 
+   3.880399119065229*^9}},ExpressionUUID->"e34c82de-ccae-412e-b070-\
+bf8b0514b861"],
+
+Cell["\<\
+2. Alter the program to do the following equation: y\[CloseCurlyQuote](x) = y \
+* cos(x + y). The calculator needs to be in radians mode. The initial \
+condition is y(0) = 1 instead of y(1) = 1
+
+(a) Make a table of the resulting function from x = 0 to x = 10 (101 data \
+points). (I\[CloseCurlyQuote]m not sure how well this will work if you \
+increase the step size to 0.2 which would make it only 51 data points.)
+
+(b) Make a graph of the resulting function from x = 0 to x = 15. The vertical \
+axis will need to go from about 0.0 to 1.25. This is a remarkable function.\
+\>", "Text",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQA2IQ/fu056oHD944+m3KWAOiP3m/2ACi7/1NeAGilY7M
++QiiJ51ZzfYQSP9i/8wPojWsWqRB9JkccUUQ/eGfjhGIfvRY2hJEHxF66gyi
+501u+AKiE/hXg+kGE0a7x0D69+m99iD6mMFeGd9Hbxx/yrvog2iBg702INrP
+LMoVRNcdnuQLog/dnBYEovXMvHNBdFjNyXwQHddvI+0PpG0cvqmC6J3bErVA
+tL9wjgmIlvjxxsL88RtHpzKpahBt8b2wGUSLlT45CKIPaxsfB9F/vliAaXc5
+vocg2sxx8isQnRG96T2IXvZu8mcQvcmr97HrS6B/2WaBaRsBnVcges2ek69B
+dADX7k8gencQy3cQDQCTZMr9
+  "],ExpressionUUID->"d5f85fca-9c67-4cf4-bb28-ca1502964e9a"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1334, 1226},
+WindowMargins->{{402, Automatic}, {Automatic, 43}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+FrontEndVersion->"13.2 for Mac OS X x86 (64-bit) (November 18, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"fdb56f20-f88b-4f34-a223-df27a3586917"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 823, 12, 67, "Section",ExpressionUUID->"47b43857-58c2-4fa2-b265-428f10ab71de"],
+Cell[CellGroupData[{
+Cell[1406, 36, 852, 16, 87, "Subtitle",ExpressionUUID->"b96dcb3f-f75b-48bf-aaac-47d330c376ac"],
+Cell[CellGroupData[{
+Cell[2283, 56, 801, 12, 54, "Subsection",ExpressionUUID->"c4d68ccc-9dc0-41f2-b33a-453426ae1e1a"],
+Cell[3087, 70, 764, 18, 150, "Text",ExpressionUUID->"038bc76f-71f2-4f5d-8ee0-2de04a1a9e76"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3888, 93, 897, 13, 54, "Subsection",ExpressionUUID->"e34c82de-ccae-412e-b070-bf8b0514b861"],
+Cell[4788, 108, 1085, 20, 127, "Text",ExpressionUUID->"d5f85fca-9c67-4cf4-bb28-ca1502964e9a"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
