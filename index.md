@@ -12,7 +12,7 @@ Four subjects will emerge:
 
 1. Operation and programming of a stack-based calculator, the Hewlett-Packard 25
 2. General applications that were in the calculator's target market: games, finance, navigation, and surveying
-3. Statistics: linear regression, exponential, logarithmic, and power law curve fitting, standard deviations and correlation coefficients
+3. Statistics: linear regression, exponential, logarithmic, and power law curve fitting, standard deviations and correlation coefficients, t-Test and &Chi;-squared hypothesis tests
 4. Numerical analysis: Newton's root-finding method, Euler's method for first-order differential equations, numerical integration
 
 There is a rich variety of background needed to deeply understand these subjects.
