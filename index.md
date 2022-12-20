@@ -11,9 +11,9 @@ Terms 2-3, Deep Springs College, Prof. [Brian Hill](../index.html)
 Four subjects will emerge:
 
 1. Operation and programming of a stack-based calculator, the Hewlett-Packard 25
-2. General applications that were in the calculator's target market: games, finance, navigation, statistics, and surveying
-3. Numerical analysis: root-finding, power series, integration
-4. Statistics: linear regression, exponential, logarithmic, and power law curve fitting, standard deviations and correlation coefficients
+2. General applications that were in the calculator's target market: games, finance, navigation, and surveying
+3. Statistics: linear regression, exponential, logarithmic, and power law curve fitting, standard deviations and correlation coefficients
+4. Numerical analysis: Newton's root-finding method, Euler's method for first-order differential equations, numerical integration
 
 There is a rich variety of background needed to deeply understand these subjects.
 Our classes will have a mix of developing the needed background and programming the
@@ -35,22 +35,20 @@ Detailed daily schedules will be kept retrospectively:
 ## Texts
 
 There will be no text to purchase for the above subjects. Instead I will be
-preparing handouts. I will draw heavily from three books:
+preparing handouts. I will draw from three books:
 
 * The HP-25 Owner's Handbook
-* HP-25 Applications Programs
-* A book by an outstanding applied mathematician, Peter Henrici, *Computational Analysis with the HP-25 Pocket Calculator*, which is long since out-of-print ([on Amazon](https://www.amazon.com/Computational-Analysis-HP-Pocket-Calculator/dp/0471029386) copies of this 45-year-old book go for about $120)
+* HP-25 Applications Programs book
+* If time, there will additionally be selections from Peter Henrici, *Computational Analysis with the HP-25 Pocket Calculator*, which is long since out-of-print
 
-As a question:
+Additionally:
 
-Would you want to purchase and read *Bill & Dave: How Hewlett and Packard Built the World's Greatest Company* as a way of rounding out our historical knowledge? It is readily arguable that Hewlett-Packard was the most influential company in what we now call Silicon Valley. We could also read the Walter Isaacson biography of Steve Jobs if you wanted to bring your Silicon Valley history more up-to-date. Understanding the technological landscape in which we live is almost impossible without understanding Hewlett-Packard and Apple. Microsoft and Intel are another entire empire which we would not have time to get into. Google and Facebook are
-yet more, and the bewildering list goes on, but Hewlett-Packard founded and represent the best of Silicon Valley culture, and although the company is a sad shadow of its former self, its influence carries on.
+* We will cover some of *Bill & Dave: How Hewlett and Packard Built the World's Greatest Company* as a way of rounding out our historical knowledge of the company that is arguably the most influential company in what we now call Silicon Valley.
 
 ## Resources
 
 We will run the HP-25 app on smartphones. There is more than one developer
-offering these. They are inexpensive. I am not personally
-familiar with the Android offerings. We will investigate those together.
+offering these. They are inexpensive.
 
 ## Grading
 
@@ -64,7 +62,7 @@ Five major areas:
 
 ## Miscellaneous Policies
 
-There will be a lot of handouts. Get a three-ring binder to keep all the handouts and problem sets organized. When the first assignment was made, I requested that assignments be on 8 1/2 x 11 paper (and not torn out from a bound notebook), that multi-page assignments be stapled, and that corrections be erased (if done in pencil) or recopied (if done in pen). Points will be removed from assignment scores when these directions are not followed. 
+There will be a lot of handouts. Get a three-ring binder to keep all the handouts and problem sets organized. Assignments should be on 8 1/2 x 11 paper (and not torn out from a bound notebook). Multi-page assignments should be stapled. Corrections should be erased (if done in pencil) or recopied (if done in pen).
 
 The College's general policies on absences and late work are applicable. There was an email from the Dean on this September 8. The
 policies below are consistent with that email:
